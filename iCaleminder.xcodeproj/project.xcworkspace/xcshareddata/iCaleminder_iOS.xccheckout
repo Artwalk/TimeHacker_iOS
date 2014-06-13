@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7C6AB175-1E8C-4AB7-B8C4-054DDF56CFD5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iCaleminder_iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>491037FA-FC40-4AFF-8C95-50173C7779D5</key>
+		<string>https://github.com/Artwalk/Time-Hacker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iCaleminder_iOS/iCaleminder_iOS.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>491037FA-FC40-4AFF-8C95-50173C7779D5</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Artwalk/Time-Hacker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>491037FA-FC40-4AFF-8C95-50173C7779D5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>491037FA-FC40-4AFF-8C95-50173C7779D5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Time-Hacker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

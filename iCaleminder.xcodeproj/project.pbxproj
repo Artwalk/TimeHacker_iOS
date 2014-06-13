@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
+		6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */; };
+		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
+		6E1D28B61946F8AC00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28B41946F8AC00892F5D /* InfoPlist.strings */; };
+		6E1D28B81946F8AC00892F5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28B71946F8AC00892F5D /* main.m */; };
+		6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */; };
+		6E1D28BF1946F8AD00892F5D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */; };
+		6E1D28C21946F8AD00892F5D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28C01946F8AD00892F5D /* Main_iPad.storyboard */; };
+		6E1D28C51946F8AD00892F5D /* ICALMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C41946F8AD00892F5D /* ICALMasterViewController.m */; };
+		6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */; };
+		6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28C91946F8AD00892F5D /* Images.xcassets */; };
+		6E1D28D11946F8AD00892F5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28D01946F8AD00892F5D /* XCTest.framework */; };
+		6E1D28D21946F8AD00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
+		6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
+		6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28D91946F8AD00892F5D /* InfoPlist.strings */; };
+		6E1D28DD1946F8AD00892F5D /* iCaleminder_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */; };
+		6E1D28EB194700B100892F5D /* ICALPomoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28EA194700B100892F5D /* ICALPomoStore.m */; };
+		6E1D28EE19470A5C00892F5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */; };
+		6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* ICALPomo.m */; };
+		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E1D28D41946F8AD00892F5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E1D28A01946F8AC00892F5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E1D28A71946F8AC00892F5D;
+			remoteInfo = iCaleminder_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E1D28A81946F8AC00892F5D /* iCaleminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCaleminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1D28AB1946F8AC00892F5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6E1D28AF1946F8AC00892F5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6E1D28B31946F8AC00892F5D /* iCaleminder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCaleminder-Info.plist"; sourceTree = "<group>"; };
+		6E1D28B51946F8AC00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E1D28B71946F8AC00892F5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E1D28B91946F8AC00892F5D /* iCaleminder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCaleminder-Prefix.pch"; sourceTree = "<group>"; };
+		6E1D28BA1946F8AC00892F5D /* ICALAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALAppDelegate.h; sourceTree = "<group>"; };
+		6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALAppDelegate.m; sourceTree = "<group>"; };
+		6E1D28BE1946F8AD00892F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		6E1D28C11946F8AD00892F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		6E1D28C31946F8AD00892F5D /* ICALMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALMasterViewController.h; sourceTree = "<group>"; };
+		6E1D28C41946F8AD00892F5D /* ICALMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALMasterViewController.m; sourceTree = "<group>"; };
+		6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALPomoViewController.h; sourceTree = "<group>"; };
+		6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALPomoViewController.m; sourceTree = "<group>"; };
+		6E1D28C91946F8AD00892F5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6E1D28CF1946F8AD00892F5D /* iCaleminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCaleminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1D28D01946F8AD00892F5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6E1D28D81946F8AD00892F5D /* iCaleminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCaleminderTests-Info.plist"; sourceTree = "<group>"; };
+		6E1D28DA1946F8AD00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCaleminder_iOSTests.m; sourceTree = "<group>"; };
+		6E1D28E9194700B100892F5D /* ICALPomoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomoStore.h; sourceTree = "<group>"; };
+		6E1D28EA194700B100892F5D /* ICALPomoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomoStore.m; sourceTree = "<group>"; };
+		6E1D28ED19470A5C00892F5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6E1D28EF19472C5C00892F5D /* ICALPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomo.h; sourceTree = "<group>"; };
+		6E1D28F019472C5C00892F5D /* ICALPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomo.m; sourceTree = "<group>"; };
+		6EDF10A219485F390059E8D7 /* snow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow1.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E1D28A51946F8AC00892F5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */,
+				6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */,
+				6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E1D28CC1946F8AD00892F5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1D28D11946F8AD00892F5D /* XCTest.framework in Frameworks */,
+				6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */,
+				6E1D28D21946F8AD00892F5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E1D289F1946F8AC00892F5D = {
+			isa = PBXGroup;
+			children = (
+				6E1D28B11946F8AC00892F5D /* iCaleminder_iOS */,
+				6E1D28D61946F8AD00892F5D /* iCaleminder_iOSTests */,
+				6E1D28AA1946F8AC00892F5D /* Frameworks */,
+				6E1D28A91946F8AC00892F5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E1D28A91946F8AC00892F5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D28A81946F8AC00892F5D /* iCaleminder.app */,
+				6E1D28CF1946F8AD00892F5D /* iCaleminderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E1D28AA1946F8AC00892F5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D28AB1946F8AC00892F5D /* Foundation.framework */,
+				6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */,
+				6E1D28AF1946F8AC00892F5D /* UIKit.framework */,
+				6E1D28D01946F8AD00892F5D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E1D28B11946F8AC00892F5D /* iCaleminder_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D28BA1946F8AC00892F5D /* ICALAppDelegate.h */,
+				6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */,
+				6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */,
+				6E1D28C01946F8AD00892F5D /* Main_iPad.storyboard */,
+				6E1D28C31946F8AD00892F5D /* ICALMasterViewController.h */,
+				6E1D28C41946F8AD00892F5D /* ICALMasterViewController.m */,
+				6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */,
+				6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */,
+				6E1D28EF19472C5C00892F5D /* ICALPomo.h */,
+				6E1D28F019472C5C00892F5D /* ICALPomo.m */,
+				6E1D28E9194700B100892F5D /* ICALPomoStore.h */,
+				6E1D28EA194700B100892F5D /* ICALPomoStore.m */,
+				6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */,
+				6E1D28C91946F8AD00892F5D /* Images.xcassets */,
+				6E1D28B21946F8AC00892F5D /* Supporting Files */,
+			);
+			path = iCaleminder_iOS;
+			sourceTree = "<group>";
+		};
+		6E1D28B21946F8AC00892F5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EDF10A219485F390059E8D7 /* snow1.png */,
+				6E1D28B31946F8AC00892F5D /* iCaleminder-Info.plist */,
+				6E1D28B41946F8AC00892F5D /* InfoPlist.strings */,
+				6E1D28B71946F8AC00892F5D /* main.m */,
+				6E1D28B91946F8AC00892F5D /* iCaleminder-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E1D28D61946F8AD00892F5D /* iCaleminder_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */,
+				6E1D28D71946F8AD00892F5D /* Supporting Files */,
+			);
+			path = iCaleminder_iOSTests;
+			sourceTree = "<group>";
+		};
+		6E1D28D71946F8AD00892F5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D28D81946F8AD00892F5D /* iCaleminderTests-Info.plist */,
+				6E1D28D91946F8AD00892F5D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E1D28A71946F8AC00892F5D /* iCaleminder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminder" */;
+			buildPhases = (
+				6E1D28A41946F8AC00892F5D /* Sources */,
+				6E1D28A51946F8AC00892F5D /* Frameworks */,
+				6E1D28A61946F8AC00892F5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCaleminder;
+			productName = iCaleminder_iOS;
+			productReference = 6E1D28A81946F8AC00892F5D /* iCaleminder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E1D28CE1946F8AD00892F5D /* iCaleminderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminderTests" */;
+			buildPhases = (
+				6E1D28CB1946F8AD00892F5D /* Sources */,
+				6E1D28CC1946F8AD00892F5D /* Frameworks */,
+				6E1D28CD1946F8AD00892F5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E1D28D51946F8AD00892F5D /* PBXTargetDependency */,
+			);
+			name = iCaleminderTests;
+			productName = iCaleminder_iOSTests;
+			productReference = 6E1D28CF1946F8AD00892F5D /* iCaleminderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E1D28A01946F8AC00892F5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ICAL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = artwalk;
+				TargetAttributes = {
+					6E1D28CE1946F8AD00892F5D = {
+						TestTargetID = 6E1D28A71946F8AC00892F5D;
+					};
+				};
+			};
+			buildConfigurationList = 6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "iCaleminder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E1D289F1946F8AC00892F5D;
+			productRefGroup = 6E1D28A91946F8AC00892F5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E1D28A71946F8AC00892F5D /* iCaleminder */,
+				6E1D28CE1946F8AD00892F5D /* iCaleminderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E1D28A61946F8AC00892F5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1D28C21946F8AD00892F5D /* Main_iPad.storyboard in Resources */,
+				6EDF10A319485F390059E8D7 /* snow1.png in Resources */,
+				6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */,
+				6E1D28BF1946F8AD00892F5D /* Main_iPhone.storyboard in Resources */,
+				6E1D28B61946F8AC00892F5D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E1D28CD1946F8AD00892F5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E1D28A41946F8AC00892F5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */,
+				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
+				6E1D28C51946F8AD00892F5D /* ICALMasterViewController.m in Sources */,
+				6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */,
+				6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */,
+				6E1D28EB194700B100892F5D /* ICALPomoStore.m in Sources */,
+				6E1D28EE19470A5C00892F5D /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E1D28CB1946F8AD00892F5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1D28DD1946F8AD00892F5D /* iCaleminder_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E1D28D51946F8AD00892F5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E1D28A71946F8AC00892F5D /* iCaleminder */;
+			targetProxy = 6E1D28D41946F8AD00892F5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E1D28B41946F8AC00892F5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E1D28B51946F8AC00892F5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E1D28BE1946F8AD00892F5D /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		6E1D28C01946F8AD00892F5D /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E1D28C11946F8AD00892F5D /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		6E1D28D91946F8AD00892F5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E1D28DA1946F8AD00892F5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E1D28DE1946F8AD00892F5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E1D28DF1946F8AD00892F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E1D28E11946F8AD00892F5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCaleminder_iOS/iCaleminder-Prefix.pch";
+				INFOPLIST_FILE = "iCaleminder_iOS/iCaleminder-Info.plist";
+				PRODUCT_NAME = iCaleminder;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6E1D28E21946F8AD00892F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCaleminder_iOS/iCaleminder-Prefix.pch";
+				INFOPLIST_FILE = "iCaleminder_iOS/iCaleminder-Info.plist";
+				PRODUCT_NAME = iCaleminder;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6E1D28E41946F8AD00892F5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iCaleminder_iOS.app/iCaleminder_iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCaleminder_iOS/iCaleminder_iOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iCaleminder_iOSTests/iCaleminderTests-Info.plist";
+				PRODUCT_NAME = iCaleminderTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6E1D28E51946F8AD00892F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iCaleminder_iOS.app/iCaleminder_iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCaleminder_iOS/iCaleminder_iOS-Prefix.pch";
+				INFOPLIST_FILE = "iCaleminder_iOSTests/iCaleminderTests-Info.plist";
+				PRODUCT_NAME = iCaleminderTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "iCaleminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E1D28DE1946F8AD00892F5D /* Debug */,
+				6E1D28DF1946F8AD00892F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E1D28E11946F8AD00892F5D /* Debug */,
+				6E1D28E21946F8AD00892F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E1D28E41946F8AD00892F5D /* Debug */,
+				6E1D28E51946F8AD00892F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6E1D28ED19470A5C00892F5D /* Model.xcdatamodel */,
+			);
+			currentVersion = 6E1D28ED19470A5C00892F5D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6E1D28A01946F8AC00892F5D /* Project object */;
+}
