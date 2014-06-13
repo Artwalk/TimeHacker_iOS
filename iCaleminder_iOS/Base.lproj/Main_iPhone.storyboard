@@ -109,11 +109,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="bzt-WY-HKx">
-                                        <barButtonItem key="rightBarButtonItem" title="Give up !" id="kLf-yO-Uje">
+                                        <barButtonItem key="leftBarButtonItem" title="Give up !" id="kLf-yO-Uje">
                                             <connections>
                                                 <action selector="giveUp:" destination="Ah7-4n-0Wa" id="wbE-rb-0bh"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Statics" id="uZZ-hm-aO0"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

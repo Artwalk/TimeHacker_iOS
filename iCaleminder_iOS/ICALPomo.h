@@ -10,9 +10,11 @@
 
 @interface ICALPomo : NSObject
 
-@property (nonatomic) NSDate *startTime;
-@property (nonatomic) NSDate *endTime;
-@property (nonatomic) NSString *eventTital;
+@property (nonatomic) NSDate *pomoStartTime;
+@property (nonatomic) NSDate *pomoEndTime;
+@property (nonatomic) NSDate *breakStartTime;
+
+@property (nonatomic) NSString *eventTitle;
 // maybe add eventType later
 
 @property (nonatomic) NSInteger interval;
@@ -25,6 +27,9 @@ typedef NS_OPTIONS(NSUInteger, EnumState)
     EnumBreak   = 1,     // 1
     EnumStart      = 1 << 1     // 2
 };
+
+
++ (ICALPomo *)getInstance;
 
 
 @end

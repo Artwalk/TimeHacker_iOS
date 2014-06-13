@@ -10,6 +10,9 @@
 #import "ICALPomo.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+#define MINUTE (60)
+#define TESTNUM (150)
+
 @interface ICALPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *pomoNavigationItem;
 
@@ -20,7 +23,7 @@
 
 @property (nonatomic, strong) NSTimer *paintingTimer;
 
-@property (nonatomic) ICALPomo *currentPomo;
+@property (nonatomic) ICALPomo *pomoInstance;
 
 @property (nonatomic, strong) NSArray *pomoIntervalPickerArray;
 
@@ -50,7 +53,7 @@
     }
     
     // new Pomo
-    self.currentPomo = [[ICALPomo alloc] init];
+    _pomoInstance = [ICALPomo getInstance];
     
     
 }
@@ -59,15 +62,14 @@
 {
     // Update the user interface for the detail item.
     if (self.pomoItem) {
-        self.pomoNavigationItem.title = [self.pomoItem description];
+        self.pomoNavigationItem.title = _pomoInstance.eventTitle = [self.pomoItem description];
         
         [self.startStopBtn setTitle: @"▶︎" forState:0];
         
         self.pomoIntervalPicker.delegate = self;
         self.pomoIntervalPickerArray = @[@"25 min", @"20 min", @"15 min"];
         
-        [self stopLeftTimePicker];
-        
+        [self stopPomoLeftTimePickerView];
     }
 }
 
@@ -93,7 +95,6 @@
 
 - (void) fireDelayNotification {
     
-    // background
     if (!_localNotification) {
         _localNotification = [[UILocalNotification alloc] init];
         
@@ -102,7 +103,7 @@
         _localNotification.hasAction = YES;
     }
     
-    _localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:_currentPomo.interval*60];
+    _localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:_pomoInstance.interval*MINUTE/TESTNUM];
     _localNotification.timeZone = [[NSCalendar currentCalendar] timeZone];
     
     [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
@@ -117,7 +118,7 @@
 #pragma mark - alertView
 
 - (IBAction)giveUp:(id)sender {
-    if (self.currentPomo.state == EnumStart) {
+    if (_pomoInstance.state == EnumStart) {
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Really Give Up?" delegate:self cancelButtonTitle:[self noButtonTitle] otherButtonTitles:[self yesButtonTitle], nil];
         [alertView show];
     } else {
@@ -133,15 +134,21 @@
     return @"No";
 }
 
+- (NSString *) breakButtonTitle{
+    return @"Have a break!";
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
     if ([buttonTitle isEqualToString:[self yesButtonTitle]]){
-        //        NSLog(@"User pressed the Yes button.");
         [self stopCounting];
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         
     } else if ([buttonTitle isEqualToString:[self noButtonTitle]]){
-        //        NSLog(@"User pressed the No button.");
+  
+    } else if ([buttonTitle isEqualToString:[self breakButtonTitle]]) {
+        _pomoInstance.breakStartTime = [NSDate date];
+        [self startCounting];
     }
 }
 
@@ -158,7 +165,7 @@
         if (component == 0) {
             return [NSString stringWithFormat:@"%02ld", (long)row];
         } else if (component == 1) {
-            return [NSString stringWithFormat:@"%02ld", (long)row%60];
+            return [NSString stringWithFormat:@"%02ld", (long)row%MINUTE];
         }
     }
     
@@ -183,7 +190,7 @@
     }
     
     if ([pickerView isEqual:self.pomoLeftTimePicker]) {
-        return component==0?26:60*26;
+        return component==0?26:MINUTE*25+1;
     }
     return 0;
 }
@@ -192,17 +199,25 @@
     
     if ([pickerView isEqual:self.pomoIntervalPicker]){
         
-        self.currentPomo.interval = [self intervalFormatWithString:self.pomoIntervalPickerArray[row]];
-        //        NSLog(@"%ld", (long)self.currentPomo.interval);
-        [self.pomoLeftTimePicker selectRow:self.currentPomo.interval inComponent:0 animated:YES];
-        [self.pomoLeftTimePicker selectRow:self.currentPomo.interval*60 inComponent:1 animated:YES];
+        _pomoInstance.interval = [self intervalFormatWithString:self.pomoIntervalPickerArray[row]];
+        
+        [self stopPomoLeftTimePickerView];
     }
+}
+
+- (void)updatePomoLeftTimePickerView:(NSInteger)numZero rowOne:(NSInteger)numOne {
+    [_pomoLeftTimePicker selectRow:numZero inComponent:0 animated:YES];
+    [_pomoLeftTimePicker selectRow:numOne inComponent:1 animated:YES];
+}
+
+- (void)stopPomoLeftTimePickerView {
+    [self updatePomoLeftTimePickerView:_pomoInstance.interval rowOne:MINUTE*_pomoInstance.interval];
 }
 
 #pragma mark - update time
 - (IBAction)updateStartStopBtn:(id)sender {
     
-    switch (self.currentPomo.state) {
+    switch (_pomoInstance.state) {
         case EnumStop:
             [self stopToStart];
             break;
@@ -219,24 +234,34 @@
 }
 
 - (void)stopToStart {
-    self.currentPomo.state = EnumStart;
+    _pomoInstance.state = EnumStart;
+    _pomoInstance.pomoStartTime = [NSDate date];
+    
+    [self fireDelayNotification];
+    
+    [self.startStopBtn setTitle: @"◼︎" forState:0];
     
     [self startCounting];
-    [self.startStopBtn setTitle: @"◼︎" forState:0];
 }
 
 - (void)startToBreak {
-    self.currentPomo.state = EnumBreak;
+    [self stopCounting];
     
-    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Great!" message:@"One PomoToDo has Done!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    _pomoInstance.state = EnumBreak;
+    _pomoInstance.pomoEndTime = [NSDate date];
+    
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Great!" message:@"One PomoToDo has Done!" delegate:self cancelButtonTitle:[self breakButtonTitle] otherButtonTitles:nil, nil];
     [alertView show];
     AudioServicesPlaySystemSound(1007);
     
-    [self startCounting];
+    _pomoNavigationItem.title = @"Break Time!";
+    [self updatePomoLeftTimePickerView:5 rowOne:MINUTE*5];
 }
 
 - (void)breakToStop {
     [self toStop];
+    
+    _pomoNavigationItem.title = _pomoInstance.eventTitle;
 }
 
 - (void)startToStop {
@@ -244,11 +269,15 @@
 }
 
 - (void)toStop {
-    self.currentPomo.state = EnumStop;
+    _pomoInstance.state = EnumStop;
     
-    [self stopCounting];
+    [self cancelDelayNotification];
+    
+    [self stopPomoLeftTimePickerView];
     [self.startStopBtn setTitle: @"▶︎" forState:0];
+    [self stopCounting];
     
+    NSLog(@"\ntitle: %@\nstart: %@\nend: %@",_pomoInstance.eventTitle, _pomoInstance.pomoStartTime, _pomoInstance.pomoEndTime);
 }
 
 - (NSInteger)intervalFormatWithString:(NSString *) minites {
@@ -258,52 +287,42 @@
 #pragma mark - counting
 
 - (void) startCount:(NSTimer *)paramTimer {
-    if (![self count:self.currentPomo.interval*60]) {
+    if (![self count:_pomoInstance.interval*MINUTE since:_pomoInstance.pomoStartTime]) {
         [self startToBreak];
     }
-    
 }
 
 - (void) breakCount:(NSTimer *)paramTimer {
-    if (![self count:5*60]) {
+    if (![self count:5*MINUTE since:_pomoInstance.breakStartTime]) {
         [self breakToStop];
     }
 }
 
 
-- (BOOL)count:(NSInteger)seconds {
-    NSInteger iSeconds, iMinutes, secondsInterval;
+- (BOOL)count:(NSInteger)seconds since:(NSDate*)time {
+    NSInteger secondsInterval;
     
-    secondsInterval = seconds - (NSInteger)[[NSDate date] timeIntervalSinceDate:self.currentPomo.startTime];
-    
+    secondsInterval = seconds - TESTNUM*(NSInteger)[[NSDate date] timeIntervalSinceDate:time];
+
     if (secondsInterval < 0.0) {
         return NO;
     }
     
-    iSeconds = secondsInterval;
-    iMinutes = secondsInterval /60;
-    
-    //    NSLog(@"%02d:%02d", iMinutes, iSeconds);
-    
-    [self.pomoLeftTimePicker selectRow:iMinutes inComponent:0 animated:YES];
-    [self.pomoLeftTimePicker selectRow:iSeconds inComponent:1 animated:YES];
+    [self updatePomoLeftTimePickerView:secondsInterval/MINUTE rowOne:secondsInterval];
     
     return YES;
 }
 
 
 - (void) startCounting {
-    self.currentPomo.startTime = [NSDate date];
     
     [self.pomoIntervalPicker setUserInteractionEnabled:NO];
     [self.pomoIntervalPicker setAlpha:0.2];
     
-    [self fireDelayNotification];
-    
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
     }
-    switch (self.currentPomo.state) {
+    switch (_pomoInstance.state) {
         case EnumStart:
             self.paintingTimer = [NSTimer
                                   scheduledTimerWithTimeInterval:1
@@ -322,24 +341,13 @@
 }
 
 - (void) stopCounting {
-    [self cancelDelayNotification];
-    
-    self.currentPomo.endTime = [NSDate date];
     
     [self.pomoIntervalPicker setUserInteractionEnabled:YES];
     [self.pomoIntervalPicker setAlpha:1.0];
-    [self stopLeftTimePicker];
     
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
     }
-}
-
-- (void) stopLeftTimePicker {
-    [self.pomoLeftTimePicker selectRow:(self.currentPomo.interval) inComponent:0 animated:NO];
-    [self.pomoLeftTimePicker selectRow:60*(self.currentPomo.interval) inComponent:1 animated:NO];
-    
-    [self.pomoIntervalPicker setNeedsDisplay];
 }
 
 #pragma mark - Split view

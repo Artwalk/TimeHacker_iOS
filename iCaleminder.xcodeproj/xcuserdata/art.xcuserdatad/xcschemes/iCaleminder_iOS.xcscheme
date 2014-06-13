@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-               BuildableName = "iCaleminder_iOS.app"
+               BuildableName = "iCaleminder.app"
                BlueprintName = "iCaleminder"
                ReferencedContainer = "container:iCaleminder.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E1D28CE1946F8AD00892F5D"
-               BuildableName = "iCaleminder_iOSTests.xctest"
+               BuildableName = "iCaleminderTests.xctest"
                BlueprintName = "iCaleminderTests"
                ReferencedContainer = "container:iCaleminder.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-            BuildableName = "iCaleminder_iOS.app"
+            BuildableName = "iCaleminder.app"
             BlueprintName = "iCaleminder"
             ReferencedContainer = "container:iCaleminder.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-            BuildableName = "iCaleminder_iOS.app"
+            BuildableName = "iCaleminder.app"
             BlueprintName = "iCaleminder"
             ReferencedContainer = "container:iCaleminder.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-            BuildableName = "iCaleminder_iOS.app"
+            BuildableName = "iCaleminder.app"
             BlueprintName = "iCaleminder"
             ReferencedContainer = "container:iCaleminder.xcodeproj">
          </BuildableReference>

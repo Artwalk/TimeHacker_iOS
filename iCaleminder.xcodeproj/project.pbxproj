@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E170CDB194B26BA007232D7 /* ICALEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E170CDA194B26BA007232D7 /* ICALEvent.m */; };
 		6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
 		6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */; };
 		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
@@ -23,7 +24,6 @@
 		6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
 		6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28D91946F8AD00892F5D /* InfoPlist.strings */; };
 		6E1D28DD1946F8AD00892F5D /* iCaleminder_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */; };
-		6E1D28EB194700B100892F5D /* ICALPomoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28EA194700B100892F5D /* ICALPomoStore.m */; };
 		6E1D28EE19470A5C00892F5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */; };
 		6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* ICALPomo.m */; };
 		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
@@ -40,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E170CD9194B26BA007232D7 /* ICALEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALEvent.h; sourceTree = "<group>"; };
+		6E170CDA194B26BA007232D7 /* ICALEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALEvent.m; sourceTree = "<group>"; };
 		6E1D28A81946F8AC00892F5D /* iCaleminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCaleminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1D28AB1946F8AC00892F5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +64,6 @@
 		6E1D28D81946F8AD00892F5D /* iCaleminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCaleminderTests-Info.plist"; sourceTree = "<group>"; };
 		6E1D28DA1946F8AD00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCaleminder_iOSTests.m; sourceTree = "<group>"; };
-		6E1D28E9194700B100892F5D /* ICALPomoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomoStore.h; sourceTree = "<group>"; };
-		6E1D28EA194700B100892F5D /* ICALPomoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomoStore.m; sourceTree = "<group>"; };
 		6E1D28ED19470A5C00892F5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6E1D28EF19472C5C00892F5D /* ICALPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomo.h; sourceTree = "<group>"; };
 		6E1D28F019472C5C00892F5D /* ICALPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomo.m; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 				6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */,
 				6E1D28EF19472C5C00892F5D /* ICALPomo.h */,
 				6E1D28F019472C5C00892F5D /* ICALPomo.m */,
-				6E1D28E9194700B100892F5D /* ICALPomoStore.h */,
-				6E1D28EA194700B100892F5D /* ICALPomoStore.m */,
+				6E170CD9194B26BA007232D7 /* ICALEvent.h */,
+				6E170CDA194B26BA007232D7 /* ICALEvent.m */,
 				6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */,
 				6E1D28C91946F8AD00892F5D /* Images.xcassets */,
 				6E1D28B21946F8AC00892F5D /* Supporting Files */,
@@ -281,8 +281,8 @@
 				6E1D28C51946F8AD00892F5D /* ICALMasterViewController.m in Sources */,
 				6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */,
 				6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */,
-				6E1D28EB194700B100892F5D /* ICALPomoStore.m in Sources */,
 				6E1D28EE19470A5C00892F5D /* Model.xcdatamodeld in Sources */,
+				6E170CDB194B26BA007232D7 /* ICALEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

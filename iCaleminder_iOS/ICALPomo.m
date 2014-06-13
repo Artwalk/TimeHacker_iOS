@@ -14,8 +14,18 @@
 
 @implementation ICALPomo
 
-- (instancetype) init {
++ (ICALPomo *)getInstance {
+    static ICALPomo *icalPomoInstance = nil;
     
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        icalPomoInstance = [[self alloc] initPrivate];
+    });
+
+    return icalPomoInstance;
+}
+
+- (instancetype)initPrivate {
     self = [super init];
     
     if (self) {
@@ -26,6 +36,11 @@
     return self;
 }
 
+- (instancetype)init {
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use + [ICALPomo]" userInfo:nil];
+    
+    return nil;
+}
 
 
 @end
