@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -49,16 +49,6 @@
         _objects = [[NSMutableArray alloc] init];
     }
     
-//    UIAlertView *alertView = [[UIAlertView alloc]
-//                              initWithTitle:@"Event"
-//                              message:@"Please enter your ToDo Task:"
-//                              delegate:self
-//                              cancelButtonTitle:@"Cancel"
-//                              otherButtonTitles:@"Ok", nil];
-//    [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
-//    UITextField *textField = [alertView textFieldAtIndex:0];
-//    [alertView show];
-//    NSString *event = textField.text;
     NSString *event = [NSString stringWithFormat:@"test %d", arc4random()%10];
     [_objects insertObject:event atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];

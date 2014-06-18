@@ -11,7 +11,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 #define MINUTE (60)
-#define TESTNUM (150)
+#define TESTNUM (1)
 
 @interface ICALPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *pomoNavigationItem;
