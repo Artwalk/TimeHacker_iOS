@@ -10,7 +10,6 @@
 #import "ICALPomoViewController.h"
 #import "ICALPomoItem.h"
 #import "ICALTodoTableViewCell.h"
-#import "ICALReminders.h"
 
 
 @interface ICALTodoListViewController () <UITextFieldDelegate>
@@ -18,8 +17,6 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @property (nonatomic, strong) UITextField *todoTextField;
-
-@property (nonatomic, strong) NSArray *reminders;
 
 @end
 
@@ -30,11 +27,6 @@
     [super awakeFromNib];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-//    _reminders = [ICALReminders getInstance].getIncompleteReminders;
-//    NSLog(@"%@", _reminders);
-    _reminders = [NSArray arrayWithObjects:@"aaa", @"bbb", nil];
-}
 
 - (void)viewDidLoad
 {
@@ -74,19 +66,13 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setPomoItem:object];
     }
-    
-    if ([[segue identifier] isEqualToString:@"RemindersToPomo"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//
-//        [[segue destinationViewController] setPomoItem:object];
-    }
 }
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -97,9 +83,6 @@
             break;
         case 1:
             return @"";
-            break;
-        case 2:
-            return @"Reminders";
             break;
         default:
             return @"";
@@ -122,9 +105,6 @@
         case 1:
             return 1;
             break;
-        case 2:
-            return [_reminders count];
-            break;
         default:
             return 0;
             break;
@@ -141,9 +121,6 @@
             break;
         case 1:
             cell = [tableView dequeueReusableCellWithIdentifier:@"Todo" forIndexPath:indexPath];
-            break;
-        case 2:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"Reminders" forIndexPath:indexPath];
             break;
         default:
             break;
@@ -162,7 +139,6 @@
             return YES;
             break;
         case 1:
-        case 2:
         default:
             return NO;
             break;
@@ -300,8 +276,6 @@
             _todoTextField = (UITextField *)[self.tableView viewWithTag:3];
             [_todoTextField addTarget:self action:@selector(textfieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
         }
-    } else if (indexPath.section == 2) {
-        cell.textLabel.text = _reminders[indexPath.row];
     }
 }
 

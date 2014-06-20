@@ -28,7 +28,6 @@
 		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
 		6E3F6A6419526ADD00BC546B /* ICALPomoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */; };
 		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
-		6EC4EF0C1953E60800D63AEC /* ICALReminders.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4EF0B1953E60800D63AEC /* ICALReminders.m */; };
 		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
 /* End PBXBuildFile section */
 
@@ -73,8 +72,6 @@
 		6E3F6A6219526ADD00BC546B /* ICALPomoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICALPomoItem.h; path = ../ICALPomoItem.h; sourceTree = "<group>"; };
 		6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICALPomoItem.m; path = ../ICALPomoItem.m; sourceTree = "<group>"; };
 		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		6EC4EF0A1953E60800D63AEC /* ICALReminders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALReminders.h; sourceTree = "<group>"; };
-		6EC4EF0B1953E60800D63AEC /* ICALReminders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALReminders.m; sourceTree = "<group>"; };
 		6EDF10A219485F390059E8D7 /* snow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,8 +187,6 @@
 				6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */,
 				6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */,
 				6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */,
-				6EC4EF0A1953E60800D63AEC /* ICALReminders.h */,
-				6EC4EF0B1953E60800D63AEC /* ICALReminders.m */,
 			);
 			name = ToDoList;
 			sourceTree = "<group>";
@@ -306,7 +301,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EC4EF0C1953E60800D63AEC /* ICALReminders.m in Sources */,
 				6E3F6A0F1951B31700BC546B /* ICALPomoModel.xcdatamodeld in Sources */,
 				6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */,
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
