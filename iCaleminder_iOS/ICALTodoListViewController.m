@@ -10,6 +10,7 @@
 #import "ICALPomoViewController.h"
 #import "ICALPomoItem.h"
 #import "ICALTodoTableViewCell.h"
+#import "ICALReminders.h"
 
 
 @interface ICALTodoListViewController () <UITextFieldDelegate>
@@ -18,6 +19,8 @@
 
 @property (nonatomic, strong) UITextField *todoTextField;
 
+@property (nonatomic, strong) NSArray *reminders;
+
 @end
 
 @implementation ICALTodoListViewController
@@ -25,6 +28,12 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+//    _reminders = [ICALReminders getInstance].getIncompleteReminders;
+//    NSLog(@"%@", _reminders);
+    _reminders = [NSArray arrayWithObjects:@"aaa", @"bbb", nil];
 }
 
 - (void)viewDidLoad
@@ -64,7 +73,12 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setPomoItem:object];
-        
+    }
+    
+    if ([[segue identifier] isEqualToString:@"RemindersToPomo"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//
+//        [[segue destinationViewController] setPomoItem:object];
     }
 }
 
@@ -72,7 +86,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -108,6 +122,9 @@
         case 1:
             return 1;
             break;
+        case 2:
+            return [_reminders count];
+            break;
         default:
             return 0;
             break;
@@ -124,6 +141,9 @@
             break;
         case 1:
             cell = [tableView dequeueReusableCellWithIdentifier:@"Todo" forIndexPath:indexPath];
+            break;
+        case 2:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"Reminders" forIndexPath:indexPath];
             break;
         default:
             break;
@@ -280,15 +300,21 @@
             _todoTextField = (UITextField *)[self.tableView viewWithTag:3];
             [_todoTextField addTarget:self action:@selector(textfieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
         }
+    } else if (indexPath.section == 2) {
+        cell.textLabel.text = _reminders[indexPath.row];
     }
 }
 
 - (IBAction)textfieldDone:(id)sender {
-    if (![_todoTextField.text isEqualToString:@""]) {
-        [self insertNewObject:_todoTextField.text];
-        _todoTextField.text = @"";
+    NSString *trimedTitle = [_todoTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if ([trimedTitle isEqualToString:@""]) {
+        // do nothing
+    } else {
+        [self insertNewObject:trimedTitle];
     }
     
+    
+    _todoTextField.text = @"";
     [sender resignFirstResponder];
 }
 

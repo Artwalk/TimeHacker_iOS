@@ -22,11 +22,13 @@
 		6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
 		6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28D91946F8AD00892F5D /* InfoPlist.strings */; };
 		6E1D28DD1946F8AD00892F5D /* iCaleminder_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */; };
-		6E1D28F119472C5C00892F5D /* ICALPomoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* ICALPomoStore.m */; };
+		6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* ICALPomo.m */; };
 		6E3B1DF41953D1E300F0DDE3 /* ICALTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */; };
 		6E3F6A0F1951B31700BC546B /* ICALPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* ICALPomoModel.xcdatamodeld */; };
 		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
 		6E3F6A6419526ADD00BC546B /* ICALPomoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */; };
+		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
+		6EC4EF0C1953E60800D63AEC /* ICALReminders.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4EF0B1953E60800D63AEC /* ICALReminders.m */; };
 		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
 /* End PBXBuildFile section */
 
@@ -62,14 +64,17 @@
 		6E1D28D81946F8AD00892F5D /* iCaleminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCaleminderTests-Info.plist"; sourceTree = "<group>"; };
 		6E1D28DA1946F8AD00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCaleminder_iOSTests.m; sourceTree = "<group>"; };
-		6E1D28EF19472C5C00892F5D /* ICALPomoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomoStore.h; sourceTree = "<group>"; };
-		6E1D28F019472C5C00892F5D /* ICALPomoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomoStore.m; sourceTree = "<group>"; };
+		6E1D28EF19472C5C00892F5D /* ICALPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomo.h; sourceTree = "<group>"; };
+		6E1D28F019472C5C00892F5D /* ICALPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomo.m; sourceTree = "<group>"; };
 		6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALTodoTableViewCell.h; sourceTree = "<group>"; };
 		6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALTodoTableViewCell.m; sourceTree = "<group>"; };
 		6E3F6A0E1951B31700BC546B /* ICALPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ICALPomoModel.xcdatamodel; sourceTree = "<group>"; };
 		6E3F6A131951BF2800BC546B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6E3F6A6219526ADD00BC546B /* ICALPomoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICALPomoItem.h; path = ../ICALPomoItem.h; sourceTree = "<group>"; };
 		6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICALPomoItem.m; path = ../ICALPomoItem.m; sourceTree = "<group>"; };
+		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		6EC4EF0A1953E60800D63AEC /* ICALReminders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALReminders.h; sourceTree = "<group>"; };
+		6EC4EF0B1953E60800D63AEC /* ICALReminders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALReminders.m; sourceTree = "<group>"; };
 		6EDF10A219485F390059E8D7 /* snow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */,
 				6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */,
 				6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */,
 				6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */,
@@ -120,6 +126,7 @@
 		6E1D28AA1946F8AC00892F5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EC4EF081953DDC500D63AEC /* EventKit.framework */,
 				6E3F6A131951BF2800BC546B /* CoreData.framework */,
 				6E1D28AB1946F8AC00892F5D /* Foundation.framework */,
 				6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */,
@@ -179,10 +186,12 @@
 		6E3F6A0A1951994500BC546B /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */,
-				6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */,
 				6E1D28C31946F8AD00892F5D /* ICALTodoListViewController.h */,
 				6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */,
+				6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */,
+				6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */,
+				6EC4EF0A1953E60800D63AEC /* ICALReminders.h */,
+				6EC4EF0B1953E60800D63AEC /* ICALReminders.m */,
 			);
 			name = ToDoList;
 			sourceTree = "<group>";
@@ -192,8 +201,8 @@
 			children = (
 				6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */,
 				6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */,
-				6E1D28EF19472C5C00892F5D /* ICALPomoStore.h */,
-				6E1D28F019472C5C00892F5D /* ICALPomoStore.m */,
+				6E1D28EF19472C5C00892F5D /* ICALPomo.h */,
+				6E1D28F019472C5C00892F5D /* ICALPomo.m */,
 			);
 			name = PomoToDo;
 			sourceTree = "<group>";
@@ -297,13 +306,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC4EF0C1953E60800D63AEC /* ICALReminders.m in Sources */,
 				6E3F6A0F1951B31700BC546B /* ICALPomoModel.xcdatamodeld in Sources */,
 				6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */,
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
 				6E1D28C51946F8AD00892F5D /* ICALTodoListViewController.m in Sources */,
 				6E3B1DF41953D1E300F0DDE3 /* ICALTodoTableViewCell.m in Sources */,
 				6E3F6A6419526ADD00BC546B /* ICALPomoItem.m in Sources */,
-				6E1D28F119472C5C00892F5D /* ICALPomoStore.m in Sources */,
+				6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */,
 				6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

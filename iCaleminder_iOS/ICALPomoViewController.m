@@ -7,11 +7,11 @@
 //
 
 #import "ICALPomoViewController.h"
-#import "ICALPomoStore.h"
+#import "ICALPomo.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 #define MINUTE (60)
-#define TESTNUM (1)
+#define TESTNUM (150)
 
 @interface ICALPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *pomoNavigationItem;
@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *pomoLeftTimePicker;
 
 @property (nonatomic, strong) NSTimer *paintingTimer;
-
-//@property (nonatomic) ICALPomoStore *pomoInstance;
 
 @property (nonatomic, strong) NSArray *pomoIntervalPickerArray;
 
@@ -58,7 +56,7 @@
 {
     // Update the user interface for the detail item.
     if (self.pomoItem) {
-        self.pomoNavigationItem.title = [ICALPomoStore getInstance].eventTitle = [[self.pomoItem valueForKey:@"title"] description];
+        self.pomoNavigationItem.title = [ICALPomo getInstance].pomoTitle = [[self.pomoItem valueForKey:@"title"] description];
         
         [self.startStopBtn setTitle: @"▶︎" forState:0];
         
@@ -99,7 +97,7 @@
         _localNotification.hasAction = YES;
     }
     
-    _localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:[ICALPomoStore getInstance].interval*MINUTE/TESTNUM];
+    _localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:[ICALPomo getInstance].interval*MINUTE/TESTNUM];
     _localNotification.timeZone = [[NSCalendar currentCalendar] timeZone];
     
     [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
@@ -114,7 +112,7 @@
 #pragma mark - alertView
 
 - (IBAction)giveUp:(id)sender {
-    if ([ICALPomoStore getInstance].state == EnumStart) {
+    if ([ICALPomo getInstance].state == EnumStart) {
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Really Give Up?" delegate:self cancelButtonTitle:[self noButtonTitle] otherButtonTitles:[self yesButtonTitle], nil];
         [alertView show];
     } else {
@@ -126,11 +124,11 @@
     return @"Yes";
 }
 
-- (NSString *) noButtonTitle{
+- (NSString *) noButtonTitle {
     return @"No";
 }
 
-- (NSString *) breakButtonTitle{
+- (NSString *) breakButtonTitle {
     return @"Have a break!";
 }
 
@@ -143,7 +141,7 @@
     } else if ([buttonTitle isEqualToString:[self noButtonTitle]]){
   
     } else if ([buttonTitle isEqualToString:[self breakButtonTitle]]) {
-        [ICALPomoStore getInstance].breakStartTime = [NSDate date];
+        [ICALPomo getInstance].breakStartTime = [NSDate date];
         [self startCounting];
     }
 }
@@ -195,7 +193,7 @@
     
     if ([pickerView isEqual:self.pomoIntervalPicker]){
         
-        [ICALPomoStore getInstance].interval = [self intervalFormatWithString:self.pomoIntervalPickerArray[row]];
+        [ICALPomo getInstance].interval = [self intervalFormatWithString:self.pomoIntervalPickerArray[row]];
         
         [self stopPomoLeftTimePickerView];
     }
@@ -207,13 +205,13 @@
 }
 
 - (void)stopPomoLeftTimePickerView {
-    [self updatePomoLeftTimePickerView:[ICALPomoStore getInstance].interval rowOne:MINUTE*[ICALPomoStore getInstance].interval];
+    [self updatePomoLeftTimePickerView:[ICALPomo getInstance].interval rowOne:MINUTE*[ICALPomo getInstance].interval];
 }
 
 #pragma mark - update time
 - (IBAction)updateStartStopBtn:(id)sender {
     
-    switch ([ICALPomoStore getInstance].state) {
+    switch ([ICALPomo getInstance].state) {
         case EnumStop:
             [self stopToStart];
             break;
@@ -230,8 +228,8 @@
 }
 
 - (void)stopToStart {
-    [ICALPomoStore getInstance].state = EnumStart;
-    [ICALPomoStore getInstance].pomoStartTime = [NSDate date];
+    [ICALPomo getInstance].state = EnumStart;
+    [ICALPomo getInstance].pomoStartTime = [NSDate date];
     
     [self fireDelayNotification];
     
@@ -243,8 +241,8 @@
 - (void)startToBreak {
     [self stopCounting];
     
-    [ICALPomoStore getInstance].state = EnumBreak;
-    [ICALPomoStore getInstance].pomoEndTime = [NSDate date];
+    [ICALPomo getInstance].state = EnumBreak;
+    [ICALPomo getInstance].pomoEndTime = [NSDate date];
     
     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Great!" message:@"One PomoToDo has Done!" delegate:self cancelButtonTitle:[self breakButtonTitle] otherButtonTitles:nil, nil];
     [alertView show];
@@ -252,12 +250,16 @@
     
     _pomoNavigationItem.title = @"Break Time!";
     [self updatePomoLeftTimePickerView:5 rowOne:MINUTE*5];
+    
+    if (![ICALPomo getInstance].insertToiCal) {
+        NSLog(@"insertToiCal fall!");
+    }
 }
 
 - (void)breakToStop {
     [self toStop];
     
-    _pomoNavigationItem.title = [ICALPomoStore getInstance].eventTitle;
+    _pomoNavigationItem.title = [ICALPomo getInstance].pomoTitle;
 }
 
 - (void)startToStop {
@@ -265,15 +267,13 @@
 }
 
 - (void)toStop {
-    [ICALPomoStore getInstance].state = EnumStop;
+    [ICALPomo getInstance].state = EnumStop;
     
     [self cancelDelayNotification];
     
     [self stopPomoLeftTimePickerView];
     [self.startStopBtn setTitle: @"▶︎" forState:0];
     [self stopCounting];
-    
-    NSLog(@"\ntitle: %@\nstart: %@\nend: %@",[ICALPomoStore getInstance].eventTitle, [ICALPomoStore getInstance].pomoStartTime, [ICALPomoStore getInstance].pomoEndTime);
 }
 
 - (NSInteger)intervalFormatWithString:(NSString *) minites {
@@ -283,13 +283,13 @@
 #pragma mark - counting
 
 - (void) startCount:(NSTimer *)paramTimer {
-    if (![self count:[ICALPomoStore getInstance].interval*MINUTE since:[ICALPomoStore getInstance].pomoStartTime]) {
+    if (![self count:[ICALPomo getInstance].interval*MINUTE since:[ICALPomo getInstance].pomoStartTime]) {
         [self startToBreak];
     }
 }
 
 - (void) breakCount:(NSTimer *)paramTimer {
-    if (![self count:5*MINUTE since:[ICALPomoStore getInstance].breakStartTime]) {
+    if (![self count:5*MINUTE since:[ICALPomo getInstance].breakStartTime]) {
         [self breakToStop];
     }
 }
@@ -318,7 +318,7 @@
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
     }
-    switch ([ICALPomoStore getInstance].state) {
+    switch ([ICALPomo getInstance].state) {
         case EnumStart:
             self.paintingTimer = [NSTimer
                                   scheduledTimerWithTimeInterval:1

@@ -7,18 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <EventKit/EventKit.h>
 
-@interface ICALPomoStore : NSObject
+@interface ICALPomo : NSObject
 
 @property (nonatomic) NSDate *pomoStartTime;
 @property (nonatomic) NSDate *pomoEndTime;
 @property (nonatomic) NSDate *breakStartTime;
 
-@property (nonatomic) NSString *eventTitle;
+@property (nonatomic) NSString *pomoTitle;
 // maybe add eventType later
 
 @property (nonatomic) NSInteger interval;
-
 @property (nonatomic) NSInteger state;
 
 typedef NS_OPTIONS(NSUInteger, EnumState)
@@ -29,7 +29,9 @@ typedef NS_OPTIONS(NSUInteger, EnumState)
 };
 
 
-+ (ICALPomoStore *)getInstance;
++ (ICALPomo *)getInstance;
+
+- (BOOL)insertToiCal;
 
 
 @end
