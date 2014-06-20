@@ -12,21 +12,21 @@
 		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
 		6E1D28B61946F8AC00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28B41946F8AC00892F5D /* InfoPlist.strings */; };
 		6E1D28B81946F8AC00892F5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28B71946F8AC00892F5D /* main.m */; };
-		6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */; };
+		6E1D28BC1946F8AD00892F5D /* THAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */; };
 		6E1D28BF1946F8AD00892F5D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */; };
-		6E1D28C51946F8AD00892F5D /* ICALTodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */; };
-		6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */; };
+		6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */; };
+		6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C71946F8AD00892F5D /* THPomoViewController.m */; };
 		6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28C91946F8AD00892F5D /* Images.xcassets */; };
 		6E1D28D11946F8AD00892F5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28D01946F8AD00892F5D /* XCTest.framework */; };
 		6E1D28D21946F8AD00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
 		6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
 		6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28D91946F8AD00892F5D /* InfoPlist.strings */; };
-		6E1D28DD1946F8AD00892F5D /* iCaleminder_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */; };
-		6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* ICALPomo.m */; };
-		6E3B1DF41953D1E300F0DDE3 /* ICALTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */; };
-		6E3F6A0F1951B31700BC546B /* ICALPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* ICALPomoModel.xcdatamodeld */; };
+		6E1D28DD1946F8AD00892F5D /* THTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* THTests.m */; };
+		6E1D28F119472C5C00892F5D /* THPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* THPomo.m */; };
+		6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */; };
+		6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */; };
 		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
-		6E3F6A6419526ADD00BC546B /* ICALPomoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */; };
+		6E3F6A6419526ADD00BC546B /* THPomoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A6319526ADD00BC546B /* THPomoItem.m */; };
 		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
 		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
 /* End PBXBuildFile section */
@@ -42,35 +42,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E1D28A81946F8AC00892F5D /* iCaleminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCaleminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1D28A81946F8AC00892F5D /* TimeHacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeHacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1D28AB1946F8AC00892F5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6E1D28AF1946F8AC00892F5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6E1D28B31946F8AC00892F5D /* iCaleminder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCaleminder-Info.plist"; sourceTree = "<group>"; };
+		6E1D28B31946F8AC00892F5D /* TimeHacker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeHacker-Info.plist"; sourceTree = "<group>"; };
 		6E1D28B51946F8AC00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E1D28B71946F8AC00892F5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6E1D28B91946F8AC00892F5D /* iCaleminder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCaleminder-Prefix.pch"; sourceTree = "<group>"; };
-		6E1D28BA1946F8AC00892F5D /* ICALAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALAppDelegate.h; sourceTree = "<group>"; };
-		6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALAppDelegate.m; sourceTree = "<group>"; };
+		6E1D28B91946F8AC00892F5D /* TimeHacker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeHacker-Prefix.pch"; sourceTree = "<group>"; };
+		6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAppDelegate.h; sourceTree = "<group>"; };
+		6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAppDelegate.m; sourceTree = "<group>"; };
 		6E1D28BE1946F8AD00892F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		6E1D28C31946F8AD00892F5D /* ICALTodoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALTodoListViewController.h; sourceTree = "<group>"; };
-		6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALTodoListViewController.m; sourceTree = "<group>"; };
-		6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALPomoViewController.h; sourceTree = "<group>"; };
-		6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALPomoViewController.m; sourceTree = "<group>"; };
+		6E1D28C31946F8AD00892F5D /* THTodoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THTodoListViewController.h; sourceTree = "<group>"; };
+		6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THTodoListViewController.m; sourceTree = "<group>"; };
+		6E1D28C61946F8AD00892F5D /* THPomoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THPomoViewController.h; sourceTree = "<group>"; };
+		6E1D28C71946F8AD00892F5D /* THPomoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THPomoViewController.m; sourceTree = "<group>"; };
 		6E1D28C91946F8AD00892F5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6E1D28CF1946F8AD00892F5D /* iCaleminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCaleminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1D28CF1946F8AD00892F5D /* TimeHackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeHackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1D28D01946F8AD00892F5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6E1D28D81946F8AD00892F5D /* iCaleminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCaleminderTests-Info.plist"; sourceTree = "<group>"; };
+		6E1D28D81946F8AD00892F5D /* TimeHackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeHackerTests-Info.plist"; sourceTree = "<group>"; };
 		6E1D28DA1946F8AD00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCaleminder_iOSTests.m; sourceTree = "<group>"; };
-		6E1D28EF19472C5C00892F5D /* ICALPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomo.h; sourceTree = "<group>"; };
-		6E1D28F019472C5C00892F5D /* ICALPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomo.m; sourceTree = "<group>"; };
-		6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALTodoTableViewCell.h; sourceTree = "<group>"; };
-		6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALTodoTableViewCell.m; sourceTree = "<group>"; };
-		6E3F6A0E1951B31700BC546B /* ICALPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ICALPomoModel.xcdatamodel; sourceTree = "<group>"; };
+		6E1D28DC1946F8AD00892F5D /* THTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THTests.m; sourceTree = "<group>"; };
+		6E1D28EF19472C5C00892F5D /* THPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPomo.h; sourceTree = "<group>"; };
+		6E1D28F019472C5C00892F5D /* THPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPomo.m; sourceTree = "<group>"; };
+		6E3B1DF21953D1E300F0DDE3 /* THTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTodoTableViewCell.h; sourceTree = "<group>"; };
+		6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTodoTableViewCell.m; sourceTree = "<group>"; };
+		6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = THPomoModel.xcdatamodel; sourceTree = "<group>"; };
 		6E3F6A131951BF2800BC546B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6E3F6A6219526ADD00BC546B /* ICALPomoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICALPomoItem.h; path = ../ICALPomoItem.h; sourceTree = "<group>"; };
-		6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICALPomoItem.m; path = ../ICALPomoItem.m; sourceTree = "<group>"; };
+		6E3F6A6219526ADD00BC546B /* THPomoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THPomoItem.h; path = ../THPomoItem.h; sourceTree = "<group>"; };
+		6E3F6A6319526ADD00BC546B /* THPomoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THPomoItem.m; path = ../THPomoItem.m; sourceTree = "<group>"; };
 		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		6EDF10A219485F390059E8D7 /* snow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +104,8 @@
 		6E1D289F1946F8AC00892F5D = {
 			isa = PBXGroup;
 			children = (
-				6E1D28B11946F8AC00892F5D /* iCaleminder_iOS */,
-				6E1D28D61946F8AD00892F5D /* iCaleminder_iOSTests */,
+				6E1D28B11946F8AC00892F5D /* TimeHacker */,
+				6E1D28D61946F8AD00892F5D /* TimeHackerTests */,
 				6E1D28AA1946F8AC00892F5D /* Frameworks */,
 				6E1D28A91946F8AC00892F5D /* Products */,
 			);
@@ -114,8 +114,8 @@
 		6E1D28A91946F8AC00892F5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28A81946F8AC00892F5D /* iCaleminder.app */,
-				6E1D28CF1946F8AD00892F5D /* iCaleminderTests.xctest */,
+				6E1D28A81946F8AC00892F5D /* TimeHacker.app */,
+				6E1D28CF1946F8AD00892F5D /* TimeHackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,20 +133,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6E1D28B11946F8AC00892F5D /* iCaleminder_iOS */ = {
+		6E1D28B11946F8AC00892F5D /* TimeHacker */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28BA1946F8AC00892F5D /* ICALAppDelegate.h */,
-				6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */,
+				6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */,
+				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */,
-				6E3F6A0D1951B31700BC546B /* ICALPomoModel.xcdatamodeld */,
-				6E3F6A6219526ADD00BC546B /* ICALPomoItem.h */,
-				6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */,
+				6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */,
+				6E3F6A6219526ADD00BC546B /* THPomoItem.h */,
+				6E3F6A6319526ADD00BC546B /* THPomoItem.m */,
 				6E3F6A0A1951994500BC546B /* ToDoList */,
 				6E3F6A0C1951998100BC546B /* PomoToDo */,
 				6E1D28C91946F8AD00892F5D /* Images.xcassets */,
 				6E1D28B21946F8AC00892F5D /* Supporting Files */,
 			);
+			name = TimeHacker;
 			path = iCaleminder_iOS;
 			sourceTree = "<group>";
 		};
@@ -154,27 +155,28 @@
 			isa = PBXGroup;
 			children = (
 				6EDF10A219485F390059E8D7 /* snow1.png */,
-				6E1D28B31946F8AC00892F5D /* iCaleminder-Info.plist */,
+				6E1D28B31946F8AC00892F5D /* TimeHacker-Info.plist */,
 				6E1D28B41946F8AC00892F5D /* InfoPlist.strings */,
 				6E1D28B71946F8AC00892F5D /* main.m */,
-				6E1D28B91946F8AC00892F5D /* iCaleminder-Prefix.pch */,
+				6E1D28B91946F8AC00892F5D /* TimeHacker-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6E1D28D61946F8AD00892F5D /* iCaleminder_iOSTests */ = {
+		6E1D28D61946F8AD00892F5D /* TimeHackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */,
+				6E1D28DC1946F8AD00892F5D /* THTests.m */,
 				6E1D28D71946F8AD00892F5D /* Supporting Files */,
 			);
+			name = TimeHackerTests;
 			path = iCaleminder_iOSTests;
 			sourceTree = "<group>";
 		};
 		6E1D28D71946F8AD00892F5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28D81946F8AD00892F5D /* iCaleminderTests-Info.plist */,
+				6E1D28D81946F8AD00892F5D /* TimeHackerTests-Info.plist */,
 				6E1D28D91946F8AD00892F5D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -183,10 +185,10 @@
 		6E3F6A0A1951994500BC546B /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28C31946F8AD00892F5D /* ICALTodoListViewController.h */,
-				6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */,
-				6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */,
-				6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */,
+				6E1D28C31946F8AD00892F5D /* THTodoListViewController.h */,
+				6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */,
+				6E3B1DF21953D1E300F0DDE3 /* THTodoTableViewCell.h */,
+				6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */,
 			);
 			name = ToDoList;
 			sourceTree = "<group>";
@@ -194,10 +196,10 @@
 		6E3F6A0C1951998100BC546B /* PomoToDo */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */,
-				6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */,
-				6E1D28EF19472C5C00892F5D /* ICALPomo.h */,
-				6E1D28F019472C5C00892F5D /* ICALPomo.m */,
+				6E1D28C61946F8AD00892F5D /* THPomoViewController.h */,
+				6E1D28C71946F8AD00892F5D /* THPomoViewController.m */,
+				6E1D28EF19472C5C00892F5D /* THPomo.h */,
+				6E1D28F019472C5C00892F5D /* THPomo.m */,
 			);
 			name = PomoToDo;
 			sourceTree = "<group>";
@@ -205,9 +207,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E1D28A71946F8AC00892F5D /* iCaleminder */ = {
+		6E1D28A71946F8AC00892F5D /* TimeHacker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminder" */;
+			buildConfigurationList = 6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHacker" */;
 			buildPhases = (
 				6E1D28A41946F8AC00892F5D /* Sources */,
 				6E1D28A51946F8AC00892F5D /* Frameworks */,
@@ -217,14 +219,14 @@
 			);
 			dependencies = (
 			);
-			name = iCaleminder;
+			name = TimeHacker;
 			productName = iCaleminder_iOS;
-			productReference = 6E1D28A81946F8AC00892F5D /* iCaleminder.app */;
+			productReference = 6E1D28A81946F8AC00892F5D /* TimeHacker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E1D28CE1946F8AD00892F5D /* iCaleminderTests */ = {
+		6E1D28CE1946F8AD00892F5D /* TimeHackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminderTests" */;
+			buildConfigurationList = 6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHackerTests" */;
 			buildPhases = (
 				6E1D28CB1946F8AD00892F5D /* Sources */,
 				6E1D28CC1946F8AD00892F5D /* Frameworks */,
@@ -235,9 +237,9 @@
 			dependencies = (
 				6E1D28D51946F8AD00892F5D /* PBXTargetDependency */,
 			);
-			name = iCaleminderTests;
+			name = TimeHackerTests;
 			productName = iCaleminder_iOSTests;
-			productReference = 6E1D28CF1946F8AD00892F5D /* iCaleminderTests.xctest */;
+			productReference = 6E1D28CF1946F8AD00892F5D /* TimeHackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "iCaleminder" */;
+			buildConfigurationList = 6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "TimeHacker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -268,8 +270,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E1D28A71946F8AC00892F5D /* iCaleminder */,
-				6E1D28CE1946F8AD00892F5D /* iCaleminderTests */,
+				6E1D28A71946F8AC00892F5D /* TimeHacker */,
+				6E1D28CE1946F8AD00892F5D /* TimeHackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -301,14 +303,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E3F6A0F1951B31700BC546B /* ICALPomoModel.xcdatamodeld in Sources */,
-				6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */,
+				6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */,
+				6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */,
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
-				6E1D28C51946F8AD00892F5D /* ICALTodoListViewController.m in Sources */,
-				6E3B1DF41953D1E300F0DDE3 /* ICALTodoTableViewCell.m in Sources */,
-				6E3F6A6419526ADD00BC546B /* ICALPomoItem.m in Sources */,
-				6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */,
-				6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */,
+				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
+				6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */,
+				6E3F6A6419526ADD00BC546B /* THPomoItem.m in Sources */,
+				6E1D28F119472C5C00892F5D /* THPomo.m in Sources */,
+				6E1D28BC1946F8AD00892F5D /* THAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1D28DD1946F8AD00892F5D /* iCaleminder_iOSTests.m in Sources */,
+				6E1D28DD1946F8AD00892F5D /* THTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +327,7 @@
 /* Begin PBXTargetDependency section */
 		6E1D28D51946F8AD00892F5D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E1D28A71946F8AC00892F5D /* iCaleminder */;
+			target = 6E1D28A71946F8AC00892F5D /* TimeHacker */;
 			targetProxy = 6E1D28D41946F8AD00892F5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -436,9 +438,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCaleminder_iOS/iCaleminder-Prefix.pch";
-				INFOPLIST_FILE = "iCaleminder_iOS/iCaleminder-Info.plist";
-				PRODUCT_NAME = iCaleminder;
+				GCC_PREFIX_HEADER = "iCaleminder_iOS/TimeHacker-Prefix.pch";
+				INFOPLIST_FILE = "iCaleminder_iOS/TimeHacker-Info.plist";
+				PRODUCT_NAME = TimeHacker;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -450,9 +452,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCaleminder_iOS/iCaleminder-Prefix.pch";
-				INFOPLIST_FILE = "iCaleminder_iOS/iCaleminder-Info.plist";
-				PRODUCT_NAME = iCaleminder;
+				GCC_PREFIX_HEADER = "iCaleminder_iOS/TimeHacker-Prefix.pch";
+				INFOPLIST_FILE = "iCaleminder_iOS/TimeHacker-Info.plist";
+				PRODUCT_NAME = TimeHacker;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -473,8 +475,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "iCaleminder_iOSTests/iCaleminderTests-Info.plist";
-				PRODUCT_NAME = iCaleminderTests;
+				INFOPLIST_FILE = "iCaleminder_iOSTests/TimeHackerTests-Info.plist";
+				PRODUCT_NAME = TimeHackerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -491,8 +493,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCaleminder_iOS/iCaleminder_iOS-Prefix.pch";
-				INFOPLIST_FILE = "iCaleminder_iOSTests/iCaleminderTests-Info.plist";
-				PRODUCT_NAME = iCaleminderTests;
+				INFOPLIST_FILE = "iCaleminder_iOSTests/TimeHackerTests-Info.plist";
+				PRODUCT_NAME = TimeHackerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -501,7 +503,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "iCaleminder" */ = {
+		6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "TimeHacker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E1D28DE1946F8AD00892F5D /* Debug */,
@@ -510,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminder" */ = {
+		6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHacker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E1D28E11946F8AD00892F5D /* Debug */,
@@ -519,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "iCaleminderTests" */ = {
+		6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E1D28E41946F8AD00892F5D /* Debug */,
@@ -531,13 +533,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6E3F6A0D1951B31700BC546B /* ICALPomoModel.xcdatamodeld */ = {
+		6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6E3F6A0E1951B31700BC546B /* ICALPomoModel.xcdatamodel */,
+				6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */,
 			);
-			currentVersion = 6E3F6A0E1951B31700BC546B /* ICALPomoModel.xcdatamodel */;
-			path = ICALPomoModel.xcdatamodeld;
+			currentVersion = 6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */;
+			path = THPomoModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

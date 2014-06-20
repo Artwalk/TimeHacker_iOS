@@ -1,31 +1,30 @@
 //
-//  ICALPomo.m
-//  iCaleminder_iOS
+//  THPomo.m
+//  TimeHacker
 //
 //  Created by artwalk on 6/10/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.
 //
 
-#import "ICALPomo.h"
+#import "THPomo.h"
 
-
-@interface ICALPomo ()
+@interface THPomo ()
 
 @property EKEventStore* eventStore;
 
 @end
 
-@implementation ICALPomo
+@implementation THPomo
 
-+ (ICALPomo *)getInstance {
-    static ICALPomo *iCalPomoInstance = nil;
++ (THPomo *)getInstance {
+    static THPomo *THPomoInstance = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        iCalPomoInstance = [[self alloc] initPrivate];
+        THPomoInstance = [[self alloc] initPrivate];
     });
 
-    return iCalPomoInstance;
+    return THPomoInstance;
 }
 
 - (instancetype)initPrivate {
@@ -42,7 +41,7 @@
 }
 
 - (instancetype)init {
-    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use + [ICALPomo]" userInfo:nil];
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use + [THPomo]" userInfo:nil];
     
     return nil;
 }

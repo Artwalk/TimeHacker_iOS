@@ -1,16 +1,16 @@
 //
-//  ICALAppDelegate.m
-//  iCaleminder_iOS
+//  THAppDelegate.m
+//  TimeHacker
 //
 //  Created by artwalk on 6/10/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.
 //
 
-#import "ICALAppDelegate.h"
+#import "THAppDelegate.h"
 
-#import "ICALTodoListViewController.h"
+#import "THTodoListViewController.h"
 
-@implementation ICALAppDelegate
+@implementation THAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -20,7 +20,7 @@
 {
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    ICALTodoListViewController *controller = (ICALTodoListViewController *)navigationController.topViewController;
+    THTodoListViewController *controller = (THTodoListViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
     return YES;
@@ -93,7 +93,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ICALPomoModel" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"THPomoModel" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }

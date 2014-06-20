@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
                BuildableName = "iCaleminder.app"
-               BlueprintName = "iCaleminder"
-               ReferencedContainer = "container:iCaleminder.xcodeproj">
+               BlueprintName = "TimeHacker"
+               ReferencedContainer = "container:TimeHacker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E1D28CE1946F8AD00892F5D"
                BuildableName = "iCaleminderTests.xctest"
-               BlueprintName = "iCaleminderTests"
-               ReferencedContainer = "container:iCaleminder.xcodeproj">
+               BlueprintName = "TimeHackerTests"
+               ReferencedContainer = "container:TimeHacker.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
             BuildableName = "iCaleminder.app"
-            BlueprintName = "iCaleminder"
-            ReferencedContainer = "container:iCaleminder.xcodeproj">
+            BlueprintName = "TimeHacker"
+            ReferencedContainer = "container:TimeHacker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
             BuildableName = "iCaleminder.app"
-            BlueprintName = "iCaleminder"
-            ReferencedContainer = "container:iCaleminder.xcodeproj">
+            BlueprintName = "TimeHacker"
+            ReferencedContainer = "container:TimeHacker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
             BuildableName = "iCaleminder.app"
-            BlueprintName = "iCaleminder"
-            ReferencedContainer = "container:iCaleminder.xcodeproj">
+            BlueprintName = "TimeHacker"
+            ReferencedContainer = "container:TimeHacker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

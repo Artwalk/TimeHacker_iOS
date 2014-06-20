@@ -1,14 +1,14 @@
 //
-//  ICALTodoTableViewCell.m
-//  iCaleminder
+//  THTodoTableViewCell.m
+//  TimeHacker
 //
 //  Created by artwalk on 6/20/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.
 //
 
-#import "ICALTodoTableViewCell.h"
+#import "THTodoTableViewCell.h"
 
-@implementation ICALTodoTableViewCell
+@implementation THTodoTableViewCell
 
 @synthesize todoTextField;
 

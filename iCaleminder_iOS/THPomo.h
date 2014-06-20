@@ -1,6 +1,6 @@
 //
-//  ICALPomo.h
-//  iCaleminder_iOS
+//  THPomo.h
+//  TimeHacker
 //
 //  Created by artwalk on 6/10/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
 
-@interface ICALPomo : NSObject
+@interface THPomo : NSObject
 
 @property (nonatomic) NSDate *pomoStartTime;
 @property (nonatomic) NSDate *pomoEndTime;
@@ -29,7 +29,7 @@ typedef NS_OPTIONS(NSUInteger, EnumState)
 };
 
 
-+ (ICALPomo *)getInstance;
++ (THPomo *)getInstance;
 
 - (BOOL)insertToiCal;
 

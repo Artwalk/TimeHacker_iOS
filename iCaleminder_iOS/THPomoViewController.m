@@ -1,19 +1,19 @@
 //
-//  ICALDetailViewController.m
-//  iCaleminder_iOS
+//  THDetailViewController.m
+//  TimeHacker
 //
 //  Created by artwalk on 6/10/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.
 //
 
-#import "ICALPomoViewController.h"
-#import "ICALPomo.h"
+#import "THPomoViewController.h"
+#import "THPomo.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 #define MINUTE (60)
 #define TESTNUM (1)
 
-@interface ICALPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
+@interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *pomoNavigationItem;
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -32,7 +32,7 @@
 - (void)configureView;
 @end
 
-@implementation ICALPomoViewController
+@implementation THPomoViewController
 
 #pragma mark - Managing the detail item
 
@@ -56,7 +56,7 @@
 {
     // Update the user interface for the detail item.
     if (self.pomoItem) {
-        self.pomoNavigationItem.title = [ICALPomo getInstance].pomoTitle = [[self.pomoItem valueForKey:@"title"] description];
+        self.pomoNavigationItem.title = [THPomo getInstance].pomoTitle = [[self.pomoItem valueForKey:@"title"] description];
         
         [self.startStopBtn setTitle: @"▶︎" forState:0];
         
@@ -97,7 +97,7 @@
         _localNotification.hasAction = YES;
     }
     
-    _localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:[ICALPomo getInstance].interval*MINUTE/TESTNUM];
+    _localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:[THPomo getInstance].interval*MINUTE/TESTNUM];
     _localNotification.timeZone = [[NSCalendar currentCalendar] timeZone];
     
     [[UIApplication sharedApplication] scheduleLocalNotification:_localNotification];
@@ -112,7 +112,7 @@
 #pragma mark - alertView
 
 - (IBAction)giveUp:(id)sender {
-    if ([ICALPomo getInstance].state == EnumStart) {
+    if ([THPomo getInstance].state == EnumStart) {
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Really Give Up?" delegate:self cancelButtonTitle:[self noButtonTitle] otherButtonTitles:[self yesButtonTitle], nil];
         [alertView show];
     } else {
@@ -141,7 +141,7 @@
     } else if ([buttonTitle isEqualToString:[self noButtonTitle]]){
   
     } else if ([buttonTitle isEqualToString:[self breakButtonTitle]]) {
-        [ICALPomo getInstance].breakStartTime = [NSDate date];
+        [THPomo getInstance].breakStartTime = [NSDate date];
         [self startCounting];
     }
 }
@@ -193,7 +193,7 @@
     
     if ([pickerView isEqual:self.pomoIntervalPicker]){
         
-        [ICALPomo getInstance].interval = [self intervalFormatWithString:self.pomoIntervalPickerArray[row]];
+        [THPomo getInstance].interval = [self intervalFormatWithString:self.pomoIntervalPickerArray[row]];
         
         [self stopPomoLeftTimePickerView];
     }
@@ -205,13 +205,13 @@
 }
 
 - (void)stopPomoLeftTimePickerView {
-    [self updatePomoLeftTimePickerView:[ICALPomo getInstance].interval rowOne:MINUTE*[ICALPomo getInstance].interval];
+    [self updatePomoLeftTimePickerView:[THPomo getInstance].interval rowOne:MINUTE*[THPomo getInstance].interval];
 }
 
 #pragma mark - update time
 - (IBAction)updateStartStopBtn:(id)sender {
     
-    switch ([ICALPomo getInstance].state) {
+    switch ([THPomo getInstance].state) {
         case EnumStop:
             [self stopToStart];
             break;
@@ -228,8 +228,8 @@
 }
 
 - (void)stopToStart {
-    [ICALPomo getInstance].state = EnumStart;
-    [ICALPomo getInstance].pomoStartTime = [NSDate date];
+    [THPomo getInstance].state = EnumStart;
+    [THPomo getInstance].pomoStartTime = [NSDate date];
     
     [self fireDelayNotification];
     
@@ -241,8 +241,8 @@
 - (void)startToBreak {
     [self stopCounting];
     
-    [ICALPomo getInstance].state = EnumBreak;
-    [ICALPomo getInstance].pomoEndTime = [NSDate date];
+    [THPomo getInstance].state = EnumBreak;
+    [THPomo getInstance].pomoEndTime = [NSDate date];
     
     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Great!" message:@"One PomoToDo has Done!" delegate:self cancelButtonTitle:[self breakButtonTitle] otherButtonTitles:nil, nil];
     [alertView show];
@@ -251,7 +251,7 @@
     _pomoNavigationItem.title = @"Break Time!";
     [self updatePomoLeftTimePickerView:5 rowOne:MINUTE*5];
     
-    if (![ICALPomo getInstance].insertToiCal) {
+    if (![THPomo getInstance].insertToiCal) {
         NSLog(@"insertToiCal fall!");
     }
 }
@@ -259,7 +259,7 @@
 - (void)breakToStop {
     [self toStop];
     
-    _pomoNavigationItem.title = [ICALPomo getInstance].pomoTitle;
+    _pomoNavigationItem.title = [THPomo getInstance].pomoTitle;
 }
 
 - (void)startToStop {
@@ -267,7 +267,7 @@
 }
 
 - (void)toStop {
-    [ICALPomo getInstance].state = EnumStop;
+    [THPomo getInstance].state = EnumStop;
     
     [self cancelDelayNotification];
     
@@ -283,13 +283,13 @@
 #pragma mark - counting
 
 - (void) startCount:(NSTimer *)paramTimer {
-    if (![self count:[ICALPomo getInstance].interval*MINUTE since:[ICALPomo getInstance].pomoStartTime]) {
+    if (![self count:[THPomo getInstance].interval*MINUTE since:[THPomo getInstance].pomoStartTime]) {
         [self startToBreak];
     }
 }
 
 - (void) breakCount:(NSTimer *)paramTimer {
-    if (![self count:5*MINUTE since:[ICALPomo getInstance].breakStartTime]) {
+    if (![self count:5*MINUTE since:[THPomo getInstance].breakStartTime]) {
         [self breakToStop];
     }
 }
@@ -318,7 +318,7 @@
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
     }
-    switch ([ICALPomo getInstance].state) {
+    switch ([THPomo getInstance].state) {
         case EnumStart:
             self.paintingTimer = [NSTimer
                                   scheduledTimerWithTimeInterval:1

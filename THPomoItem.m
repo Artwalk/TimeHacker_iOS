@@ -1,15 +1,15 @@
 //
-//  ICALPomoItem.m
-//  iCaleminder
+//  THPomoItem.m
+//  TimeHacker
 //
 //  Created by artwalk on 6/19/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.
 //
 
-#import "ICALPomoItem.h"
+#import "THPomoItem.h"
 
 
-@implementation ICALPomoItem
+@implementation THPomoItem
 
 @dynamic endTime;
 @dynamic startTime;
