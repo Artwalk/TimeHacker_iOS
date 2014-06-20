@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ICALPomo : NSObject
+@interface ICALPomoStore : NSObject
 
 @property (nonatomic) NSDate *pomoStartTime;
 @property (nonatomic) NSDate *pomoEndTime;
@@ -29,7 +29,7 @@ typedef NS_OPTIONS(NSUInteger, EnumState)
 };
 
 
-+ (ICALPomo *)getInstance;
++ (ICALPomoStore *)getInstance;
 
 
 @end

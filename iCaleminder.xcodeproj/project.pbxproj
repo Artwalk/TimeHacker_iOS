@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E170CDB194B26BA007232D7 /* ICALEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E170CDA194B26BA007232D7 /* ICALEvent.m */; };
 		6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
 		6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */; };
 		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
@@ -15,8 +14,7 @@
 		6E1D28B81946F8AC00892F5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28B71946F8AC00892F5D /* main.m */; };
 		6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */; };
 		6E1D28BF1946F8AD00892F5D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */; };
-		6E1D28C21946F8AD00892F5D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28C01946F8AD00892F5D /* Main_iPad.storyboard */; };
-		6E1D28C51946F8AD00892F5D /* ICALMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C41946F8AD00892F5D /* ICALMasterViewController.m */; };
+		6E1D28C51946F8AD00892F5D /* ICALTodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */; };
 		6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */; };
 		6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28C91946F8AD00892F5D /* Images.xcassets */; };
 		6E1D28D11946F8AD00892F5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28D01946F8AD00892F5D /* XCTest.framework */; };
@@ -24,8 +22,11 @@
 		6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
 		6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28D91946F8AD00892F5D /* InfoPlist.strings */; };
 		6E1D28DD1946F8AD00892F5D /* iCaleminder_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */; };
-		6E1D28EE19470A5C00892F5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */; };
-		6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* ICALPomo.m */; };
+		6E1D28F119472C5C00892F5D /* ICALPomoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* ICALPomoStore.m */; };
+		6E3B1DF41953D1E300F0DDE3 /* ICALTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */; };
+		6E3F6A0F1951B31700BC546B /* ICALPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* ICALPomoModel.xcdatamodeld */; };
+		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
+		6E3F6A6419526ADD00BC546B /* ICALPomoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */; };
 		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E170CD9194B26BA007232D7 /* ICALEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALEvent.h; sourceTree = "<group>"; };
-		6E170CDA194B26BA007232D7 /* ICALEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALEvent.m; sourceTree = "<group>"; };
 		6E1D28A81946F8AC00892F5D /* iCaleminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCaleminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1D28AB1946F8AC00892F5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,9 +52,8 @@
 		6E1D28BA1946F8AC00892F5D /* ICALAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALAppDelegate.h; sourceTree = "<group>"; };
 		6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALAppDelegate.m; sourceTree = "<group>"; };
 		6E1D28BE1946F8AD00892F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		6E1D28C11946F8AD00892F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		6E1D28C31946F8AD00892F5D /* ICALMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALMasterViewController.h; sourceTree = "<group>"; };
-		6E1D28C41946F8AD00892F5D /* ICALMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALMasterViewController.m; sourceTree = "<group>"; };
+		6E1D28C31946F8AD00892F5D /* ICALTodoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALTodoListViewController.h; sourceTree = "<group>"; };
+		6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALTodoListViewController.m; sourceTree = "<group>"; };
 		6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICALPomoViewController.h; sourceTree = "<group>"; };
 		6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICALPomoViewController.m; sourceTree = "<group>"; };
 		6E1D28C91946F8AD00892F5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -64,9 +62,14 @@
 		6E1D28D81946F8AD00892F5D /* iCaleminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCaleminderTests-Info.plist"; sourceTree = "<group>"; };
 		6E1D28DA1946F8AD00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E1D28DC1946F8AD00892F5D /* iCaleminder_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCaleminder_iOSTests.m; sourceTree = "<group>"; };
-		6E1D28ED19470A5C00892F5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		6E1D28EF19472C5C00892F5D /* ICALPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomo.h; sourceTree = "<group>"; };
-		6E1D28F019472C5C00892F5D /* ICALPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomo.m; sourceTree = "<group>"; };
+		6E1D28EF19472C5C00892F5D /* ICALPomoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALPomoStore.h; sourceTree = "<group>"; };
+		6E1D28F019472C5C00892F5D /* ICALPomoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALPomoStore.m; sourceTree = "<group>"; };
+		6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICALTodoTableViewCell.h; sourceTree = "<group>"; };
+		6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICALTodoTableViewCell.m; sourceTree = "<group>"; };
+		6E3F6A0E1951B31700BC546B /* ICALPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ICALPomoModel.xcdatamodel; sourceTree = "<group>"; };
+		6E3F6A131951BF2800BC546B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6E3F6A6219526ADD00BC546B /* ICALPomoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICALPomoItem.h; path = ../ICALPomoItem.h; sourceTree = "<group>"; };
+		6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICALPomoItem.m; path = ../ICALPomoItem.m; sourceTree = "<group>"; };
 		6EDF10A219485F390059E8D7 /* snow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */,
 				6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */,
 				6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */,
 				6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */,
@@ -116,6 +120,7 @@
 		6E1D28AA1946F8AC00892F5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E3F6A131951BF2800BC546B /* CoreData.framework */,
 				6E1D28AB1946F8AC00892F5D /* Foundation.framework */,
 				6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */,
 				6E1D28AF1946F8AC00892F5D /* UIKit.framework */,
@@ -130,16 +135,11 @@
 				6E1D28BA1946F8AC00892F5D /* ICALAppDelegate.h */,
 				6E1D28BB1946F8AD00892F5D /* ICALAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */,
-				6E1D28C01946F8AD00892F5D /* Main_iPad.storyboard */,
-				6E1D28C31946F8AD00892F5D /* ICALMasterViewController.h */,
-				6E1D28C41946F8AD00892F5D /* ICALMasterViewController.m */,
-				6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */,
-				6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */,
-				6E1D28EF19472C5C00892F5D /* ICALPomo.h */,
-				6E1D28F019472C5C00892F5D /* ICALPomo.m */,
-				6E170CD9194B26BA007232D7 /* ICALEvent.h */,
-				6E170CDA194B26BA007232D7 /* ICALEvent.m */,
-				6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */,
+				6E3F6A0D1951B31700BC546B /* ICALPomoModel.xcdatamodeld */,
+				6E3F6A6219526ADD00BC546B /* ICALPomoItem.h */,
+				6E3F6A6319526ADD00BC546B /* ICALPomoItem.m */,
+				6E3F6A0A1951994500BC546B /* ToDoList */,
+				6E3F6A0C1951998100BC546B /* PomoToDo */,
 				6E1D28C91946F8AD00892F5D /* Images.xcassets */,
 				6E1D28B21946F8AC00892F5D /* Supporting Files */,
 			);
@@ -174,6 +174,28 @@
 				6E1D28D91946F8AD00892F5D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E3F6A0A1951994500BC546B /* ToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				6E3B1DF21953D1E300F0DDE3 /* ICALTodoTableViewCell.h */,
+				6E3B1DF31953D1E300F0DDE3 /* ICALTodoTableViewCell.m */,
+				6E1D28C31946F8AD00892F5D /* ICALTodoListViewController.h */,
+				6E1D28C41946F8AD00892F5D /* ICALTodoListViewController.m */,
+			);
+			name = ToDoList;
+			sourceTree = "<group>";
+		};
+		6E3F6A0C1951998100BC546B /* PomoToDo */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D28C61946F8AD00892F5D /* ICALPomoViewController.h */,
+				6E1D28C71946F8AD00892F5D /* ICALPomoViewController.m */,
+				6E1D28EF19472C5C00892F5D /* ICALPomoStore.h */,
+				6E1D28F019472C5C00892F5D /* ICALPomoStore.m */,
+			);
+			name = PomoToDo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +275,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1D28C21946F8AD00892F5D /* Main_iPad.storyboard in Resources */,
 				6EDF10A319485F390059E8D7 /* snow1.png in Resources */,
 				6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */,
 				6E1D28BF1946F8AD00892F5D /* Main_iPhone.storyboard in Resources */,
@@ -276,13 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3F6A0F1951B31700BC546B /* ICALPomoModel.xcdatamodeld in Sources */,
 				6E1D28C81946F8AD00892F5D /* ICALPomoViewController.m in Sources */,
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
-				6E1D28C51946F8AD00892F5D /* ICALMasterViewController.m in Sources */,
-				6E1D28F119472C5C00892F5D /* ICALPomo.m in Sources */,
+				6E1D28C51946F8AD00892F5D /* ICALTodoListViewController.m in Sources */,
+				6E3B1DF41953D1E300F0DDE3 /* ICALTodoTableViewCell.m in Sources */,
+				6E3F6A6419526ADD00BC546B /* ICALPomoItem.m in Sources */,
+				6E1D28F119472C5C00892F5D /* ICALPomoStore.m in Sources */,
 				6E1D28BC1946F8AD00892F5D /* ICALAppDelegate.m in Sources */,
-				6E1D28EE19470A5C00892F5D /* Model.xcdatamodeld in Sources */,
-				6E170CDB194B26BA007232D7 /* ICALEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,14 +341,6 @@
 				6E1D28BE1946F8AD00892F5D /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		6E1D28C01946F8AD00892F5D /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E1D28C11946F8AD00892F5D /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		6E1D28D91946F8AD00892F5D /* InfoPlist.strings */ = {
@@ -513,13 +527,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6E1D28EC19470A5C00892F5D /* Model.xcdatamodeld */ = {
+		6E3F6A0D1951B31700BC546B /* ICALPomoModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6E1D28ED19470A5C00892F5D /* Model.xcdatamodel */,
+				6E3F6A0E1951B31700BC546B /* ICALPomoModel.xcdatamodel */,
 			);
-			currentVersion = 6E1D28ED19470A5C00892F5D /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = 6E3F6A0E1951B31700BC546B /* ICALPomoModel.xcdatamodel */;
+			path = ICALPomoModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

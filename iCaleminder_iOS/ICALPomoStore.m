@@ -6,23 +6,23 @@
 //  Copyright (c) 2014 artwalk. All rights reserved.
 //
 
-#import "ICALPomo.h"
+#import "ICALPomoStore.h"
 
-@interface ICALPomo ()
+@interface ICALPomoStore ()
 
 @end
 
-@implementation ICALPomo
+@implementation ICALPomoStore
 
-+ (ICALPomo *)getInstance {
-    static ICALPomo *icalPomoInstance = nil;
++ (ICALPomoStore *)getInstance {
+    static ICALPomoStore *iCalPomoStoreInstance = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        icalPomoInstance = [[self alloc] initPrivate];
+        iCalPomoStoreInstance = [[self alloc] initPrivate];
     });
 
-    return icalPomoInstance;
+    return iCalPomoStoreInstance;
 }
 
 - (instancetype)initPrivate {
