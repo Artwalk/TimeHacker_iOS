@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-               BuildableName = "iCaleminder.app"
+               BuildableName = "TimeHacker.app"
                BlueprintName = "TimeHacker"
                ReferencedContainer = "container:TimeHacker.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E1D28CE1946F8AD00892F5D"
-               BuildableName = "iCaleminderTests.xctest"
+               BuildableName = "TimeHackerTests.xctest"
                BlueprintName = "TimeHackerTests"
                ReferencedContainer = "container:TimeHacker.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-            BuildableName = "iCaleminder.app"
+            BuildableName = "TimeHacker.app"
             BlueprintName = "TimeHacker"
             ReferencedContainer = "container:TimeHacker.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-            BuildableName = "iCaleminder.app"
+            BuildableName = "TimeHacker.app"
             BlueprintName = "TimeHacker"
             ReferencedContainer = "container:TimeHacker.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
-            BuildableName = "iCaleminder.app"
+            BuildableName = "TimeHacker.app"
             BlueprintName = "TimeHacker"
             ReferencedContainer = "container:TimeHacker.xcodeproj">
          </BuildableReference>
