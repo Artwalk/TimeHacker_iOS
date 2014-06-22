@@ -9,6 +9,7 @@
 #import "THAppDelegate.h"
 
 #import "THTodoListViewController.h"
+#import "THPomo.h"
 
 @implementation THAppDelegate
 
@@ -18,10 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [THPomo getInstance].managedObjectContext = self.managedObjectContext;
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     THTodoListViewController *controller = (THTodoListViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
     
     return YES;
 }

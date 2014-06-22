@@ -8,10 +8,12 @@
 
 #import "THPomoViewController.h"
 #import "THPomo.h"
+#import "PomoList.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+
 #define MINUTE (60)
-#define TESTNUM (1)
+#define TESTNUM (200)
 
 @interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *pomoNavigationItem;
@@ -22,12 +24,11 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *pomoLeftTimePicker;
 
 @property (nonatomic, strong) NSTimer *paintingTimer;
-
 @property (nonatomic, strong) NSArray *pomoIntervalPickerArray;
-
 @property (nonatomic, strong) NSArray *pomoLeftTimePickerSecondsArray;
 
 @property (nonatomic, strong) UILocalNotification *localNotification;
+
 
 - (void)configureView;
 @end
@@ -56,19 +57,17 @@
 {
     // Update the user interface for the detail item.
     if (self.pomoItem) {
-        self.pomoNavigationItem.title = [THPomo getInstance].pomoTitle = [[self.pomoItem valueForKey:@"title"] description];
+        self.pomoNavigationItem.title = [THPomo getInstance].title = [[self.pomoItem valueForKey:@"title"] description];
         
         [self.startStopBtn setTitle: @"▶︎" forState:0];
         
         self.pomoIntervalPicker.delegate = self;
         self.pomoIntervalPickerArray = @[@"25 min", @"20 min", @"15 min"];
         
+        [self.pomoIntervalPicker selectRow:(25 - [THPomo getInstance].interval)/5 inComponent:0 animated:YES];
+        
         [self stopPomoLeftTimePickerView];
     }
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 - (void)viewDidLoad
@@ -141,7 +140,7 @@
     } else if ([buttonTitle isEqualToString:[self noButtonTitle]]){
   
     } else if ([buttonTitle isEqualToString:[self breakButtonTitle]]) {
-        [THPomo getInstance].breakStartTime = [NSDate date];
+        [THPomo getInstance].breakDate = [NSDate date];
         [self startCounting];
     }
 }
@@ -229,7 +228,7 @@
 
 - (void)stopToStart {
     [THPomo getInstance].state = EnumStart;
-    [THPomo getInstance].pomoStartTime = [NSDate date];
+    [THPomo getInstance].startDate = [NSDate date];
     
     [self fireDelayNotification];
     
@@ -242,7 +241,7 @@
     [self stopCounting];
     
     [THPomo getInstance].state = EnumBreak;
-    [THPomo getInstance].pomoEndTime = [NSDate date];
+    [THPomo getInstance].endDate = [NSDate date];
     
     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Great!" message:@"One PomoToDo has Done!" delegate:self cancelButtonTitle:[self breakButtonTitle] otherButtonTitles:nil, nil];
     [alertView show];
@@ -259,7 +258,7 @@
 - (void)breakToStop {
     [self toStop];
     
-    _pomoNavigationItem.title = [THPomo getInstance].pomoTitle;
+    _pomoNavigationItem.title = [THPomo getInstance].title;
 }
 
 - (void)startToStop {
@@ -283,13 +282,13 @@
 #pragma mark - counting
 
 - (void) startCount:(NSTimer *)paramTimer {
-    if (![self count:[THPomo getInstance].interval*MINUTE since:[THPomo getInstance].pomoStartTime]) {
+    if (![self count:[THPomo getInstance].interval*MINUTE since:[THPomo getInstance].startDate]) {
         [self startToBreak];
     }
 }
 
 - (void) breakCount:(NSTimer *)paramTimer {
-    if (![self count:5*MINUTE since:[THPomo getInstance].breakStartTime]) {
+    if (![self count:5*MINUTE since:[THPomo getInstance].breakDate]) {
         [self breakToStop];
     }
 }
@@ -344,22 +343,6 @@
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
     }
-}
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
 }
 
 @end

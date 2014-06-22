@@ -7,14 +7,19 @@
 //
 
 #import "THPomo.h"
+#import "Pomo.h"
 
 @interface THPomo ()
 
-@property EKEventStore* eventStore;
+@property (nonatomic, strong) NSManagedObject *managedObject;
+
+@property (nonatomic, strong) EKEventStore* eventStore;
+@property (nonatomic, readonly ,strong) NSString *pomoEntityName;
 
 @end
 
 @implementation THPomo
+
 
 + (THPomo *)getInstance {
     static THPomo *THPomoInstance = nil;
@@ -23,7 +28,7 @@
     dispatch_once(&onceToken, ^{
         THPomoInstance = [[self alloc] initPrivate];
     });
-
+    
     return THPomoInstance;
 }
 
@@ -34,7 +39,6 @@
     
     if (self) {
         _state = EnumStop;
-        _interval = 25;
     }
     
     return self;
@@ -45,6 +49,8 @@
     
     return nil;
 }
+
+# pragma mark - iCal
 
 - (BOOL)insertToiCal {
     
@@ -59,24 +65,19 @@
         _eventStore =  store;
         
     }];
-
+    
 }
 
 - (BOOL) writeEvent2iCal {
-    
-    if (_pomoTitle == nil || _pomoStartTime == nil || _pomoEndTime == nil) {
-        return NO;
-    }
-    
-    if (_pomoEndTime < _pomoStartTime) {
+    if (_title == nil || self.startTime == nil) {
         return NO;
     }
     
     EKEvent *event = [EKEvent eventWithEventStore:_eventStore];
     
-    event.title = _pomoTitle;
-    event.endDate = _pomoEndTime;
-    event.startDate = _pomoStartTime;
+    event.title = _title;
+    event.startDate = self.startTime;
+    event.endDate = _endDate = [NSDate dateWithTimeInterval:self.interval*60 sinceDate:self.startTime];
     
     [event setCalendar:[_eventStore defaultCalendarForNewEvents]];
     NSError *err;
@@ -84,13 +85,78 @@
     //save your event
     if([_eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
         ical_event_id = event.eventIdentifier;
-        NSLog(@"%@",ical_event_id);
-        NSLog(@"\ntitle: %@\nstart: %@\nend: %@", _pomoTitle, _pomoStartTime, _pomoEndTime);
     }
-
+    
     return err==nil?YES:NO;
 }
 
+- (void)creatingCalendarIniCloud {
+    
+}
+
+#pragma mark - setter
+
+- (void)setStartTime:(NSDate *)startTime {
+    if (_managedObject != nil) {
+        [self.managedObject setValue:startTime forKey:@"startTime"];
+    }
+}
+
+- (void)setInterval:(NSInteger)interval {
+    if (_managedObject != nil) {
+        [self.managedObject setValue:[NSNumber numberWithInteger:interval] forKey:@"interval"];
+    }
+}
+
+#pragma mark - getter
+
+- (NSString *)pomoEntityName {
+    return @"Pomo";
+}
+
+- (NSDate *)startTime {
+    return [self.managedObject valueForKey:@"startTime"];
+}
+
+- (NSInteger)interval {
+    return [[self.managedObject valueForKey:@"interval"] intValue];
+}
+
+- (NSManagedObject *)managedObject {
+    if (_managedObject != nil) {
+        return _managedObject;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.pomoEntityName];
+    NSError *err = nil;
+    NSArray *pomoItems = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
+    if ([pomoItems count] == 0) {
+        _managedObject = [self createNewObject];
+    } else {
+        _managedObject = pomoItems[0];
+    }
+    
+    return _managedObject;
+}
+
+- (NSManagedObject *)createNewObject {
+    
+    Pomo *newPomo = [NSEntityDescription
+                     insertNewObjectForEntityForName:self.pomoEntityName
+                     inManagedObjectContext:self.managedObjectContext];
+    if (newPomo != nil){
+        NSError *savingError = nil;
+        if ([self.managedObjectContext save:&savingError]) {
+            NSLog(@"Successfully saved the context.");
+        } else {
+            NSLog(@"Failed to save the context. Error = %@", savingError);
+        }
+    } else {
+        NSLog(@"Failed to create the new person.");
+    }
+    
+    return newPomo;
+}
 
 
 @end

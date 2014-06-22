@@ -8,7 +8,7 @@
 
 #import "THTodoListViewController.h"
 #import "THPomoViewController.h"
-#import "THPomoItem.h"
+#import "PomoList.h"
 #import "THTodoTableViewCell.h"
 
 
@@ -17,6 +17,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @property (nonatomic, strong) UITextField *todoTextField;
+@property (nonatomic, readonly, strong) NSString *pomoListEntityName;
 
 @end
 
@@ -27,6 +28,9 @@
     [super awakeFromNib];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
 
 - (void)viewDidLoad
 {
@@ -76,7 +80,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-
+    
     switch (section) {
         case 0:
             return @"UserList";
@@ -172,7 +176,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PomoItem" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:self.pomoListEntityName inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -284,12 +288,31 @@
     if ([trimedTitle isEqualToString:@""]) {
         // do nothing
     } else {
-        [self insertNewObject:trimedTitle];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.pomoListEntityName];
+        NSError *err = nil;
+        NSArray *pomoItems = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
+        
+        BOOL finded = NO;
+        for(NSManagedObject *pomoItem in pomoItems) {
+            if ([[pomoItem valueForKey:@"title"] isEqualToString:trimedTitle]) {
+                finded = YES;
+            }
+        }
+        
+        if (!finded) {
+            [self insertNewObject:trimedTitle];
+        }
     }
-    
     
     _todoTextField.text = @"";
     [sender resignFirstResponder];
+    
+}
+
+
+- (NSString *)pomoListEntityName {
+    return @"PomoList";
 }
 
 @end

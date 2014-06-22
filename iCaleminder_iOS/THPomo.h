@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
+#import <CoreData/CoreData.h>
 
-@interface THPomo : NSObject
+@interface THPomo : NSObject <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic) NSDate *pomoStartTime;
-@property (nonatomic) NSDate *pomoEndTime;
-@property (nonatomic) NSDate *breakStartTime;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property (nonatomic) NSString *pomoTitle;
+@property (nonatomic) NSDate *startDate;
+@property (nonatomic) NSDate *endDate;
+@property (nonatomic) NSDate *breakDate;
+
+@property (nonatomic) NSString *title;
 // maybe add eventType later
 
 @property (nonatomic) NSInteger interval;
@@ -32,6 +36,5 @@ typedef NS_OPTIONS(NSUInteger, EnumState)
 + (THPomo *)getInstance;
 
 - (BOOL)insertToiCal;
-
 
 @end

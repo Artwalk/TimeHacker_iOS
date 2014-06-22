@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E106FFF195653470026FA12 /* Pomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E106FFE195653470026FA12 /* Pomo.m */; };
+		6E10700B1956544C0026FA12 /* PomoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E10700A1956544C0026FA12 /* PomoList.m */; };
 		6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
 		6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */; };
 		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
@@ -26,7 +28,6 @@
 		6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */; };
 		6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */; };
 		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
-		6E3F6A6419526ADD00BC546B /* THPomoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A6319526ADD00BC546B /* THPomoItem.m */; };
 		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
 		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E106FFD195653470026FA12 /* Pomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomo.h; sourceTree = "<group>"; };
+		6E106FFE195653470026FA12 /* Pomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pomo.m; sourceTree = "<group>"; };
+		6E1070091956544C0026FA12 /* PomoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomoList.h; sourceTree = "<group>"; };
+		6E10700A1956544C0026FA12 /* PomoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomoList.m; sourceTree = "<group>"; };
 		6E1D28A81946F8AC00892F5D /* TimeHacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeHacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1D28AB1946F8AC00892F5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,8 +74,6 @@
 		6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTodoTableViewCell.m; sourceTree = "<group>"; };
 		6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = THPomoModel.xcdatamodel; sourceTree = "<group>"; };
 		6E3F6A131951BF2800BC546B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6E3F6A6219526ADD00BC546B /* THPomoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THPomoItem.h; path = ../THPomoItem.h; sourceTree = "<group>"; };
-		6E3F6A6319526ADD00BC546B /* THPomoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THPomoItem.m; path = ../THPomoItem.m; sourceTree = "<group>"; };
 		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		6EDF10A219485F390059E8D7 /* snow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,8 +143,10 @@
 				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */,
 				6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */,
-				6E3F6A6219526ADD00BC546B /* THPomoItem.h */,
-				6E3F6A6319526ADD00BC546B /* THPomoItem.m */,
+				6E1070091956544C0026FA12 /* PomoList.h */,
+				6E10700A1956544C0026FA12 /* PomoList.m */,
+				6E106FFD195653470026FA12 /* Pomo.h */,
+				6E106FFE195653470026FA12 /* Pomo.m */,
 				6E3F6A0A1951994500BC546B /* ToDoList */,
 				6E3F6A0C1951998100BC546B /* PomoToDo */,
 				6E1D28C91946F8AD00892F5D /* Images.xcassets */,
@@ -303,12 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E106FFF195653470026FA12 /* Pomo.m in Sources */,
 				6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */,
 				6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */,
+				6E10700B1956544C0026FA12 /* PomoList.m in Sources */,
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
 				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
 				6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */,
-				6E3F6A6419526ADD00BC546B /* THPomoItem.m in Sources */,
 				6E1D28F119472C5C00892F5D /* THPomo.m in Sources */,
 				6E1D28BC1946F8AD00892F5D /* THAppDelegate.m in Sources */,
 			);
