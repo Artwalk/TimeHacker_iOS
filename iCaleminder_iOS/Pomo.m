@@ -11,8 +11,8 @@
 
 @implementation Pomo
 
-@dynamic startTime;
-@dynamic endTime;
+@dynamic startDate;
+@dynamic endDate;
 @dynamic interval;
 
 @end

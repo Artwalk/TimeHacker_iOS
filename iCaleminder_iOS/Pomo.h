@@ -12,8 +12,8 @@
 
 @interface Pomo : NSManagedObject
 
-@property (nonatomic, retain) NSDate * startTime;
-@property (nonatomic, retain) NSDate * endTime;
+@property (nonatomic, retain) NSDate * startDate;
+@property (nonatomic, retain) NSDate * endDate;
 @property (nonatomic, retain) NSNumber * interval;
 
 @end

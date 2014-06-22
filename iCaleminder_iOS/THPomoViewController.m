@@ -13,7 +13,7 @@
 
 
 #define MINUTE (60)
-#define TESTNUM (200)
+#define TESTNUM (1)
 
 @interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *pomoNavigationItem;

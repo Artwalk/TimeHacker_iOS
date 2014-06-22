@@ -14,6 +14,10 @@
 @property (nonatomic, strong) NSManagedObject *managedObject;
 
 @property (nonatomic, strong) EKEventStore* eventStore;
+@property (nonatomic, strong) EKSource *icloudEventSource;
+
+@property (nonatomic, strong) EKCalendar *timeHackerCalendar;
+
 @property (nonatomic, readonly ,strong) NSString *pomoEntityName;
 
 @end
@@ -53,7 +57,6 @@
 # pragma mark - iCal
 
 - (BOOL)insertToiCal {
-    
     return [self writeEvent2iCal]?YES:NO;
 }
 
@@ -68,37 +71,67 @@
     
 }
 
-- (BOOL) writeEvent2iCal {
-    if (_title == nil || self.startTime == nil) {
+
+- (EKSource *)icloudEventSource {
+    for (EKSource *source in self.eventStore.sources){
+        if (source.sourceType == EKSourceTypeCalDAV && [source.title isEqualToString:@"iCloud"]) {
+            _icloudEventSource = source;
+            break;
+        }
+    }
+    
+    return _icloudEventSource;
+}
+
+- (EKCalendar *)timeHackerCalendar {
+    NSSet *calendars = [self.icloudEventSource calendarsForEntityType:EKEntityTypeEvent];
+    for (EKCalendar *calendar in calendars){
+        if ([calendar.title isEqualToString:@"TimeHarker"]) {
+            _timeHackerCalendar = calendar;
+        }
+    }
+    
+    if (_timeHackerCalendar == nil) {
+        // not found & create
+        EKCalendar *calendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.eventStore];
+        calendar.title = @"TimeHarker";
+        calendar.source = self.icloudEventSource;
+        
+        NSError *error = nil;
+        if ([_eventStore saveCalendar:calendar commit:YES error:&error]) {
+            _timeHackerCalendar = calendar;
+        }
+    }
+    
+    return _timeHackerCalendar;
+}
+
+- (BOOL)writeEvent2iCal {
+    if (_title == nil || self.startDate == nil) {
         return NO;
     }
     
-    EKEvent *event = [EKEvent eventWithEventStore:_eventStore];
+    EKEvent *event = [EKEvent eventWithEventStore:self.eventStore];
     
     event.title = _title;
-    event.startDate = self.startTime;
-    event.endDate = _endDate = [NSDate dateWithTimeInterval:self.interval*60 sinceDate:self.startTime];
+    event.startDate = self.startDate;
+    event.endDate = _endDate = [NSDate dateWithTimeInterval:self.interval*60 sinceDate:self.startDate];
     
-    [event setCalendar:[_eventStore defaultCalendarForNewEvents]];
+    event.calendar = self.timeHackerCalendar;
+    
     NSError *err;
-    NSString *ical_event_id;
-    //save your event
-    if([_eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
-        ical_event_id = event.eventIdentifier;
+    if([self.eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
+//        NSLog(@"event.eventIdentifier: %@", event.eventIdentifier);
     }
     
     return err==nil?YES:NO;
 }
 
-- (void)creatingCalendarIniCloud {
-    
-}
-
 #pragma mark - setter
 
-- (void)setStartTime:(NSDate *)startTime {
+- (void)setStartDate:(NSDate *)startDate {
     if (_managedObject != nil) {
-        [self.managedObject setValue:startTime forKey:@"startTime"];
+        [self.managedObject setValue:startDate forKey:@"startDate"];
     }
 }
 
@@ -110,12 +143,20 @@
 
 #pragma mark - getter
 
+- (EKEventStore *)eventStore {
+    if (_eventStore == nil) {
+        [self getAuthority];
+    }
+    
+    return _eventStore;
+}
+
 - (NSString *)pomoEntityName {
     return @"Pomo";
 }
 
-- (NSDate *)startTime {
-    return [self.managedObject valueForKey:@"startTime"];
+- (NSDate *)startDate {
+    return [self.managedObject valueForKey:@"startDate"];
 }
 
 - (NSInteger)interval {
@@ -147,12 +188,12 @@
     if (newPomo != nil){
         NSError *savingError = nil;
         if ([self.managedObjectContext save:&savingError]) {
-            NSLog(@"Successfully saved the context.");
+//            NSLog(@"Successfully saved the context.");
         } else {
             NSLog(@"Failed to save the context. Error = %@", savingError);
         }
     } else {
-        NSLog(@"Failed to create the new person.");
+//        NSLog(@"Failed to create the new Pomo.");
     }
     
     return newPomo;

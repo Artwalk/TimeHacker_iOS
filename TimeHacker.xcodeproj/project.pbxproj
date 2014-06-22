@@ -104,6 +104,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E10700C195668150026FA12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */,
+				6E1070091956544C0026FA12 /* PomoList.h */,
+				6E10700A1956544C0026FA12 /* PomoList.m */,
+				6E106FFD195653470026FA12 /* Pomo.h */,
+				6E106FFE195653470026FA12 /* Pomo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		6E1D289F1946F8AC00892F5D = {
 			isa = PBXGroup;
 			children = (
@@ -142,11 +154,7 @@
 				6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */,
 				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main_iPhone.storyboard */,
-				6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */,
-				6E1070091956544C0026FA12 /* PomoList.h */,
-				6E10700A1956544C0026FA12 /* PomoList.m */,
-				6E106FFD195653470026FA12 /* Pomo.h */,
-				6E106FFE195653470026FA12 /* Pomo.m */,
+				6E10700C195668150026FA12 /* Model */,
 				6E3F6A0A1951994500BC546B /* ToDoList */,
 				6E3F6A0C1951998100BC546B /* PomoToDo */,
 				6E1D28C91946F8AD00892F5D /* Images.xcassets */,
