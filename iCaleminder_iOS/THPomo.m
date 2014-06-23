@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSManagedObject *managedObject;
 
 @property (nonatomic, strong) EKEventStore* eventStore;
-@property (nonatomic, strong) EKSource *icloudEventSource;
+@property (nonatomic, strong) EKSource *calendarSource;
 
 @property (nonatomic, strong) EKCalendar *timeHackerCalendar;
 
@@ -72,35 +72,76 @@
 }
 
 
-- (EKSource *)icloudEventSource {
+- (EKSource *)getiCloudEventSource {
     for (EKSource *source in self.eventStore.sources){
         if (source.sourceType == EKSourceTypeCalDAV && [source.title isEqualToString:@"iCloud"]) {
-            _icloudEventSource = source;
+            _calendarSource = source;
             break;
         }
     }
     
-    return _icloudEventSource;
+    return _calendarSource;
+}
+
+- (EKSource *)getLocalEventSource {
+    for (EKSource *source in self.eventStore.sources){
+        if (source.sourceType == EKSourceTypeLocal) {
+            _calendarSource = source;
+            break;
+        }
+    }
+    
+    return _calendarSource;
+}
+
+- (EKSource *)calendarSource {
+    _calendarSource = [self getiCloudEventSource];
+    
+    if (_calendarSource == nil) {
+        // user may not open iCloud account
+        // use local calendars instead
+        _calendarSource  = [self getLocalEventSource];
+    } else {
+        // user delete iCalender.app ???
+    }
+    
+    return _calendarSource;
 }
 
 - (EKCalendar *)timeHackerCalendar {
-    NSSet *calendars = [self.icloudEventSource calendarsForEntityType:EKEntityTypeEvent];
-    for (EKCalendar *calendar in calendars){
-        if ([calendar.title isEqualToString:@"TimeHarker"]) {
-            _timeHackerCalendar = calendar;
-        }
-    }
+    
+    _timeHackerCalendar = [self findCalendar:@"TimeHarker"];
     
     if (_timeHackerCalendar == nil) {
         // not found & create
         EKCalendar *calendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.eventStore];
         calendar.title = @"TimeHarker";
-        calendar.source = self.icloudEventSource;
+        calendar.source = self.calendarSource;
         
         NSError *error = nil;
         if ([_eventStore saveCalendar:calendar commit:YES error:&error]) {
-            _timeHackerCalendar = calendar;
+            _timeHackerCalendar = [self findCalendar:@"TimeHarker"];
         }
+    }
+    
+    return _timeHackerCalendar;
+}
+
+- (EKCalendar *)findCalendar:(NSString *)title {
+    NSSet *calendars = [self.calendarSource calendarsForEntityType:EKEntityTypeEvent];
+    
+    EKCalendar *calendar = nil;
+    for (calendar in calendars){
+        if ([calendar.title isEqualToString:title]) {
+            _timeHackerCalendar = calendar;
+            break;
+        }
+    }
+    
+    if (_timeHackerCalendar != nil) {
+        NSLog(@"findCalendar %@", title);
+    } else {
+        NSLog(@"not findCalendar %@", title);
     }
     
     return _timeHackerCalendar;
