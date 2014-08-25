@@ -16,12 +16,12 @@
 #define TESTNUM (1)
 
 @interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
-@property (weak, nonatomic) IBOutlet UINavigationItem *pomoNavigationItem;
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (weak, nonatomic) IBOutlet UIButton *startStopBtn;
 @property (weak, nonatomic) IBOutlet UIPickerView *pomoIntervalPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *pomoLeftTimePicker;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *giveUpBtn;
 
 @property (nonatomic, strong) NSTimer *paintingTimer;
 @property (nonatomic, strong) NSArray *pomoIntervalPickerArray;
@@ -57,7 +57,7 @@
 {
     // Update the user interface for the detail item.
     if (self.pomoItem) {
-        self.pomoNavigationItem.title = [THPomo getInstance].title = [[self.pomoItem valueForKey:@"title"] description];
+        self.navigationItem.title = [THPomo getInstance].title = [[self.pomoItem valueForKey:@"title"] description];
         
         [self.startStopBtn setTitle: @"▶︎" forState:0];
         
@@ -114,8 +114,6 @@
     if ([THPomo getInstance].state == EnumStart) {
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Really Give Up?" delegate:self cancelButtonTitle:[self noButtonTitle] otherButtonTitles:[self yesButtonTitle], nil];
         [alertView show];
-    } else {
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -134,9 +132,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
     if ([buttonTitle isEqualToString:[self yesButtonTitle]]){
-        [self stopCounting];
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-        
+        [self startToStop];
+
     } else if ([buttonTitle isEqualToString:[self noButtonTitle]]){
   
     } else if ([buttonTitle isEqualToString:[self breakButtonTitle]]) {
@@ -233,6 +230,7 @@
     [self fireDelayNotification];
     
     [self.startStopBtn setTitle: @"◼︎" forState:0];
+    self.giveUpBtn.enabled = YES;
     
     [self startCounting];
 }
@@ -247,7 +245,7 @@
     [alertView show];
     AudioServicesPlaySystemSound(1007);
     
-    _pomoNavigationItem.title = @"Break Time!";
+    self.navigationItem.title = @"Break Time!";
     [self updatePomoLeftTimePickerView:5 rowOne:MINUTE*5];
     
     if (![THPomo getInstance].insertToiCal) {
@@ -258,7 +256,9 @@
 - (void)breakToStop {
     [self toStop];
     
-    _pomoNavigationItem.title = [THPomo getInstance].title;
+    self.giveUpBtn.enabled = NO;
+    
+    self.navigationItem.title = [THPomo getInstance].title;
 }
 
 - (void)startToStop {
@@ -272,6 +272,8 @@
     
     [self stopPomoLeftTimePickerView];
     [self.startStopBtn setTitle: @"▶︎" forState:0];
+    self.giveUpBtn.enabled = NO;
+    
     [self stopCounting];
 }
 

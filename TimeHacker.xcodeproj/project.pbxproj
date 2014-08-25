@@ -28,6 +28,8 @@
 		6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */; };
 		6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */; };
 		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
+		6E49229A19AACACA00AB00EB /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49229919AACACA00AB00EB /* SettingsTableViewController.m */; };
+		6E49229E19AACF0A00AB00EB /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49229D19AACF0A00AB00EB /* FeedbackViewController.m */; };
 		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,10 @@
 		6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTodoTableViewCell.m; sourceTree = "<group>"; };
 		6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = THPomoModel.xcdatamodel; sourceTree = "<group>"; };
 		6E3F6A131951BF2800BC546B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6E49229819AACACA00AB00EB /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		6E49229919AACACA00AB00EB /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		6E49229C19AACF0A00AB00EB /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		6E49229D19AACF0A00AB00EB /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,7 @@
 				6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */,
 				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
+				6E49229B19AACAD400AB00EB /* Settings */,
 				6E10700C195668150026FA12 /* Model */,
 				6E3F6A0A1951994500BC546B /* ToDoList */,
 				6E3F6A0C1951998100BC546B /* PomoToDo */,
@@ -213,6 +220,17 @@
 				6E1D28F019472C5C00892F5D /* THPomo.m */,
 			);
 			name = PomoToDo;
+			sourceTree = "<group>";
+		};
+		6E49229B19AACAD400AB00EB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6E49229819AACACA00AB00EB /* SettingsTableViewController.h */,
+				6E49229919AACACA00AB00EB /* SettingsTableViewController.m */,
+				6E49229C19AACF0A00AB00EB /* FeedbackViewController.h */,
+				6E49229D19AACF0A00AB00EB /* FeedbackViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		6EDD174D19A3032D0090251F /* iPad */ = {
@@ -325,8 +343,10 @@
 			files = (
 				6E106FFF195653470026FA12 /* Pomo.m in Sources */,
 				6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */,
+				6E49229A19AACACA00AB00EB /* SettingsTableViewController.m in Sources */,
 				6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */,
 				6E10700B1956544C0026FA12 /* PomoList.m in Sources */,
+				6E49229E19AACF0A00AB00EB /* FeedbackViewController.m in Sources */,
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
 				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
 				6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */,
