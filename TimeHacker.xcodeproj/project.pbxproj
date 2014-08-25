@@ -29,7 +29,6 @@
 		6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */; };
 		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
 		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
-		6EDF10A319485F390059E8D7 /* snow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF10A219485F390059E8D7 /* snow1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +74,6 @@
 		6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = THPomoModel.xcdatamodel; sourceTree = "<group>"; };
 		6E3F6A131951BF2800BC546B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		6EDF10A219485F390059E8D7 /* snow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +149,7 @@
 		6E1D28B11946F8AC00892F5D /* TimeHacker */ = {
 			isa = PBXGroup;
 			children = (
+				6EDD174D19A3032D0090251F /* iPad */,
 				6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */,
 				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
@@ -167,7 +166,6 @@
 		6E1D28B21946F8AC00892F5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6EDF10A219485F390059E8D7 /* snow1.png */,
 				6E1D28B31946F8AC00892F5D /* TimeHacker-Info.plist */,
 				6E1D28B41946F8AC00892F5D /* InfoPlist.strings */,
 				6E1D28B71946F8AC00892F5D /* main.m */,
@@ -215,6 +213,13 @@
 				6E1D28F019472C5C00892F5D /* THPomo.m */,
 			);
 			name = PomoToDo;
+			sourceTree = "<group>";
+		};
+		6EDD174D19A3032D0090251F /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +302,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EDF10A319485F390059E8D7 /* snow1.png in Resources */,
 				6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */,
 				6E1D28BF1946F8AD00892F5D /* Main.storyboard in Resources */,
 				6E1D28B61946F8AC00892F5D /* InfoPlist.strings in Resources */,
@@ -455,11 +459,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCaleminder_iOS/TimeHacker-Prefix.pch";
 				INFOPLIST_FILE = "iCaleminder_iOS/TimeHacker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = TimeHacker;
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -470,11 +477,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCaleminder_iOS/TimeHacker-Prefix.pch";
 				INFOPLIST_FILE = "iCaleminder_iOS/TimeHacker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = TimeHacker;
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
