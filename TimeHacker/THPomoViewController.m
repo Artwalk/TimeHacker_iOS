@@ -19,12 +19,11 @@
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (weak, nonatomic) IBOutlet UIButton *startStopBtn;
-@property (weak, nonatomic) IBOutlet UIPickerView *pomoIntervalPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *pomoLeftTimePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *giveUpBtn;
+@property (weak, nonatomic) IBOutlet UISlider *pomoTimerSlider;
 
 @property (nonatomic, strong) NSTimer *paintingTimer;
-@property (nonatomic, strong) NSArray *pomoIntervalPickerArray;
 @property (nonatomic, strong) NSArray *pomoLeftTimePickerSecondsArray;
 
 @property (nonatomic, strong) UILocalNotification *localNotification;
@@ -58,13 +57,8 @@
     // Update the user interface for the detail item.
     if (self.pomoItem) {
         self.navigationItem.title = [THPomo getInstance].title = [[self.pomoItem valueForKey:@"title"] description];
-        
+        self.pomoTimerSlider.value = [THPomo getInstance].interval;
         [self.startStopBtn setTitle: @"▶︎" forState:0];
-        
-        self.pomoIntervalPicker.delegate = self;
-        self.pomoIntervalPickerArray = @[@"25 min", @"20 min", @"15 min"];
-        
-        [self.pomoIntervalPicker selectRow:(25 - [THPomo getInstance].interval)/5 inComponent:0 animated:YES];
         
         [self stopPomoLeftTimePickerView];
     }
@@ -133,23 +127,28 @@
     NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
     if ([buttonTitle isEqualToString:[self yesButtonTitle]]){
         [self startToStop];
-
+        
     } else if ([buttonTitle isEqualToString:[self noButtonTitle]]){
-  
+        
     } else if ([buttonTitle isEqualToString:[self breakButtonTitle]]) {
         [THPomo getInstance].breakDate = [NSDate date];
         [self startCounting];
     }
 }
 
+
+#pragma mark - slider
+- (IBAction)pomoTimerSliderValueChanged:(UISlider *)sender {
+    int min = (int)sender.value;
+    [[THPomo getInstance] setInterval:min];
+    [self updatePomoLeftTimePickerView:min rowOne:min*60];
+}
+
+
 #pragma mark - pickerView
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row
             forComponent:(NSInteger)component{
-    if ([pickerView isEqual:self.pomoIntervalPicker]){
-        
-        return self.pomoIntervalPickerArray[row];
-    }
     
     if ([pickerView isEqual:self.pomoLeftTimePicker]) {
         if (component == 0) {
@@ -164,10 +163,6 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
-    if ([pickerView isEqual:self.pomoIntervalPicker]){
-        return 1;
-    }
-    
     if ([pickerView isEqual:self.pomoLeftTimePicker]) {
         return 2;
     }
@@ -175,24 +170,11 @@
 }
 
 -(NSInteger) pickerView:(UIPickerView*)pickerView numberOfRowsInComponent:(NSInteger)component{
-    if ([pickerView isEqual:self.pomoIntervalPicker]){
-        return 3;
-    }
     
     if ([pickerView isEqual:self.pomoLeftTimePicker]) {
-        return component==0?26:MINUTE*25+1;
+        return component==0?61:MINUTE*60+1;
     }
     return 0;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    if ([pickerView isEqual:self.pomoIntervalPicker]){
-        
-        [THPomo getInstance].interval = [self intervalFormatWithString:self.pomoIntervalPickerArray[row]];
-        
-        [self stopPomoLeftTimePickerView];
-    }
 }
 
 - (void)updatePomoLeftTimePickerView:(NSInteger)numZero rowOne:(NSInteger)numOne {
@@ -300,7 +282,7 @@
     NSInteger secondsInterval;
     
     secondsInterval = seconds - TESTNUM*(NSInteger)[[NSDate date] timeIntervalSinceDate:time];
-
+    
     if (secondsInterval < 0.0) {
         return NO;
     }
@@ -313,8 +295,8 @@
 
 - (void) startCounting {
     
-    [self.pomoIntervalPicker setUserInteractionEnabled:NO];
-    [self.pomoIntervalPicker setAlpha:0.2];
+    [self.pomoTimerSlider setUserInteractionEnabled:NO];
+    [self.pomoTimerSlider setAlpha:0.2];
     
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
@@ -339,8 +321,8 @@
 
 - (void) stopCounting {
     
-    [self.pomoIntervalPicker setUserInteractionEnabled:YES];
-    [self.pomoIntervalPicker setAlpha:1.0];
+    [self.pomoTimerSlider setUserInteractionEnabled:YES];
+    [self.pomoTimerSlider setAlpha:1.0];
     
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];

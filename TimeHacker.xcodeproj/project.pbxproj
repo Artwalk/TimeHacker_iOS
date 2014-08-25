@@ -155,7 +155,6 @@
 		6E1D28B11946F8AC00892F5D /* TimeHacker */ = {
 			isa = PBXGroup;
 			children = (
-				6EDD174D19A3032D0090251F /* iPad */,
 				6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */,
 				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
@@ -229,13 +228,6 @@
 				6E49229D19AACF0A00AB00EB /* FeedbackViewController.m */,
 			);
 			name = Settings;
-			sourceTree = "<group>";
-		};
-		6EDD174D19A3032D0090251F /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,7 +476,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = TimeHacker;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -502,7 +494,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = TimeHacker;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
