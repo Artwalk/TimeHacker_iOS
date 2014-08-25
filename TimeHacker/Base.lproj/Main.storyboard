@@ -79,7 +79,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todo List" id="tQt-TN-PWz">
-                        <barButtonItem key="leftBarButtonItem" image="settings" id="xyY-P8-0N6">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="xyY-P8-0N6">
                             <connections>
                                 <segue destination="zMr-HK-D2w" kind="modal" modalTransitionStyle="flipHorizontal" id="TTw-Aq-GmO"/>
                             </connections>

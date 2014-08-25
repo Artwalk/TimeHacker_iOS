@@ -1,6 +1,6 @@
 //
 //  main.m
-//  iCaleminder_iOS
+//  TimeHacker
 //
 //  Created by artwalk on 6/10/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.

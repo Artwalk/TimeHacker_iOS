@@ -1,6 +1,6 @@
 //
-//  iCaleminder_iOSTests.m
-//  iCaleminder_iOSTests
+//  TimeHackerTests.m
+//  TimeHackerTests
 //
 //  Created by artwalk on 6/10/14.
 //  Copyright (c) 2014 artwalk. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface iCaleminder_iOSTests : XCTestCase
+@interface TimeHackerTests : XCTestCase
 
 @end
 
-@implementation iCaleminder_iOSTests
+@implementation TimeHackerTests
 
 - (void)setUp
 {
