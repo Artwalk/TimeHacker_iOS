@@ -34,7 +34,8 @@ static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedb
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+//    [self send2Server];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +55,11 @@ static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedb
 - (IBAction)submitBtnAction:(id)sender {
     self.submitBarButtonItem.enabled = NO;
     self.feedbackTextField.enabled = NO;
-    // send to server
+    
+    [self send2Server];
+}
+
+- (void)send2Server {
     NSURL *url = [NSURL URLWithString:[serverUrl copy]];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     [req setHTTPMethod:@"POST"];
@@ -81,11 +86,13 @@ static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedb
             
             NSLog(@"%ld", (long)[(NSHTTPURLResponse *)response statusCode]);
             if (connectionError == nil && [(NSHTTPURLResponse *)response statusCode] == 200) {
+                
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     UIAlertView *aView = [[UIAlertView alloc] initWithTitle:nil message:@"Your feedback has been submitted." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
                     self.feedbackTextField.text = @"";
                     [aView show];
                 });
+                
             } else if ([data length] == 0) {
                 
             } if (connectionError != nil) {
@@ -98,7 +105,6 @@ static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedb
             });
         }];
     }
-    
 }
 
 - (NSDictionary *)deviceInfo {
