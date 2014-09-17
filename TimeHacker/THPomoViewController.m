@@ -108,6 +108,8 @@
     if ([THPomo getInstance].state == EnumStart) {
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Really Give Up?" delegate:self cancelButtonTitle:[self noButtonTitle] otherButtonTitles:[self yesButtonTitle], nil];
         [alertView show];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -212,6 +214,7 @@
     [self fireDelayNotification];
     
     [self.startStopBtn setTitle: @"◼︎" forState:0];
+    self.navigationItem.leftBarButtonItem.enabled = NO;
     self.giveUpBtn.enabled = YES;
     
     [self startCounting];
@@ -238,7 +241,8 @@
 - (void)breakToStop {
     [self toStop];
     
-    self.giveUpBtn.enabled = NO;
+    self.navigationItem.leftBarButtonItem.enabled = NO;
+//    self.giveUpBtn.enabled = NO;
     
     self.navigationItem.title = [THPomo getInstance].title;
 }
@@ -254,7 +258,7 @@
     
     [self stopPomoLeftTimePickerView];
     [self.startStopBtn setTitle: @"▶︎" forState:0];
-    self.giveUpBtn.enabled = NO;
+//    self.giveUpBtn.enabled = NO;
     
     [self stopCounting];
 }

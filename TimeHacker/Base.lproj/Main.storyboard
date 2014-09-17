@@ -270,12 +270,8 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="fd7-bD-9h8">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Give up" id="kLf-yO-Uje">
-                            <connections>
-                                <action selector="giveUp:" destination="Ah7-4n-0Wa" id="wbE-rb-0bh"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Title" id="sZS-HX-ZJR">
+                        <barButtonItem key="leftBarButtonItem" title="Give up" id="kLf-yO-Uje"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
