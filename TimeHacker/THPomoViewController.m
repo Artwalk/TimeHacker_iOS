@@ -108,8 +108,6 @@
     if ([THPomo getInstance].state == EnumStart) {
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Really Give Up?" delegate:self cancelButtonTitle:[self noButtonTitle] otherButtonTitles:[self yesButtonTitle], nil];
         [alertView show];
-    } else if ([THPomo getInstance].state == EnumStop) {
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -129,7 +127,6 @@
     NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
     if ([buttonTitle isEqualToString:[self yesButtonTitle]]){
         [self startToStop];
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         
     } else if ([buttonTitle isEqualToString:[self noButtonTitle]]){
         
@@ -144,9 +141,7 @@
 - (IBAction)pomoTimerSliderValueChanged:(UISlider *)sender {
     int min = (int)sender.value;
     [[THPomo getInstance] setInterval:min];
-//    [self updatePomoLeftTimePickerView:min rowOne:min*MINUTE];
-    [_pomoLeftTimePicker selectRow:min inComponent:0 animated:YES];
-    [_pomoLeftTimePicker selectRow:min*MINUTE inComponent:1 animated:NO];
+    [self updatePomoLeftTimePickerView:min rowOne:min*MINUTE];
 }
 
 
@@ -217,7 +212,7 @@
     [self fireDelayNotification];
     
     [self.startStopBtn setTitle: @"◼︎" forState:0];
-//    self.giveUpBtn.enabled = YES;
+    self.giveUpBtn.enabled = YES;
     
     [self startCounting];
 }
@@ -243,7 +238,7 @@
 - (void)breakToStop {
     [self toStop];
     
-//    self.giveUpBtn.enabled = NO;
+    self.giveUpBtn.enabled = NO;
     
     self.navigationItem.title = [THPomo getInstance].title;
 }
@@ -259,7 +254,7 @@
     
     [self stopPomoLeftTimePickerView];
     [self.startStopBtn setTitle: @"▶︎" forState:0];
-//    self.giveUpBtn.enabled = NO;
+    self.giveUpBtn.enabled = NO;
     
     [self stopCounting];
 }
