@@ -143,7 +143,9 @@
 - (IBAction)pomoTimerSliderValueChanged:(UISlider *)sender {
     int min = (int)sender.value;
     [[THPomo getInstance] setInterval:min];
-    [self updatePomoLeftTimePickerView:min rowOne:min*MINUTE];
+    
+    [_pomoLeftTimePicker selectRow:min inComponent:0 animated:YES];
+    [_pomoLeftTimePicker selectRow:min*MINUTE inComponent:1 animated:NO];
 }
 
 
