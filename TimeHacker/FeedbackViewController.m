@@ -10,11 +10,12 @@
 
 #import <MessageUI/MFMailComposeViewController.h>
 
-//static const NSString *serverUrl = @"http://localhost:5000/feedback";
-static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedback";
+//static const NSString *serverUrl = @"http://timehacker.ahorn.me/feedback";
+static const NSString *serverUrl = @"http://127.0.0.1:8001/feedback";
 
 @interface FeedbackViewController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *feedbackTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *submitBarButtonItem;
 @property (strong, nonatomic) NSDictionary* deviceInfo;
 
@@ -64,16 +65,29 @@ static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedb
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     [req setHTTPMethod:@"POST"];
     
-    NSString *str = self.feedbackTextField.text;
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:self.deviceInfo];
-    [dict setValue:str forKey:@"feedback"];
     
-    if (![NSJSONSerialization isValidJSONObject:dict]) {
+   
+    NSMutableDictionary *userDict = [[NSMutableDictionary alloc] initWithCapacity:2];
+    
+    NSString *feedbackStr = self.feedbackTextField.text;
+    [userDict setValue:feedbackStr forKey:@"feedback"];
+    
+    NSString *emailStr = self.emailTextField.text;
+    [userDict setValue:emailStr forKey:@"email"];
+    
+    if (![NSJSONSerialization isValidJSONObject:userDict]) {
         return;
     }
     
+    
+    NSMutableDictionary *deviceInfoDict = [[NSMutableDictionary alloc] initWithDictionary:self.deviceInfo];
+    NSMutableDictionary *dataDict = [[NSMutableDictionary alloc] initWithCapacity:2];
+    [dataDict setValue:deviceInfoDict forKey:@"deviceInfo"];
+    [dataDict setValue:userDict forKey:@"userInfo"];
+    
+    
     NSError *err = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&err];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataDict options:NSJSONWritingPrettyPrinted error:&err];
     if ([jsonData length] > 0 && err == nil) {
         NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         
@@ -89,7 +103,7 @@ static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedb
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     UIAlertView *aView = [[UIAlertView alloc] initWithTitle:nil message:@"Your feedback has been submitted." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
-                    self.feedbackTextField.text = @"";
+                    self.emailTextField.text = self.feedbackTextField.text = @"";
                     [aView show];
                 });
                 
@@ -122,7 +136,7 @@ static const NSString *serverUrl = @"http://timehackerserver.herokuapp.com/feedb
     [dict setValue:[NSString stringWithFormat:@"%lld", processInfo.physicalMemory] forKey:@"physicalMemory"];
     
     UIDevice *device = [UIDevice currentDevice];
-    [dict setValue:[NSString stringWithFormat:@"%@", device.identifierForVendor] forKey:@"identifierForVendor"];
+//    [dict setValue:[NSString stringWithFormat:@"%@", device.identifierForVendor] forKey:@"identifierForVendor"];
     [dict setValue:device.name forKey:@"name"];
     [dict setValue:device.systemName forKey:@"systemName"];
     [dict setValue:device.systemVersion forKey:@"systemVersion"];
