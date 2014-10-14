@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -94,7 +93,7 @@
         <!--Settings-->
         <scene sceneID="Doc-on-g2p">
             <objects>
-                <tableViewController id="Bub-Ql-hm7" customClass="SettingsTableViewController" sceneMemberID="viewController">
+                <tableViewController id="Bub-Ql-hm7" customClass="SettingsTableViewController" customModule="TimeHacker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ham-vx-yjg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,12 +134,12 @@
                     <navigationItem key="navigationItem" title="Settings" id="o8o-38-uHe">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="nRx-0T-KDi">
                             <connections>
-                                <action selector="navDoneBtnAction:" destination="Bub-Ql-hm7" id="fvo-Zx-Fcz"/>
+                                <action selector="navDoneBtnAction:" destination="Bub-Ql-hm7" id="zdf-Vn-jTS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="navDoneBtn" destination="nRx-0T-KDi" id="krb-al-F4J"/>
+                        <outlet property="navDoneBtn" destination="nRx-0T-KDi" id="hec-Y4-DWL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5R8-ww-m2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,7 +149,7 @@
         <!--Feedback-->
         <scene sceneID="gzI-UK-Are">
             <objects>
-                <viewController id="c10-Uj-CKz" customClass="FeedbackViewController" sceneMemberID="viewController">
+                <viewController id="c10-Uj-CKz" customClass="FeedbackViewController" customModule="TimeHacker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eo0-Wd-1mM"/>
                         <viewControllerLayoutGuide type="bottom" id="VB5-ws-k3D"/>
@@ -164,7 +163,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <action selector="textFieldEditingChanged:" destination="c10-Uj-CKz" eventType="editingChanged" id="h3c-mb-ltl"/>
+                                    <action selector="feedbackTextFieldEditingChanged:" destination="c10-Uj-CKz" eventType="editingChanged" id="Wuc-D5-hl7"/>
                                     <outlet property="delegate" destination="c10-Uj-CKz" id="k4g-SL-VcF"/>
                                 </connections>
                             </textField>
@@ -193,9 +192,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emailTextField" destination="gJh-0o-40Y" id="k72-3Z-ssO"/>
-                        <outlet property="feedbackTextField" destination="0le-Ck-M93" id="Gq2-ub-G1T"/>
-                        <outlet property="submitBarButtonItem" destination="wB1-1u-y0L" id="pxZ-n1-tmK"/>
+                        <outlet property="emailTextField" destination="gJh-0o-40Y" id="h4g-pQ-crQ"/>
+                        <outlet property="feedbackTextField" destination="0le-Ck-M93" id="esp-er-99e"/>
+                        <outlet property="submitBarButtonItem" destination="wB1-1u-y0L" id="en8-Hq-Xga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKq-Rn-PsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +245,7 @@
                                     <constraint firstAttribute="width" constant="50" id="LPJ-p9-pDw"/>
                                     <constraint firstAttribute="height" constant="50" id="Rwi-bX-hTL"/>
                                 </constraints>
-                                <state key="normal" title=">">
+                                <state key="normal" title="&gt;">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
