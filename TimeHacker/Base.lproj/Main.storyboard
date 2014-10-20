@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -187,7 +188,7 @@
                     <navigationItem key="navigationItem" title="Feedback" id="h1c-fI-ZNJ">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Submit" id="wB1-1u-y0L">
                             <connections>
-                                <action selector="submitBtnAction:" destination="c10-Uj-CKz" id="AHU-yq-nmC"/>
+                                <action selector="submitBarButtonItemAction:" destination="c10-Uj-CKz" id="0QO-N6-fz8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -19,6 +19,10 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
     
     var deviceInfo:NSDictionary?
     
+    override func viewDidLoad() {
+//        println(DeviceInfo().info())
+    }
+    
     @IBAction func feedbackTextFieldEditingChanged(sender: UITextField) {
         self.submitBarButtonItem?.enabled = (self.feedbackTextField?.text != "")
     }
@@ -28,4 +32,29 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    @IBAction func submitBarButtonItemAction(sender: UIBarButtonItem) {
+        let url = NSURL(string:serverUrl)
+        let cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData
+        var request = NSMutableURLRequest(URL: url, cachePolicy: cachePolicy, timeoutInterval: 3.0)
+        request.HTTPMethod = "POST"
+        
+        let jsonObject = ["data":DeviceInfo().info()]
+        
+        if NSJSONSerialization.isValidJSONObject(jsonObject) {
+            if let data = NSJSONSerialization.dataWithJSONObject(jsonObject, options: NSJSONWritingOptions.PrettyPrinted, error: nil) {
+                let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                request.HTTPBody = jsonStr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+            }
+        }
+        
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+//            println(error)
+//            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+        }
+        
+        
+        
+    }
 }
