@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -253,24 +253,23 @@
                                     <action selector="updateStartStopBtn:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="B6d-sU-rvK"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="10" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-Yi-c1U">
-                                <rect key="frame" x="56" y="274" width="208" height="31"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRP-1p-7B2">
+                                <rect key="frame" x="58" y="288" width="204" height="39"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="204" id="Edh-9C-HqL"/>
+                                    <constraint firstAttribute="height" constant="39" id="8Ae-MD-SPn"/>
+                                    <constraint firstAttribute="width" constant="204" id="HJB-k5-7iS"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="pomoTimerSliderValueChanged:" destination="Ah7-4n-0Wa" eventType="valueChanged" id="aPA-G7-s22"/>
-                                </connections>
-                            </slider>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="YSb-5R-xUt" secondAttribute="centerX" id="7Z6-nc-Ado"/>
-                            <constraint firstAttribute="centerX" secondItem="i9v-Yi-c1U" secondAttribute="centerX" id="AYO-yX-LQD"/>
                             <constraint firstItem="Get-SO-5VL" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="Cgw-hq-i26"/>
-                            <constraint firstItem="i9v-Yi-c1U" firstAttribute="top" secondItem="Get-SO-5VL" secondAttribute="bottom" constant="30" id="L4B-7C-phn"/>
+                            <constraint firstItem="iRP-1p-7B2" firstAttribute="top" secondItem="Get-SO-5VL" secondAttribute="top" constant="206" id="Vc0-6w-bMW"/>
+                            <constraint firstAttribute="centerX" secondItem="iRP-1p-7B2" secondAttribute="centerX" id="a97-zy-Juf"/>
                             <constraint firstItem="YSb-5R-xUt" firstAttribute="centerY" secondItem="Get-SO-5VL" secondAttribute="centerY" id="cic-ZF-nV5"/>
-                            <constraint firstItem="Get-SO-5VL" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="18" id="vDq-un-iU4"/>
+                            <constraint firstItem="Get-SO-5VL" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="18" id="tNF-yQ-ha9"/>
                             <constraint firstAttribute="trailing" secondItem="Get-SO-5VL" secondAttribute="trailing" id="zrq-w9-hjP"/>
                         </constraints>
                     </view>
@@ -285,8 +284,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="giveUpBtn" destination="kLf-yO-Uje" id="cKq-b1-r4z"/>
+                        <outlet property="horizontalSVpView" destination="iRP-1p-7B2" id="8MQ-kC-fo2"/>
                         <outlet property="pomoLeftTimePicker" destination="Get-SO-5VL" id="ohQ-k5-5bT"/>
-                        <outlet property="pomoTimerSlider" destination="i9v-Yi-c1U" id="pay-dK-IDp"/>
                         <outlet property="startStopBtn" destination="YSb-5R-xUt" id="nSc-24-Z8R"/>
                     </connections>
                 </viewController>

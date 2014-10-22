@@ -25,6 +25,7 @@
 		6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28D91946F8AD00892F5D /* InfoPlist.strings */; };
 		6E1D28DD1946F8AD00892F5D /* THTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* THTests.m */; };
 		6E1D28F119472C5C00892F5D /* THPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* THPomo.m */; };
+		6E28F58419F7743900ED4218 /* ARTHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */; };
 		6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */; };
 		6E3C53F419EB4DEE00CDAB64 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C53F319EB4DEE00CDAB64 /* SettingsTableViewController.swift */; };
 		6E3C542919EB5BF200CDAB64 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C542819EB5BF200CDAB64 /* FeedbackViewController.swift */; };
@@ -72,6 +73,7 @@
 		6E1D28DC1946F8AD00892F5D /* THTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THTests.m; sourceTree = "<group>"; };
 		6E1D28EF19472C5C00892F5D /* THPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPomo.h; sourceTree = "<group>"; };
 		6E1D28F019472C5C00892F5D /* THPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPomo.m; sourceTree = "<group>"; };
+		6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARTHorizontalScrollView.swift; sourceTree = "<group>"; };
 		6E3B1DF21953D1E300F0DDE3 /* THTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTodoTableViewCell.h; sourceTree = "<group>"; };
 		6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTodoTableViewCell.m; sourceTree = "<group>"; };
 		6E3C53F319EB4DEE00CDAB64 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
 				6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */,
+				6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */,
 				6E49229B19AACAD400AB00EB /* Settings */,
 				6E10700C195668150026FA12 /* Model */,
 				6E3F6A0A1951994500BC546B /* ToDoList */,
@@ -347,6 +350,7 @@
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
 				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
 				6E3C542919EB5BF200CDAB64 /* FeedbackViewController.swift in Sources */,
+				6E28F58419F7743900ED4218 /* ARTHorizontalScrollView.swift in Sources */,
 				6E87EB4E19F4C6F300E7DAAF /* DeviceInfo.swift in Sources */,
 				6E3C53F419EB4DEE00CDAB64 /* SettingsTableViewController.swift in Sources */,
 				6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */,

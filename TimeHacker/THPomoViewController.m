@@ -11,17 +11,25 @@
 #import "PomoList.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+#import "TimeHacker-Swift.h"
+
 
 #define MINUTE (60)
+#define TATOL (55)
 #define TESTNUM (1)
 
-@interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
+@interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate, ARTHorizontalScrollViewDelegate>
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (weak, nonatomic) IBOutlet UIButton *startStopBtn;
 @property (weak, nonatomic) IBOutlet UIPickerView *pomoLeftTimePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *giveUpBtn;
-@property (weak, nonatomic) IBOutlet UISlider *pomoTimerSlider;
+//@property (weak, nonatomic) IBOutlet UISlider *pomoTimerSlider;
+
+@property (strong, nonatomic) ARTHorizontalScrollView *horizontalScrollView;
+@property (strong, nonatomic) NSArray *labelNames;
+
+@property (weak, nonatomic) IBOutlet UIView *horizontalSVpView;
 
 @property (nonatomic, strong) NSTimer *paintingTimer;
 @property (nonatomic, strong) NSArray *pomoLeftTimePickerSecondsArray;
@@ -29,7 +37,7 @@
 @property (nonatomic, strong) UILocalNotification *localNotification;
 
 
-- (void)configureView;
+//- (void)configureView;
 @end
 
 @implementation THPomoViewController
@@ -57,8 +65,18 @@
     // Update the user interface for the detail item.
     if (self.pomoItem) {
         self.navigationItem.title = [THPomo getInstance].title = [[self.pomoItem valueForKey:@"title"] description];
-        self.pomoTimerSlider.value = [THPomo getInstance].interval;
         [self.startStopBtn setTitle: @"▶︎" forState:0];
+        
+       
+        _labelNames = @[@"15", @"20", @"25", @"30", @"35", @"40", @"45", @"50", @"55"];
+        _horizontalScrollView = [[ARTHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, self.horizontalSVpView.frame.size.width, self.horizontalSVpView.frame.size.height) labelCountOnScreen:[@5 intValue] labelNames:_labelNames backgroundImageName:@"bg"];
+        
+        int idx = [_labelNames indexOfObject:[NSString stringWithFormat:@"%d", [THPomo getInstance].interval]];
+    
+        [_horizontalScrollView setIndex:idx];
+        _horizontalScrollView.delegate = self;
+        
+        [self.horizontalSVpView addSubview:_horizontalScrollView];
         
         [self stopPomoLeftTimePickerView];
     }
@@ -140,14 +158,15 @@
 
 
 #pragma mark - slider
-- (IBAction)pomoTimerSliderValueChanged:(UISlider *)sender {
-    int min = (int)sender.value;
+- (void)scrollViewDidSelected:(ARTHorizontalScrollView *)horizontalScrollView {
+    int index = [horizontalScrollView.mIndex intValue];
+    int min = [_labelNames[index] intValue];
+    
     [[THPomo getInstance] setInterval:min];
     
     [_pomoLeftTimePicker selectRow:min inComponent:0 animated:YES];
     [_pomoLeftTimePicker selectRow:min*MINUTE inComponent:1 animated:NO];
 }
-
 
 #pragma mark - pickerView
 
@@ -176,7 +195,7 @@
 -(NSInteger) pickerView:(UIPickerView*)pickerView numberOfRowsInComponent:(NSInteger)component{
     
     if ([pickerView isEqual:self.pomoLeftTimePicker]) {
-        return component==0?61:MINUTE*60+1;
+        return component==0?TATOL+1:MINUTE*TATOL+1;
     }
     return 0;
 }
@@ -301,8 +320,8 @@
 
 - (void) startCounting {
     
-    [self.pomoTimerSlider setUserInteractionEnabled:NO];
-    [self.pomoTimerSlider setAlpha:0.2];
+    [self.horizontalScrollView setUserInteractionEnabled:NO];
+    [self.horizontalScrollView setAlpha:0.2];
     
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
@@ -327,8 +346,8 @@
 
 - (void) stopCounting {
     
-    [self.pomoTimerSlider setUserInteractionEnabled:YES];
-    [self.pomoTimerSlider setAlpha:1.0];
+    [self.horizontalScrollView setUserInteractionEnabled:YES];
+    [self.horizontalScrollView setAlpha:1.0];
     
     if (self.paintingTimer != nil){
         [self.paintingTimer invalidate];
