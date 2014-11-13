@@ -10,15 +10,16 @@
 #import "THPomo.h"
 #import "PomoList.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <EventKitUI/EventKitUI.h>
 
 #import "TimeHacker-Swift.h"
 
 
 #define MINUTE (60)
 #define TATOL (55)
-#define TESTNUM (1)
+#define TESTNUM (1)*(60*5)
 
-@interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate, ARTHorizontalScrollViewDelegate>
+@interface THPomoViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate, ARTHorizontalScrollViewDelegate, EKCalendarChooserDelegate>
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (weak, nonatomic) IBOutlet UIButton *startStopBtn;
@@ -69,9 +70,9 @@
         
        
         _labelNames = @[@"15", @"20", @"25", @"30", @"35", @"40", @"45", @"50", @"55"];
-        _horizontalScrollView = [[ARTHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, self.horizontalSVpView.frame.size.width, self.horizontalSVpView.frame.size.height) labelCountOnScreen:[@5 intValue] labelNames:_labelNames backgroundImageName:@"bg"];
+        _horizontalScrollView = [[ARTHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, self.horizontalSVpView.frame.size.width, self.horizontalSVpView.frame.size.height) labelCountOnScreen:[@5 intValue] labelNames:_labelNames backgroundImageName:@""];
         
-        int idx = [_labelNames indexOfObject:[NSString stringWithFormat:@"%d", [THPomo getInstance].interval]];
+        NSInteger idx = [_labelNames indexOfObject:[NSString stringWithFormat:@"%ld", [THPomo getInstance].interval]];
     
         [_horizontalScrollView setIndex:idx];
         _horizontalScrollView.delegate = self;
@@ -127,7 +128,7 @@
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Really Give Up?" delegate:self cancelButtonTitle:[self noButtonTitle] otherButtonTitles:[self yesButtonTitle], nil];
         [alertView show];
     } else {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self popVC];
     }
 }
 
@@ -247,16 +248,38 @@
     [THPomo getInstance].state = EnumBreak;
     [THPomo getInstance].endDate = [NSDate date];
     
-    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Great!" message:@"One PomoToDo has Done!" delegate:self cancelButtonTitle:[self breakButtonTitle] otherButtonTitles:nil, nil];
-    [alertView show];
+    
+    EKCalendarChooser *cc = [[EKCalendarChooser alloc] initWithSelectionStyle:EKCalendarChooserSelectionStyleSingle displayStyle:EKCalendarChooserDisplayWritableCalendarsOnly entityType:EKEntityTypeEvent eventStore:[THPomo getInstance].eventStore];
+    cc.delegate = self;
+    cc.showsDoneButton = YES;
+    cc.showsCancelButton = YES;
+    
+    [self.navigationController pushViewController:cc animated:YES];
+    
+//    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Great!" message:@"One PomoToDo has Done!" delegate:self cancelButtonTitle:[self breakButtonTitle] otherButtonTitles:nil, nil];
+//    [alertView show];
     AudioServicesPlaySystemSound(1007);
     
     self.navigationItem.title = @"Break Time!";
     [self updatePomoLeftTimePickerView:5 rowOne:MINUTE*5];
+}
+
+- (void)calendarChooserDidFinish:(EKCalendarChooser *)calendarChooser {
+    [THPomo getInstance].calendar = [calendarChooser.selectedCalendars anyObject];
     
     if (![THPomo getInstance].insertToiCal) {
         NSLog(@"insertToiCal fall!");
     }
+    
+    [self popVC];
+}
+
+- (void)calendarChooserDidCancel:(EKCalendarChooser *)calendarChooser {
+    [self popVC];
+}
+
+- (void)popVC {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)breakToStop {

@@ -13,12 +13,12 @@
 
 @property (nonatomic, strong) NSManagedObject *managedObject;
 
-@property (nonatomic, strong) EKEventStore* eventStore;
 @property (nonatomic, strong) EKSource *calendarSource;
 
 @property (nonatomic, strong) EKCalendar *timeHackerCalendar;
 
 @property (nonatomic, readonly ,strong) NSString *pomoEntityName;
+
 
 @end
 
@@ -57,7 +57,23 @@
 # pragma mark - iCal
 
 - (BOOL)insertToiCal {
-    return [self writeEvent2iCal]?YES:NO;
+    if (_title == nil || self.startDate == nil) {
+        return NO;
+    }
+    
+    EKEvent *event = [EKEvent eventWithEventStore:self.eventStore];
+    
+    event.title = _title;
+    event.startDate = self.startDate;
+    event.endDate = _endDate = [NSDate dateWithTimeInterval:self.interval*60 sinceDate:self.startDate];
+    event.calendar = _calendar;
+    
+    NSError *err;
+    if([self.eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
+        //        NSLog(@"event.eventIdentifier: %@", event.eventIdentifier);
+    }
+    
+    return err==nil?YES:NO;
 }
 
 - (void)getAuthority {
@@ -66,7 +82,6 @@
     [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted,
                                                                     NSError *error) {
         _eventStore =  store;
-        
     }];
     
 }
@@ -108,66 +123,6 @@
     return _calendarSource;
 }
 
-- (EKCalendar *)timeHackerCalendar {
-    
-    _timeHackerCalendar = [self findCalendar:@"TimeHarker"];
-    
-    if (_timeHackerCalendar == nil) {
-        // not found & create
-        EKCalendar *calendar = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.eventStore];
-        calendar.title = @"TimeHarker";
-        calendar.source = self.calendarSource;
-        
-        NSError *error = nil;
-        if ([_eventStore saveCalendar:calendar commit:YES error:&error]) {
-            _timeHackerCalendar = [self findCalendar:@"TimeHarker"];
-        }
-    }
-    
-    return _timeHackerCalendar;
-}
-
-- (EKCalendar *)findCalendar:(NSString *)title {
-    NSSet *calendars = [self.calendarSource calendarsForEntityType:EKEntityTypeEvent];
-    
-    EKCalendar *calendar = nil;
-    for (calendar in calendars){
-        if ([calendar.title isEqualToString:title]) {
-            _timeHackerCalendar = calendar;
-            break;
-        }
-    }
-    
-    if (_timeHackerCalendar != nil) {
-        NSLog(@"findCalendar %@", title);
-    } else {
-        NSLog(@"not findCalendar %@", title);
-    }
-    
-    return _timeHackerCalendar;
-}
-
-- (BOOL)writeEvent2iCal {
-    if (_title == nil || self.startDate == nil) {
-        return NO;
-    }
-    
-    EKEvent *event = [EKEvent eventWithEventStore:self.eventStore];
-    
-    event.title = _title;
-    event.startDate = self.startDate;
-    event.endDate = _endDate = [NSDate dateWithTimeInterval:self.interval*60 sinceDate:self.startDate];
-    
-    event.calendar = self.timeHackerCalendar;
-    
-    NSError *err;
-    if([self.eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
-//        NSLog(@"event.eventIdentifier: %@", event.eventIdentifier);
-    }
-    
-    return err==nil?YES:NO;
-}
-
 #pragma mark - setter
 
 - (void)setStartDate:(NSDate *)startDate {
@@ -201,7 +156,7 @@
 }
 
 - (NSInteger)interval {
-    return [[self.managedObject valueForKey:@"interval"] intValue];
+    return [[self.managedObject valueForKey:@"interval"] integerValue];
 }
 
 - (NSManagedObject *)managedObject {
@@ -229,12 +184,12 @@
     if (newPomo != nil){
         NSError *savingError = nil;
         if ([self.managedObjectContext save:&savingError]) {
-//            NSLog(@"Successfully saved the context.");
+            //            NSLog(@"Successfully saved the context.");
         } else {
             NSLog(@"Failed to save the context. Error = %@", savingError);
         }
     } else {
-//        NSLog(@"Failed to create the new Pomo.");
+        //        NSLog(@"Failed to create the new Pomo.");
     }
     
     return newPomo;

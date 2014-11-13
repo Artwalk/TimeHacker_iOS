@@ -19,11 +19,17 @@
 @property (nonatomic) NSDate *endDate;
 @property (nonatomic) NSDate *breakDate;
 
+@property (nonatomic, strong) EKEventStore* eventStore;
+
 @property (nonatomic) NSString *title;
 // maybe add eventType later
 
 @property (nonatomic) NSInteger interval;
 @property (nonatomic) NSInteger state;
+
+@property (nonatomic, strong) EKCalendar *calendar;
+
+//@property (nonatomic, strong) UINavigationController *navigationController;
 
 typedef NS_OPTIONS(NSUInteger, EnumState)
 {
