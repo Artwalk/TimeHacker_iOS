@@ -47,7 +47,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="showPomo" id="KXq-By-4Gs"/>
+                                    <segue destination="jnn-vs-5bH" kind="modal" id="Jxb-if-gFA"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Todo" id="Mw7-k9-gH8" customClass="THTodoTableViewCell">
@@ -260,7 +260,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Get-SO-5VL">
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Get-SO-5VL">
                                 <rect key="frame" x="0.0" y="82" width="320" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="XnD-PQ-X0X"/>
@@ -270,7 +270,7 @@
                                     <outlet property="delegate" destination="Ah7-4n-0Wa" id="4Xg-Az-8tW"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSb-5R-xUt">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSb-5R-xUt">
                                 <rect key="frame" x="135" y="138" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="LPJ-p9-pDw"/>
@@ -283,7 +283,7 @@
                                     <action selector="updateStartStopBtn:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="B6d-sU-rvK"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRP-1p-7B2">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iRP-1p-7B2">
                                 <rect key="frame" x="58" y="288" width="204" height="39"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -322,6 +322,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997" y="64"/>
+        </scene>
+        <!--Circular Slider View Controller-->
+        <scene sceneID="Hnv-Qe-8G1">
+            <objects>
+                <viewController id="jnn-vs-5bH" customClass="THCircularSliderViewController" customModule="TimeHacker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kPx-6F-Yre"/>
+                        <viewControllerLayoutGuide type="bottom" id="adw-SI-93a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xf4-rn-bLz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRa-K5-Olc" customClass="ARTCircularSliderView" customModule="TimeHacker" customModuleProvider="target">
+                                <rect key="frame" x="49" y="173" width="222" height="222"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="1Ar-g9-NjZ"/>
+                                    <constraint firstAttribute="height" constant="222" id="J7B-ny-keh"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9P-Hz-Re6">
+                                <rect key="frame" x="101" y="255" width="119.5" height="57.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woH-XG-gp5">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Xz9-2P-cJ9">
+                                        <barButtonItem key="leftBarButtonItem" title="Give Up" id="xui-O9-1ci"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWj-1v-m1s" customClass="ARTCircularSliderView" customModule="TimeHacker" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="161.5" width="245" height="245"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="Nan-5x-bMT"/>
+                                    <constraint firstAttribute="height" constant="245" id="YQd-5l-Dy1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="woH-XG-gp5" firstAttribute="leading" secondItem="xf4-rn-bLz" secondAttribute="leadingMargin" constant="-16" id="4Px-tW-OgD"/>
+                            <constraint firstAttribute="centerY" secondItem="OWj-1v-m1s" secondAttribute="centerY" id="7Ce-sZ-IW7"/>
+                            <constraint firstAttribute="centerX" secondItem="hRa-K5-Olc" secondAttribute="centerX" id="Aa4-S3-F4A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="woH-XG-gp5" secondAttribute="trailing" constant="-16" id="UaH-1Q-MLZ"/>
+                            <constraint firstAttribute="centerY" secondItem="hRa-K5-Olc" secondAttribute="centerY" id="UjE-X4-Mad"/>
+                            <constraint firstAttribute="centerX" secondItem="r9P-Hz-Re6" secondAttribute="centerX" constant="-0.5" id="Y80-Ns-NgT"/>
+                            <constraint firstAttribute="centerY" secondItem="r9P-Hz-Re6" secondAttribute="centerY" id="ch3-tN-UzK"/>
+                            <constraint firstItem="woH-XG-gp5" firstAttribute="top" secondItem="kPx-6F-Yre" secondAttribute="bottom" id="kNA-LE-Nsv"/>
+                            <constraint firstAttribute="centerX" secondItem="OWj-1v-m1s" secondAttribute="centerX" id="keY-zU-Xx8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="circularSlider" destination="hRa-K5-Olc" id="TU7-gg-WyI"/>
+                        <outlet property="outsideCircularSliderView" destination="OWj-1v-m1s" id="EfT-w9-JxR"/>
+                        <outlet property="timeLabel" destination="r9P-Hz-Re6" id="VXW-Qh-zOy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mt-DH-yLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997" y="690"/>
         </scene>
     </scenes>
     <resources>

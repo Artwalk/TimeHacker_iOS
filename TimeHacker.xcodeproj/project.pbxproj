@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		6E106FFF195653470026FA12 /* Pomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E106FFE195653470026FA12 /* Pomo.m */; };
 		6E10700B1956544C0026FA12 /* PomoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E10700A1956544C0026FA12 /* PomoList.m */; };
-		6E1C63911A146FA700B69833 /* ARTCircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C63901A146FA700B69833 /* ARTCircularSlider.swift */; };
+		6E1C63911A146FA700B69833 /* ARTCircularSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C63901A146FA700B69833 /* ARTCircularSliderView.swift */; };
+		6E1C63941A14720400B69833 /* THCircularSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C63931A14720400B69833 /* THCircularSliderViewController.swift */; };
 		6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
 		6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */; };
 		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
@@ -52,7 +53,8 @@
 		6E106FFE195653470026FA12 /* Pomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pomo.m; sourceTree = "<group>"; };
 		6E1070091956544C0026FA12 /* PomoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomoList.h; sourceTree = "<group>"; };
 		6E10700A1956544C0026FA12 /* PomoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomoList.m; sourceTree = "<group>"; };
-		6E1C63901A146FA700B69833 /* ARTCircularSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARTCircularSlider.swift; sourceTree = "<group>"; };
+		6E1C63901A146FA700B69833 /* ARTCircularSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARTCircularSliderView.swift; sourceTree = "<group>"; };
+		6E1C63931A14720400B69833 /* THCircularSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCircularSliderViewController.swift; sourceTree = "<group>"; };
 		6E1D28A81946F8AC00892F5D /* TimeHacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeHacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1D28AB1946F8AC00892F5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +130,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		6E1C63921A14709F00B69833 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */,
+				6E1C63901A146FA700B69833 /* ARTCircularSliderView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		6E1D289F1946F8AC00892F5D = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +180,8 @@
 				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
 				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
 				6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */,
-				6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */,
 				6E49229B19AACAD400AB00EB /* Settings */,
+				6E1C63921A14709F00B69833 /* View */,
 				6E10700C195668150026FA12 /* Model */,
 				6E3F6A0A1951994500BC546B /* ToDoList */,
 				6E3F6A0C1951998100BC546B /* PomoToDo */,
@@ -230,7 +241,7 @@
 		6E3F6A0C1951998100BC546B /* PomoToDo */ = {
 			isa = PBXGroup;
 			children = (
-				6E1C63901A146FA700B69833 /* ARTCircularSlider.swift */,
+				6E1C63931A14720400B69833 /* THCircularSliderViewController.swift */,
 				6E1D28C61946F8AD00892F5D /* THPomoViewController.h */,
 				6E1D28C71946F8AD00892F5D /* THPomoViewController.m */,
 				6E1D28EF19472C5C00892F5D /* THPomo.h */,
@@ -351,9 +362,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E106FFF195653470026FA12 /* Pomo.m in Sources */,
+				6E1C63941A14720400B69833 /* THCircularSliderViewController.swift in Sources */,
 				6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */,
 				6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */,
-				6E1C63911A146FA700B69833 /* ARTCircularSlider.swift in Sources */,
+				6E1C63911A146FA700B69833 /* ARTCircularSliderView.swift in Sources */,
 				6E10700B1956544C0026FA12 /* PomoList.m in Sources */,
 				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
 				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
