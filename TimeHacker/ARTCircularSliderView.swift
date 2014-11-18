@@ -17,22 +17,20 @@ class ARTCircularSliderView : UIControl {
     
     var delegate:ARTCircularSliderViewDelegate!
     
-    var _lineWidth = CGFloat(13)
-    let _unfilledColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-    let _filledColor = UIColor.blueColor()
+    var lineWidth = CGFloat(13)
+    let unfilledColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+    let filledColor = UIColor.blueColor()
 
-    var _centerPoint:CGPoint!
-    var _halfHeight:CGFloat!
-    var _halfWidth:CGFloat!
-    var _radius:CGFloat!
+    var centerPoint:CGPoint!
+    var halfHeight:CGFloat!
+    var halfWidth:CGFloat!
+    var radius:CGFloat!
     
-    let _maximumValue:CGFloat = 60.0
-    let _minimumValue:CGFloat = 0.0
+    let maximumValue:CGFloat = 60.0*60.0
+    let minimumValue:CGFloat = 0.0
     
-    var _fixedAngle:CGFloat!
-    
-    var _angle:CGFloat = 0
-    var _curValue:CGFloat!
+    var angle:CGFloat = 0
+    var curValue:CGFloat!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,27 +46,27 @@ class ARTCircularSliderView : UIControl {
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        _radius = _halfWidth - _lineWidth/2
+        radius = halfWidth - lineWidth/2
         
         var ctx = UIGraphicsGetCurrentContext()
-        CGContextAddArc(ctx, _halfWidth, _halfHeight, _radius, 0, CGFloat(M_PI*2), 0)
-        drawCircle(ctx, color: _unfilledColor)
+        CGContextAddArc(ctx, halfWidth, halfHeight, radius, 0, CGFloat(M_PI*2), 0)
+        drawCircle(ctx, color: unfilledColor)
         
-        CGContextAddArc(ctx, _halfWidth, _halfHeight, _radius, CGFloat(M_PI*3/2), CGFloat(3*M_PI/2)-toRad(_angle), 0)
-        drawCircle(ctx, color: _filledColor)
+        CGContextAddArc(ctx, halfWidth, halfHeight, radius, CGFloat(M_PI*3/2), CGFloat(3*M_PI/2)-toRad(angle), 0)
+        drawCircle(ctx, color: filledColor)
     }
     
     func configView () {
         let size = frame.size
-        _halfHeight = size.height/2
-        _halfWidth = size.width/2
-        _centerPoint = CGPointMake(_halfWidth, _halfHeight)
+        halfHeight = size.height/2
+        halfWidth = size.width/2
+        centerPoint = CGPointMake(halfWidth, halfHeight)
         backgroundColor = UIColor.clearColor()
     }
     
     func drawCircle (ctx:CGContextRef, color:UIColor  ) {
         color.setStroke()
-        CGContextSetLineWidth(ctx, _lineWidth)
+        CGContextSetLineWidth(ctx, lineWidth)
         CGContextSetLineCap(ctx, kCGLineCapButt)
         CGContextDrawPath(ctx, kCGPathStroke)
     }
@@ -95,10 +93,16 @@ class ARTCircularSliderView : UIControl {
         
     }
     
+    func setCurValue(value:Double) {
+        curValue = CGFloat(value)
+        angleFromValue()
+        self.setNeedsDisplay()
+    }
+    
     func moveHandle(point:CGPoint) {
-        var curAngle = floor(angleFromNorth(_centerPoint, p2: point, angle: false))
-        _angle = CGFloat(360-90) - curAngle
-        _curValue = valueFromAngle()
+        var curAngle = floor(angleFromNorth(centerPoint, p2: point, angle: false))
+        angle = CGFloat(360-90) - curAngle
+        curValue = valueFromAngle()
         self.setNeedsDisplay()
     }
     
@@ -115,10 +119,16 @@ class ARTCircularSliderView : UIControl {
     }
     
     func valueFromAngle() -> CGFloat {
-        _curValue =  _angle < 0 ? -_angle : (270 + 90 - _angle)
-        _fixedAngle = _curValue
+        curValue =  angle < 0 ? -angle : (270 + 90 - angle)
         
-        return (_curValue * (_maximumValue - _minimumValue))/CGFloat(360)
+        return (curValue * (maximumValue - minimumValue))/CGFloat(360)
+    }
+    
+    func angleFromValue() -> CGFloat {
+        angle =  curValue * CGFloat(360)/(maximumValue - minimumValue)
+        angle = angle>180 ?  -angle : 360 - angle
+    
+        return angle
     }
     
     func toDeg(v:CGFloat) -> CGFloat {

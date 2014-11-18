@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -47,7 +47,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jnn-vs-5bH" kind="modal" id="Jxb-if-gFA"/>
+                                    <segue destination="iO8-dl-LNT" kind="modal" id="Jxb-if-gFA"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Todo" id="Mw7-k9-gH8" customClass="THTodoTableViewCell">
@@ -343,42 +343,53 @@
                                     <constraint firstAttribute="height" constant="222" id="J7B-ny-keh"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9P-Hz-Re6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9P-Hz-Re6">
                                 <rect key="frame" x="101" y="255" width="119.5" height="57.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woH-XG-gp5">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="Xz9-2P-cJ9">
-                                        <barButtonItem key="leftBarButtonItem" title="Give Up" id="xui-O9-1ci"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWj-1v-m1s" customClass="ARTCircularSliderView" customModule="TimeHacker" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="161.5" width="245" height="245"/>
+                                <rect key="frame" x="37" y="161" width="245" height="245"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="245" id="Nan-5x-bMT"/>
                                     <constraint firstAttribute="height" constant="245" id="YQd-5l-Dy1"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNo-7G-ktj">
+                                <rect key="frame" x="96" y="220" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="SvY-hp-p9A"/>
+                                    <constraint firstAttribute="width" constant="128" id="wpA-pX-2Pj"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startBtn:" destination="jnn-vs-5bH" eventType="touchUpInside" id="EZq-xC-fS2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="woH-XG-gp5" firstAttribute="leading" secondItem="xf4-rn-bLz" secondAttribute="leadingMargin" constant="-16" id="4Px-tW-OgD"/>
                             <constraint firstAttribute="centerY" secondItem="OWj-1v-m1s" secondAttribute="centerY" id="7Ce-sZ-IW7"/>
                             <constraint firstAttribute="centerX" secondItem="hRa-K5-Olc" secondAttribute="centerX" id="Aa4-S3-F4A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="woH-XG-gp5" secondAttribute="trailing" constant="-16" id="UaH-1Q-MLZ"/>
                             <constraint firstAttribute="centerY" secondItem="hRa-K5-Olc" secondAttribute="centerY" id="UjE-X4-Mad"/>
+                            <constraint firstItem="OWj-1v-m1s" firstAttribute="centerY" secondItem="KNo-7G-ktj" secondAttribute="centerY" id="XF2-zP-lWd"/>
                             <constraint firstAttribute="centerX" secondItem="r9P-Hz-Re6" secondAttribute="centerX" constant="-0.5" id="Y80-Ns-NgT"/>
                             <constraint firstAttribute="centerY" secondItem="r9P-Hz-Re6" secondAttribute="centerY" id="ch3-tN-UzK"/>
-                            <constraint firstItem="woH-XG-gp5" firstAttribute="top" secondItem="kPx-6F-Yre" secondAttribute="bottom" id="kNA-LE-Nsv"/>
+                            <constraint firstItem="OWj-1v-m1s" firstAttribute="centerX" secondItem="KNo-7G-ktj" secondAttribute="centerX" id="eSF-qa-AlU"/>
                             <constraint firstAttribute="centerX" secondItem="OWj-1v-m1s" secondAttribute="centerX" id="keY-zU-Xx8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FOp-sO-OWH">
+                        <barButtonItem key="leftBarButtonItem" title="Give Up" id="xui-O9-1ci">
+                            <connections>
+                                <action selector="giveUpBarButtonItemAction:" destination="jnn-vs-5bH" id="kNc-H7-u1f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="circularSlider" destination="hRa-K5-Olc" id="TU7-gg-WyI"/>
                         <outlet property="outsideCircularSliderView" destination="OWj-1v-m1s" id="EfT-w9-JxR"/>
@@ -386,6 +397,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mt-DH-yLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1529" y="690"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h2p-jt-9yc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iO8-dl-LNT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Mk-TX-0RB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jnn-vs-5bH" kind="relationship" relationship="rootViewController" id="KYw-k4-iRC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pim-9B-Hc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997" y="690"/>
         </scene>

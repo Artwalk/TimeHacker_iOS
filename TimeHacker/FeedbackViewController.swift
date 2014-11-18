@@ -10,8 +10,11 @@ import UIKit
 
 class FeedbackViewController: UIViewController, UITextFieldDelegate {
     
-//    let serverUrl = "http://timehacker.ahorn.me/feedback"
+    #if DEBUG
     let serverUrl = "http://127.0.0.1:8001/feedback"
+    #else
+    let serverUrl = "http://timehacker.ahorn.me/feedback"
+    #endif
     
     @IBOutlet weak var feedbackTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
