@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "THAppDelegate.h"
+#import "TimeHacker-Swift.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([THAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

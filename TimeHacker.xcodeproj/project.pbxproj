@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0A2BB61A55E24C00E2914D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0A2BB51A55E24C00E2914D /* LaunchScreen.xib */; };
+		6E0A2BEB1A55EC5300E2914D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2BEA1A55EC5300E2914D /* AppDelegate.swift */; };
+		6E0A2BEF1A55EE5C00E2914D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E0A2BEC1A55EE5C00E2914D /* InfoPlist.strings */; };
+		6E0A2BF01A55EE5C00E2914D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2BED1A55EE5C00E2914D /* main.m */; };
 		6E106FFF195653470026FA12 /* Pomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E106FFE195653470026FA12 /* Pomo.m */; };
 		6E10700B1956544C0026FA12 /* PomoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E10700A1956544C0026FA12 /* PomoList.m */; };
 		6E1C63911A146FA700B69833 /* ARTCircularSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C63901A146FA700B69833 /* ARTCircularSliderView.swift */; };
@@ -14,9 +18,6 @@
 		6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
 		6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */; };
 		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
-		6E1D28B61946F8AC00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28B41946F8AC00892F5D /* InfoPlist.strings */; };
-		6E1D28B81946F8AC00892F5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28B71946F8AC00892F5D /* main.m */; };
-		6E1D28BC1946F8AD00892F5D /* THAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */; };
 		6E1D28BF1946F8AD00892F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28BD1946F8AD00892F5D /* Main.storyboard */; };
 		6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */; };
 		6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C71946F8AD00892F5D /* THPomoViewController.m */; };
@@ -49,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0A2BB51A55E24C00E2914D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		6E0A2BEA1A55EC5300E2914D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6E0A2BEC1A55EE5C00E2914D /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		6E0A2BED1A55EE5C00E2914D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E0A2BEE1A55EE5C00E2914D /* TimeHacker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TimeHacker-Prefix.pch"; sourceTree = "<group>"; };
 		6E106FFD195653470026FA12 /* Pomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomo.h; sourceTree = "<group>"; };
 		6E106FFE195653470026FA12 /* Pomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pomo.m; sourceTree = "<group>"; };
 		6E1070091956544C0026FA12 /* PomoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomoList.h; sourceTree = "<group>"; };
@@ -60,11 +66,6 @@
 		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6E1D28AF1946F8AC00892F5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E1D28B31946F8AC00892F5D /* TimeHacker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeHacker-Info.plist"; sourceTree = "<group>"; };
-		6E1D28B51946F8AC00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6E1D28B71946F8AC00892F5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6E1D28B91946F8AC00892F5D /* TimeHacker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeHacker-Prefix.pch"; sourceTree = "<group>"; };
-		6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAppDelegate.h; sourceTree = "<group>"; };
-		6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAppDelegate.m; sourceTree = "<group>"; };
 		6E1D28BE1946F8AD00892F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E1D28C31946F8AD00892F5D /* THTodoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THTodoListViewController.h; sourceTree = "<group>"; };
 		6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THTodoListViewController.m; sourceTree = "<group>"; };
@@ -176,10 +177,11 @@
 			isa = PBXGroup;
 			children = (
 				6E3E258F19AC20A700A29BAC /* iPad */,
-				6E1D28BA1946F8AC00892F5D /* THAppDelegate.h */,
-				6E1D28BB1946F8AD00892F5D /* THAppDelegate.m */,
+				6E0A2BEA1A55EC5300E2914D /* AppDelegate.swift */,
+				6E3C542A19EB5C6F00CDAB64 /* TimeHacker-Bridging-Header.h */,
 				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
 				6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */,
+				6E0A2BB51A55E24C00E2914D /* LaunchScreen.xib */,
 				6E49229B19AACAD400AB00EB /* Settings */,
 				6E1C63921A14709F00B69833 /* View */,
 				6E10700C195668150026FA12 /* Model */,
@@ -195,9 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				6E1D28B31946F8AC00892F5D /* TimeHacker-Info.plist */,
-				6E1D28B41946F8AC00892F5D /* InfoPlist.strings */,
-				6E1D28B71946F8AC00892F5D /* main.m */,
-				6E1D28B91946F8AC00892F5D /* TimeHacker-Prefix.pch */,
+				6E0A2BEC1A55EE5C00E2914D /* InfoPlist.strings */,
+				6E0A2BED1A55EE5C00E2914D /* main.m */,
+				6E0A2BEE1A55EE5C00E2914D /* TimeHacker-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,7 +255,6 @@
 		6E49229B19AACAD400AB00EB /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				6E3C542A19EB5C6F00CDAB64 /* TimeHacker-Bridging-Header.h */,
 				6E3C53F319EB4DEE00CDAB64 /* SettingsTableViewController.swift */,
 				6E3C542819EB5BF200CDAB64 /* FeedbackViewController.swift */,
 			);
@@ -340,9 +341,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0A2BB61A55E24C00E2914D /* LaunchScreen.xib in Resources */,
+				6E0A2BEF1A55EE5C00E2914D /* InfoPlist.strings in Resources */,
 				6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */,
 				6E1D28BF1946F8AD00892F5D /* Main.storyboard in Resources */,
-				6E1D28B61946F8AC00892F5D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,15 +369,15 @@
 				6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */,
 				6E1C63911A146FA700B69833 /* ARTCircularSliderView.swift in Sources */,
 				6E10700B1956544C0026FA12 /* PomoList.m in Sources */,
-				6E1D28B81946F8AC00892F5D /* main.m in Sources */,
+				6E0A2BF01A55EE5C00E2914D /* main.m in Sources */,
 				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
+				6E0A2BEB1A55EC5300E2914D /* AppDelegate.swift in Sources */,
 				6E3C542919EB5BF200CDAB64 /* FeedbackViewController.swift in Sources */,
 				6E28F58419F7743900ED4218 /* ARTHorizontalScrollView.swift in Sources */,
 				6E87EB4E19F4C6F300E7DAAF /* DeviceInfo.swift in Sources */,
 				6E3C53F419EB4DEE00CDAB64 /* SettingsTableViewController.swift in Sources */,
 				6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */,
 				6E1D28F119472C5C00892F5D /* THPomo.m in Sources */,
-				6E1D28BC1946F8AD00892F5D /* THAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,14 +400,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6E1D28B41946F8AC00892F5D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E1D28B51946F8AC00892F5D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		6E1D28BD1946F8AD00892F5D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -457,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -508,7 +502,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimeHacker/TimeHacker-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TimeHacker/TimeHacker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeHacker;
 				PROVISIONING_PROFILE = "";
@@ -530,7 +524,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimeHacker/TimeHacker-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TimeHacker/TimeHacker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeHacker;
 				PROVISIONING_PROFILE = "";
