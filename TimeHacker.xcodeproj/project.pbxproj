@@ -37,6 +37,9 @@
 		6E87EB4E19F4C6F300E7DAAF /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */; };
 		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
 		6EE41FCF1A10C42400B91183 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE41FCE1A10C42400B91183 /* EventKitUI.framework */; };
+		6EFFE0441A580FC800AA2B3C /* THCalenderAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0431A580FC800AA2B3C /* THCalenderAnalysis.swift */; };
+		6EFFE0461A5886F300AA2B3C /* THDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0451A5886F300AA2B3C /* THDatePickerViewController.swift */; };
+		6EFFE0481A58A08300AA2B3C /* THAnalysisResultTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0471A58A08300AA2B3C /* THAnalysisResultTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		6EE41FCE1A10C42400B91183 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		6EFFE0431A580FC800AA2B3C /* THCalenderAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCalenderAnalysis.swift; sourceTree = "<group>"; };
+		6EFFE0451A5886F300AA2B3C /* THDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THDatePickerViewController.swift; sourceTree = "<group>"; };
+		6EFFE0471A58A08300AA2B3C /* THAnalysisResultTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THAnalysisResultTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,7 @@
 				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
 				6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */,
 				6E0A2BB51A55E24C00E2914D /* LaunchScreen.xib */,
+				6EFFE0421A580F4D00AA2B3C /* CalenderAnalysis */,
 				6E49229B19AACAD400AB00EB /* Settings */,
 				6E1C63921A14709F00B69833 /* View */,
 				6E10700C195668150026FA12 /* Model */,
@@ -259,6 +266,16 @@
 				6E3C542819EB5BF200CDAB64 /* FeedbackViewController.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		6EFFE0421A580F4D00AA2B3C /* CalenderAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				6EFFE0431A580FC800AA2B3C /* THCalenderAnalysis.swift */,
+				6EFFE0451A5886F300AA2B3C /* THDatePickerViewController.swift */,
+				6EFFE0471A58A08300AA2B3C /* THAnalysisResultTVC.swift */,
+			);
+			name = CalenderAnalysis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFFE0441A580FC800AA2B3C /* THCalenderAnalysis.swift in Sources */,
 				6E106FFF195653470026FA12 /* Pomo.m in Sources */,
 				6E1C63941A14720400B69833 /* THCircularSliderViewController.swift in Sources */,
 				6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */,
@@ -372,12 +390,14 @@
 				6E0A2BF01A55EE5C00E2914D /* main.m in Sources */,
 				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
 				6E0A2BEB1A55EC5300E2914D /* AppDelegate.swift in Sources */,
+				6EFFE0481A58A08300AA2B3C /* THAnalysisResultTVC.swift in Sources */,
 				6E3C542919EB5BF200CDAB64 /* FeedbackViewController.swift in Sources */,
 				6E28F58419F7743900ED4218 /* ARTHorizontalScrollView.swift in Sources */,
 				6E87EB4E19F4C6F300E7DAAF /* DeviceInfo.swift in Sources */,
 				6E3C53F419EB4DEE00CDAB64 /* SettingsTableViewController.swift in Sources */,
 				6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */,
 				6E1D28F119472C5C00892F5D /* THPomo.m in Sources */,
+				6EFFE0461A5886F300AA2B3C /* THDatePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

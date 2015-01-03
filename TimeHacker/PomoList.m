@@ -1,5 +1,5 @@
 //
-//  ICALPomoItem.m
+//  PomoItem.m
 //  TimeHacker
 //
 //  Created by artwalk on 6/22/14.
