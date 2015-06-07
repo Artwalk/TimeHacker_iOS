@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
+               BlueprintIdentifier = "6EA33EB01B241DE100ACA79E"
                BuildableName = "TimeHacker.app"
                BlueprintName = "TimeHacker"
+               ReferencedContainer = "container:TimeHacker.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6EA33EC51B241DE100ACA79E"
+               BuildableName = "TimeHackerTests.xctest"
+               BlueprintName = "TimeHackerTests"
                ReferencedContainer = "container:TimeHacker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,11 +42,21 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6EA33EC51B241DE100ACA79E"
+               BuildableName = "TimeHackerTests.xctest"
+               BlueprintName = "TimeHackerTests"
+               ReferencedContainer = "container:TimeHacker.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
+            BlueprintIdentifier = "6EA33EB01B241DE100ACA79E"
             BuildableName = "TimeHacker.app"
             BlueprintName = "TimeHacker"
             ReferencedContainer = "container:TimeHacker.xcodeproj">
@@ -48,10 +72,11 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
+            BlueprintIdentifier = "6EA33EB01B241DE100ACA79E"
             BuildableName = "TimeHacker.app"
             BlueprintName = "TimeHacker"
             ReferencedContainer = "container:TimeHacker.xcodeproj">
@@ -66,10 +91,11 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E1D28A71946F8AC00892F5D"
+            BlueprintIdentifier = "6EA33EB01B241DE100ACA79E"
             BuildableName = "TimeHacker.app"
             BlueprintName = "TimeHacker"
             ReferencedContainer = "container:TimeHacker.xcodeproj">

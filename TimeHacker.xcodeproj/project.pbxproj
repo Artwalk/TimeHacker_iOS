@@ -7,334 +7,174 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E0A2BB61A55E24C00E2914D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0A2BB51A55E24C00E2914D /* LaunchScreen.xib */; };
-		6E0A2BEB1A55EC5300E2914D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2BEA1A55EC5300E2914D /* AppDelegate.swift */; };
-		6E0A2BEF1A55EE5C00E2914D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E0A2BEC1A55EE5C00E2914D /* InfoPlist.strings */; };
-		6E0A2BF01A55EE5C00E2914D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A2BED1A55EE5C00E2914D /* main.m */; };
-		6E106FFF195653470026FA12 /* Pomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E106FFE195653470026FA12 /* Pomo.m */; };
-		6E10700B1956544C0026FA12 /* PomoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E10700A1956544C0026FA12 /* PomoList.m */; };
-		6E1C63911A146FA700B69833 /* ARTCircularSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C63901A146FA700B69833 /* ARTCircularSliderView.swift */; };
-		6E1C63941A14720400B69833 /* THCircularSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C63931A14720400B69833 /* THCircularSliderViewController.swift */; };
-		6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
-		6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */; };
-		6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
-		6E1D28BF1946F8AD00892F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28BD1946F8AD00892F5D /* Main.storyboard */; };
-		6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */; };
-		6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28C71946F8AD00892F5D /* THPomoViewController.m */; };
-		6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28C91946F8AD00892F5D /* Images.xcassets */; };
-		6E1D28D11946F8AD00892F5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28D01946F8AD00892F5D /* XCTest.framework */; };
-		6E1D28D21946F8AD00892F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AB1946F8AC00892F5D /* Foundation.framework */; };
-		6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1D28AF1946F8AC00892F5D /* UIKit.framework */; };
-		6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E1D28D91946F8AD00892F5D /* InfoPlist.strings */; };
-		6E1D28DD1946F8AD00892F5D /* THTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28DC1946F8AD00892F5D /* THTests.m */; };
-		6E1D28F119472C5C00892F5D /* THPomo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D28F019472C5C00892F5D /* THPomo.m */; };
-		6E28F58419F7743900ED4218 /* ARTHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */; };
-		6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */; };
-		6E3C53F419EB4DEE00CDAB64 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C53F319EB4DEE00CDAB64 /* SettingsTableViewController.swift */; };
-		6E3C542919EB5BF200CDAB64 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C542819EB5BF200CDAB64 /* FeedbackViewController.swift */; };
-		6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */; };
-		6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3F6A131951BF2800BC546B /* CoreData.framework */; };
-		6E87EB4E19F4C6F300E7DAAF /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */; };
-		6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4EF081953DDC500D63AEC /* EventKit.framework */; };
-		6EE41FCF1A10C42400B91183 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE41FCE1A10C42400B91183 /* EventKitUI.framework */; };
-		6EFFE0441A580FC800AA2B3C /* THCalenderAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0431A580FC800AA2B3C /* THCalenderAnalysis.swift */; };
-		6EFFE0461A5886F300AA2B3C /* THDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0451A5886F300AA2B3C /* THDatePickerViewController.swift */; };
-		6EFFE0481A58A08300AA2B3C /* THAnalysisResultTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0471A58A08300AA2B3C /* THAnalysisResultTVC.swift */; };
+		6EA33EB71B241DE100ACA79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA33EB61B241DE100ACA79E /* AppDelegate.swift */; };
+		6EA33EB91B241DE100ACA79E /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA33EB81B241DE100ACA79E /* TimerVC.swift */; };
+		6EA33EBC1B241DE100ACA79E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA33EBA1B241DE100ACA79E /* Main.storyboard */; };
+		6EA33EBE1B241DE100ACA79E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA33EBD1B241DE100ACA79E /* Images.xcassets */; };
+		6EA33EC11B241DE100ACA79E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EA33EBF1B241DE100ACA79E /* LaunchScreen.xib */; };
+		6EA33ECD1B241DE100ACA79E /* TimeHackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA33ECC1B241DE100ACA79E /* TimeHackerTests.swift */; };
+		6EA33ED71B241F6800ACA79E /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA33ED61B241F6800ACA79E /* TimerVM.swift */; };
+		6EA33ED91B24241200ACA79E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA33ED81B24241200ACA79E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6E1D28D41946F8AD00892F5D /* PBXContainerItemProxy */ = {
+		6EA33EC71B241DE100ACA79E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6E1D28A01946F8AC00892F5D /* Project object */;
+			containerPortal = 6EA33EA91B241DE100ACA79E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6E1D28A71946F8AC00892F5D;
-			remoteInfo = iCaleminder_iOS;
+			remoteGlobalIDString = 6EA33EB01B241DE100ACA79E;
+			remoteInfo = TimeHacker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E0A2BB51A55E24C00E2914D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		6E0A2BEA1A55EC5300E2914D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E0A2BEC1A55EE5C00E2914D /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
-		6E0A2BED1A55EE5C00E2914D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6E0A2BEE1A55EE5C00E2914D /* TimeHacker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TimeHacker-Prefix.pch"; sourceTree = "<group>"; };
-		6E106FFD195653470026FA12 /* Pomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pomo.h; sourceTree = "<group>"; };
-		6E106FFE195653470026FA12 /* Pomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pomo.m; sourceTree = "<group>"; };
-		6E1070091956544C0026FA12 /* PomoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PomoList.h; sourceTree = "<group>"; };
-		6E10700A1956544C0026FA12 /* PomoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PomoList.m; sourceTree = "<group>"; };
-		6E1C63901A146FA700B69833 /* ARTCircularSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARTCircularSliderView.swift; sourceTree = "<group>"; };
-		6E1C63931A14720400B69833 /* THCircularSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCircularSliderViewController.swift; sourceTree = "<group>"; };
-		6E1D28A81946F8AC00892F5D /* TimeHacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeHacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E1D28AB1946F8AC00892F5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6E1D28AF1946F8AC00892F5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6E1D28B31946F8AC00892F5D /* TimeHacker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeHacker-Info.plist"; sourceTree = "<group>"; };
-		6E1D28BE1946F8AD00892F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6E1D28C31946F8AD00892F5D /* THTodoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THTodoListViewController.h; sourceTree = "<group>"; };
-		6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THTodoListViewController.m; sourceTree = "<group>"; };
-		6E1D28C61946F8AD00892F5D /* THPomoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THPomoViewController.h; sourceTree = "<group>"; };
-		6E1D28C71946F8AD00892F5D /* THPomoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THPomoViewController.m; sourceTree = "<group>"; };
-		6E1D28C91946F8AD00892F5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6E1D28CF1946F8AD00892F5D /* TimeHackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeHackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E1D28D01946F8AD00892F5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6E1D28D81946F8AD00892F5D /* TimeHackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeHackerTests-Info.plist"; sourceTree = "<group>"; };
-		6E1D28DA1946F8AD00892F5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6E1D28DC1946F8AD00892F5D /* THTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THTests.m; sourceTree = "<group>"; };
-		6E1D28EF19472C5C00892F5D /* THPomo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPomo.h; sourceTree = "<group>"; };
-		6E1D28F019472C5C00892F5D /* THPomo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPomo.m; sourceTree = "<group>"; };
-		6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARTHorizontalScrollView.swift; sourceTree = "<group>"; };
-		6E3B1DF21953D1E300F0DDE3 /* THTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTodoTableViewCell.h; sourceTree = "<group>"; };
-		6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTodoTableViewCell.m; sourceTree = "<group>"; };
-		6E3C53F319EB4DEE00CDAB64 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		6E3C542819EB5BF200CDAB64 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
-		6E3C542A19EB5C6F00CDAB64 /* TimeHacker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeHacker-Bridging-Header.h"; sourceTree = "<group>"; };
-		6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = THPomoModel.xcdatamodel; sourceTree = "<group>"; };
-		6E3F6A131951BF2800BC546B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
-		6EC4EF081953DDC500D63AEC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		6EE41FCE1A10C42400B91183 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		6EFFE0431A580FC800AA2B3C /* THCalenderAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCalenderAnalysis.swift; sourceTree = "<group>"; };
-		6EFFE0451A5886F300AA2B3C /* THDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THDatePickerViewController.swift; sourceTree = "<group>"; };
-		6EFFE0471A58A08300AA2B3C /* THAnalysisResultTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THAnalysisResultTVC.swift; sourceTree = "<group>"; };
+		6EA33EB11B241DE100ACA79E /* TimeHacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeHacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA33EB51B241DE100ACA79E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EA33EB61B241DE100ACA79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6EA33EB81B241DE100ACA79E /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
+		6EA33EBB1B241DE100ACA79E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6EA33EBD1B241DE100ACA79E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6EA33EC01B241DE100ACA79E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6EA33EC61B241DE100ACA79E /* TimeHackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeHackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA33ECB1B241DE100ACA79E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EA33ECC1B241DE100ACA79E /* TimeHackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHackerTests.swift; sourceTree = "<group>"; };
+		6EA33ED61B241F6800ACA79E /* TimerVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
+		6EA33ED81B24241200ACA79E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6E1D28A51946F8AC00892F5D /* Frameworks */ = {
+		6EA33EAE1B241DE100ACA79E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE41FCF1A10C42400B91183 /* EventKitUI.framework in Frameworks */,
-				6EC4EF091953DDC500D63AEC /* EventKit.framework in Frameworks */,
-				6E3F6A141951BF2800BC546B /* CoreData.framework in Frameworks */,
-				6E1D28AE1946F8AC00892F5D /* CoreGraphics.framework in Frameworks */,
-				6E1D28B01946F8AC00892F5D /* UIKit.framework in Frameworks */,
-				6E1D28AC1946F8AC00892F5D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E1D28CC1946F8AD00892F5D /* Frameworks */ = {
+		6EA33EC31B241DE100ACA79E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1D28D11946F8AD00892F5D /* XCTest.framework in Frameworks */,
-				6E1D28D31946F8AD00892F5D /* UIKit.framework in Frameworks */,
-				6E1D28D21946F8AD00892F5D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E10700C195668150026FA12 /* Model */ = {
+		6EA33EA81B241DE100ACA79E = {
 			isa = PBXGroup;
 			children = (
-				6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */,
-				6E1070091956544C0026FA12 /* PomoList.h */,
-				6E10700A1956544C0026FA12 /* PomoList.m */,
-				6E106FFD195653470026FA12 /* Pomo.h */,
-				6E106FFE195653470026FA12 /* Pomo.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		6E1C63921A14709F00B69833 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6E28F58319F7743900ED4218 /* ARTHorizontalScrollView.swift */,
-				6E1C63901A146FA700B69833 /* ARTCircularSliderView.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		6E1D289F1946F8AC00892F5D = {
-			isa = PBXGroup;
-			children = (
-				6E1D28B11946F8AC00892F5D /* TimeHacker */,
-				6E1D28D61946F8AD00892F5D /* TimeHackerTests */,
-				6E1D28AA1946F8AC00892F5D /* Frameworks */,
-				6E1D28A91946F8AC00892F5D /* Products */,
+				6EA33EB31B241DE100ACA79E /* TimeHacker */,
+				6EA33EC91B241DE100ACA79E /* TimeHackerTests */,
+				6EA33EB21B241DE100ACA79E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6E1D28A91946F8AC00892F5D /* Products */ = {
+		6EA33EB21B241DE100ACA79E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28A81946F8AC00892F5D /* TimeHacker.app */,
-				6E1D28CF1946F8AD00892F5D /* TimeHackerTests.xctest */,
+				6EA33EB11B241DE100ACA79E /* TimeHacker.app */,
+				6EA33EC61B241DE100ACA79E /* TimeHackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6E1D28AA1946F8AC00892F5D /* Frameworks */ = {
+		6EA33EB31B241DE100ACA79E /* TimeHacker */ = {
 			isa = PBXGroup;
 			children = (
-				6EE41FCE1A10C42400B91183 /* EventKitUI.framework */,
-				6EC4EF081953DDC500D63AEC /* EventKit.framework */,
-				6E3F6A131951BF2800BC546B /* CoreData.framework */,
-				6E1D28AB1946F8AC00892F5D /* Foundation.framework */,
-				6E1D28AD1946F8AC00892F5D /* CoreGraphics.framework */,
-				6E1D28AF1946F8AC00892F5D /* UIKit.framework */,
-				6E1D28D01946F8AD00892F5D /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6E1D28B11946F8AC00892F5D /* TimeHacker */ = {
-			isa = PBXGroup;
-			children = (
-				6E3E258F19AC20A700A29BAC /* iPad */,
-				6E0A2BEA1A55EC5300E2914D /* AppDelegate.swift */,
-				6E3C542A19EB5C6F00CDAB64 /* TimeHacker-Bridging-Header.h */,
-				6E1D28BD1946F8AD00892F5D /* Main.storyboard */,
-				6E87EB4D19F4C6F300E7DAAF /* DeviceInfo.swift */,
-				6E0A2BB51A55E24C00E2914D /* LaunchScreen.xib */,
-				6EFFE0421A580F4D00AA2B3C /* CalenderAnalysis */,
-				6E49229B19AACAD400AB00EB /* Settings */,
-				6E1C63921A14709F00B69833 /* View */,
-				6E10700C195668150026FA12 /* Model */,
-				6E3F6A0A1951994500BC546B /* ToDoList */,
-				6E3F6A0C1951998100BC546B /* PomoToDo */,
-				6E1D28C91946F8AD00892F5D /* Images.xcassets */,
-				6E1D28B21946F8AC00892F5D /* Supporting Files */,
+				6EA33EB61B241DE100ACA79E /* AppDelegate.swift */,
+				6EA33EB81B241DE100ACA79E /* TimerVC.swift */,
+				6EA33ED61B241F6800ACA79E /* TimerVM.swift */,
+				6EA33ED81B24241200ACA79E /* Extensions.swift */,
+				6EA33EBA1B241DE100ACA79E /* Main.storyboard */,
+				6EA33EBD1B241DE100ACA79E /* Images.xcassets */,
+				6EA33EBF1B241DE100ACA79E /* LaunchScreen.xib */,
+				6EA33EB41B241DE100ACA79E /* Supporting Files */,
 			);
 			path = TimeHacker;
 			sourceTree = "<group>";
 		};
-		6E1D28B21946F8AC00892F5D /* Supporting Files */ = {
+		6EA33EB41B241DE100ACA79E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28B31946F8AC00892F5D /* TimeHacker-Info.plist */,
-				6E0A2BEC1A55EE5C00E2914D /* InfoPlist.strings */,
-				6E0A2BED1A55EE5C00E2914D /* main.m */,
-				6E0A2BEE1A55EE5C00E2914D /* TimeHacker-Prefix.pch */,
+				6EA33EB51B241DE100ACA79E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6E1D28D61946F8AD00892F5D /* TimeHackerTests */ = {
+		6EA33EC91B241DE100ACA79E /* TimeHackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28DC1946F8AD00892F5D /* THTests.m */,
-				6E1D28D71946F8AD00892F5D /* Supporting Files */,
+				6EA33ECC1B241DE100ACA79E /* TimeHackerTests.swift */,
+				6EA33ECA1B241DE100ACA79E /* Supporting Files */,
 			);
 			path = TimeHackerTests;
 			sourceTree = "<group>";
 		};
-		6E1D28D71946F8AD00892F5D /* Supporting Files */ = {
+		6EA33ECA1B241DE100ACA79E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E1D28D81946F8AD00892F5D /* TimeHackerTests-Info.plist */,
-				6E1D28D91946F8AD00892F5D /* InfoPlist.strings */,
+				6EA33ECB1B241DE100ACA79E /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6E3E258F19AC20A700A29BAC /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
-		6E3F6A0A1951994500BC546B /* ToDoList */ = {
-			isa = PBXGroup;
-			children = (
-				6E1D28C31946F8AD00892F5D /* THTodoListViewController.h */,
-				6E1D28C41946F8AD00892F5D /* THTodoListViewController.m */,
-				6E3B1DF21953D1E300F0DDE3 /* THTodoTableViewCell.h */,
-				6E3B1DF31953D1E300F0DDE3 /* THTodoTableViewCell.m */,
-			);
-			name = ToDoList;
-			sourceTree = "<group>";
-		};
-		6E3F6A0C1951998100BC546B /* PomoToDo */ = {
-			isa = PBXGroup;
-			children = (
-				6E1C63931A14720400B69833 /* THCircularSliderViewController.swift */,
-				6E1D28C61946F8AD00892F5D /* THPomoViewController.h */,
-				6E1D28C71946F8AD00892F5D /* THPomoViewController.m */,
-				6E1D28EF19472C5C00892F5D /* THPomo.h */,
-				6E1D28F019472C5C00892F5D /* THPomo.m */,
-			);
-			name = PomoToDo;
-			sourceTree = "<group>";
-		};
-		6E49229B19AACAD400AB00EB /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				6E3C53F319EB4DEE00CDAB64 /* SettingsTableViewController.swift */,
-				6E3C542819EB5BF200CDAB64 /* FeedbackViewController.swift */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		6EFFE0421A580F4D00AA2B3C /* CalenderAnalysis */ = {
-			isa = PBXGroup;
-			children = (
-				6EFFE0431A580FC800AA2B3C /* THCalenderAnalysis.swift */,
-				6EFFE0451A5886F300AA2B3C /* THDatePickerViewController.swift */,
-				6EFFE0471A58A08300AA2B3C /* THAnalysisResultTVC.swift */,
-			);
-			name = CalenderAnalysis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E1D28A71946F8AC00892F5D /* TimeHacker */ = {
+		6EA33EB01B241DE100ACA79E /* TimeHacker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHacker" */;
+			buildConfigurationList = 6EA33ED01B241DE100ACA79E /* Build configuration list for PBXNativeTarget "TimeHacker" */;
 			buildPhases = (
-				6E1D28A41946F8AC00892F5D /* Sources */,
-				6E1D28A51946F8AC00892F5D /* Frameworks */,
-				6E1D28A61946F8AC00892F5D /* Resources */,
+				6EA33EAD1B241DE100ACA79E /* Sources */,
+				6EA33EAE1B241DE100ACA79E /* Frameworks */,
+				6EA33EAF1B241DE100ACA79E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TimeHacker;
-			productName = iCaleminder_iOS;
-			productReference = 6E1D28A81946F8AC00892F5D /* TimeHacker.app */;
+			productName = TimeHacker;
+			productReference = 6EA33EB11B241DE100ACA79E /* TimeHacker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E1D28CE1946F8AD00892F5D /* TimeHackerTests */ = {
+		6EA33EC51B241DE100ACA79E /* TimeHackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHackerTests" */;
+			buildConfigurationList = 6EA33ED31B241DE100ACA79E /* Build configuration list for PBXNativeTarget "TimeHackerTests" */;
 			buildPhases = (
-				6E1D28CB1946F8AD00892F5D /* Sources */,
-				6E1D28CC1946F8AD00892F5D /* Frameworks */,
-				6E1D28CD1946F8AD00892F5D /* Resources */,
+				6EA33EC21B241DE100ACA79E /* Sources */,
+				6EA33EC31B241DE100ACA79E /* Frameworks */,
+				6EA33EC41B241DE100ACA79E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6E1D28D51946F8AD00892F5D /* PBXTargetDependency */,
+				6EA33EC81B241DE100ACA79E /* PBXTargetDependency */,
 			);
 			name = TimeHackerTests;
-			productName = iCaleminder_iOSTests;
-			productReference = 6E1D28CF1946F8AD00892F5D /* TimeHackerTests.xctest */;
+			productName = TimeHackerTests;
+			productReference = 6EA33EC61B241DE100ACA79E /* TimeHackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6E1D28A01946F8AC00892F5D /* Project object */ = {
+		6EA33EA91B241DE100ACA79E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = ICAL;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = artwalk;
 				TargetAttributes = {
-					6E1D28A71946F8AC00892F5D = {
-						DevelopmentTeam = QW827XK56P;
+					6EA33EB01B241DE100ACA79E = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
-					6E1D28CE1946F8AD00892F5D = {
-						TestTargetID = 6E1D28A71946F8AC00892F5D;
+					6EA33EC51B241DE100ACA79E = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 6EA33EB01B241DE100ACA79E;
 					};
 				};
 			};
-			buildConfigurationList = 6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "TimeHacker" */;
+			buildConfigurationList = 6EA33EAC1B241DE100ACA79E /* Build configuration list for PBXProject "TimeHacker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -342,104 +182,88 @@
 				en,
 				Base,
 			);
-			mainGroup = 6E1D289F1946F8AC00892F5D;
-			productRefGroup = 6E1D28A91946F8AC00892F5D /* Products */;
+			mainGroup = 6EA33EA81B241DE100ACA79E;
+			productRefGroup = 6EA33EB21B241DE100ACA79E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E1D28A71946F8AC00892F5D /* TimeHacker */,
-				6E1D28CE1946F8AD00892F5D /* TimeHackerTests */,
+				6EA33EB01B241DE100ACA79E /* TimeHacker */,
+				6EA33EC51B241DE100ACA79E /* TimeHackerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6E1D28A61946F8AC00892F5D /* Resources */ = {
+		6EA33EAF1B241DE100ACA79E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E0A2BB61A55E24C00E2914D /* LaunchScreen.xib in Resources */,
-				6E0A2BEF1A55EE5C00E2914D /* InfoPlist.strings in Resources */,
-				6E1D28CA1946F8AD00892F5D /* Images.xcassets in Resources */,
-				6E1D28BF1946F8AD00892F5D /* Main.storyboard in Resources */,
+				6EA33EBC1B241DE100ACA79E /* Main.storyboard in Resources */,
+				6EA33EC11B241DE100ACA79E /* LaunchScreen.xib in Resources */,
+				6EA33EBE1B241DE100ACA79E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E1D28CD1946F8AD00892F5D /* Resources */ = {
+		6EA33EC41B241DE100ACA79E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1D28DB1946F8AD00892F5D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6E1D28A41946F8AC00892F5D /* Sources */ = {
+		6EA33EAD1B241DE100ACA79E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EFFE0441A580FC800AA2B3C /* THCalenderAnalysis.swift in Sources */,
-				6E106FFF195653470026FA12 /* Pomo.m in Sources */,
-				6E1C63941A14720400B69833 /* THCircularSliderViewController.swift in Sources */,
-				6E3F6A0F1951B31700BC546B /* THPomoModel.xcdatamodeld in Sources */,
-				6E1D28C81946F8AD00892F5D /* THPomoViewController.m in Sources */,
-				6E1C63911A146FA700B69833 /* ARTCircularSliderView.swift in Sources */,
-				6E10700B1956544C0026FA12 /* PomoList.m in Sources */,
-				6E0A2BF01A55EE5C00E2914D /* main.m in Sources */,
-				6E1D28C51946F8AD00892F5D /* THTodoListViewController.m in Sources */,
-				6E0A2BEB1A55EC5300E2914D /* AppDelegate.swift in Sources */,
-				6EFFE0481A58A08300AA2B3C /* THAnalysisResultTVC.swift in Sources */,
-				6E3C542919EB5BF200CDAB64 /* FeedbackViewController.swift in Sources */,
-				6E28F58419F7743900ED4218 /* ARTHorizontalScrollView.swift in Sources */,
-				6E87EB4E19F4C6F300E7DAAF /* DeviceInfo.swift in Sources */,
-				6E3C53F419EB4DEE00CDAB64 /* SettingsTableViewController.swift in Sources */,
-				6E3B1DF41953D1E300F0DDE3 /* THTodoTableViewCell.m in Sources */,
-				6E1D28F119472C5C00892F5D /* THPomo.m in Sources */,
-				6EFFE0461A5886F300AA2B3C /* THDatePickerViewController.swift in Sources */,
+				6EA33EB91B241DE100ACA79E /* TimerVC.swift in Sources */,
+				6EA33ED71B241F6800ACA79E /* TimerVM.swift in Sources */,
+				6EA33EB71B241DE100ACA79E /* AppDelegate.swift in Sources */,
+				6EA33ED91B24241200ACA79E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E1D28CB1946F8AD00892F5D /* Sources */ = {
+		6EA33EC21B241DE100ACA79E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1D28DD1946F8AD00892F5D /* THTests.m in Sources */,
+				6EA33ECD1B241DE100ACA79E /* TimeHackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6E1D28D51946F8AD00892F5D /* PBXTargetDependency */ = {
+		6EA33EC81B241DE100ACA79E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E1D28A71946F8AC00892F5D /* TimeHacker */;
-			targetProxy = 6E1D28D41946F8AD00892F5D /* PBXContainerItemProxy */;
+			target = 6EA33EB01B241DE100ACA79E /* TimeHacker */;
+			targetProxy = 6EA33EC71B241DE100ACA79E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6E1D28BD1946F8AD00892F5D /* Main.storyboard */ = {
+		6EA33EBA1B241DE100ACA79E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6E1D28BE1946F8AD00892F5D /* Base */,
+				6EA33EBB1B241DE100ACA79E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6E1D28D91946F8AD00892F5D /* InfoPlist.strings */ = {
+		6EA33EBF1B241DE100ACA79E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6E1D28DA1946F8AD00892F5D /* en */,
+				6EA33EC01B241DE100ACA79E /* Base */,
 			);
-			name = InfoPlist.strings;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6E1D28DE1946F8AD00892F5D /* Debug */ = {
+		6EA33ECE1B241DE100ACA79E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -454,11 +278,15 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -471,14 +299,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		6E1D28DF1946F8AD00892F5D /* Release */ = {
+		6EA33ECF1B241DE100ACA79E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -493,151 +322,111 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		6E1D28E11946F8AD00892F5D /* Debug */ = {
+		6EA33ED11B241DE100ACA79E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TimeHacker/TimeHacker-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/TimeHacker/TimeHacker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = TimeHacker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = TimeHacker;
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TimeHacker/TimeHacker-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		6E1D28E21946F8AD00892F5D /* Release */ = {
+		6EA33ED21B241DE100ACA79E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TimeHacker/TimeHacker-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/TimeHacker/TimeHacker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = TimeHacker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = TimeHacker;
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "TimeHacker/TimeHacker-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		6E1D28E41946F8AD00892F5D /* Debug */ = {
+		6EA33ED41B241DE100ACA79E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TimeHacker.app/TimeHacker";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TimeHacker/TimeHacker-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "TimeHackerTests/TimeHackerTests-Info.plist";
-				PRODUCT_NAME = TimeHackerTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				INFOPLIST_FILE = TimeHackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeHacker.app/TimeHacker";
 			};
 			name = Debug;
 		};
-		6E1D28E51946F8AD00892F5D /* Release */ = {
+		6EA33ED51B241DE100ACA79E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TimeHacker.app/TimeHacker";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TimeHacker/TimeHacker-Prefix.pch";
-				INFOPLIST_FILE = "TimeHackerTests/TimeHackerTests-Info.plist";
-				PRODUCT_NAME = TimeHackerTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				INFOPLIST_FILE = TimeHackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeHacker.app/TimeHacker";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E1D28A31946F8AC00892F5D /* Build configuration list for PBXProject "TimeHacker" */ = {
+		6EA33EAC1B241DE100ACA79E /* Build configuration list for PBXProject "TimeHacker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6E1D28DE1946F8AD00892F5D /* Debug */,
-				6E1D28DF1946F8AD00892F5D /* Release */,
+				6EA33ECE1B241DE100ACA79E /* Debug */,
+				6EA33ECF1B241DE100ACA79E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E1D28E01946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHacker" */ = {
+		6EA33ED01B241DE100ACA79E /* Build configuration list for PBXNativeTarget "TimeHacker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6E1D28E11946F8AD00892F5D /* Debug */,
-				6E1D28E21946F8AD00892F5D /* Release */,
+				6EA33ED11B241DE100ACA79E /* Debug */,
+				6EA33ED21B241DE100ACA79E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		6E1D28E31946F8AD00892F5D /* Build configuration list for PBXNativeTarget "TimeHackerTests" */ = {
+		6EA33ED31B241DE100ACA79E /* Build configuration list for PBXNativeTarget "TimeHackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6E1D28E41946F8AD00892F5D /* Debug */,
-				6E1D28E51946F8AD00892F5D /* Release */,
+				6EA33ED41B241DE100ACA79E /* Debug */,
+				6EA33ED51B241DE100ACA79E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6E3F6A0D1951B31700BC546B /* THPomoModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */,
-			);
-			currentVersion = 6E3F6A0E1951B31700BC546B /* THPomoModel.xcdatamodel */;
-			path = THPomoModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 6E1D28A01946F8AC00892F5D /* Project object */;
+	rootObject = 6EA33EA91B241DE100ACA79E /* Project object */;
 }
